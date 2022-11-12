@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/steps_nav"
+    app:startDestination="@id/createServiceStep1Intro">
+    <fragment
+        android:id="@+id/createServiceStep1Intro"
+        android:name="com.yatenesturno.activities.services.step1.CreateServiceStep1Intro"
+        android:label="fragment_create_service_step1_intro"
+        tools:layout="@layout/fragment_create_service_step1_intro" >
+        <action
+            android:id="@+id/action_createServiceStep1Intro_to_createServiceStep1"
+            app:destination="@id/createServiceStep1"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_createServiceStep1Intro_to_createServiceConfirmAndCreate"
+            app:destination="@id/createServiceConfirmAndCreate" />
+    </fragment>
+    <fragment
+        android:id="@+id/createServiceStep1"
+        android:name="com.yatenesturno.activities.services.step1.CreateServiceStep1"
+        android:label="fragment_create_service_step1"
+        tools:layout="@layout/fragment_create_service_step1" >
+        <action
+            android:id="@+id/action_createServiceStep1_to_createServiceStep1Intro"
+            app:destination="@id/createServiceStep1Intro"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_createServiceStep1_to_createServiceStep2Intro"
+            app:destination="@id/createServiceStep2Intro"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createServiceStep2Intro"
+        android:name="com.yatenesturno.activities.services.step2.CreateServiceStep2Intro"
+        android:label="fragment_create_service_step2_intro"
+        tools:layout="@layout/fragment_create_service_step2_intro" >
+        <action
+            android:id="@+id/action_createServiceStep2Intro_to_createServiceStep1"
+            app:destination="@id/createServiceStep1"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_createServiceStep2Intro_to_createServiceStep2"
+            app:destination="@id/createServiceStep2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createServiceStep2"
+        android:name="com.yatenesturno.activities.services.step2.CreateServiceStep2"
+        android:label="fragment_create_service_step2"
+        tools:layout="@layout/fragment_create_service_step2" >
+        <action
+            android:id="@+id/action_createServiceStep2_to_createServiceStep2Intro"
+            app:destination="@id/createServiceStep2Intro" />
+        <action
+            android:id="@+id/action_createServiceStep2_to_createServiceStep3Intro"
+            app:destination="@id/createServiceStep3Intro"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createServiceStep3Intro"
+        android:name="com.yatenesturno.activities.services.step3.CreateServiceStep3Intro"
+        android:label="fragment_create_service_step3_intro"
+        tools:layout="@layout/fragment_create_service_step3_intro" >
+        <action
+            android:id="@+id/action_createServiceStep3Intro_to_createServiceStep2"
+            app:destination="@id/createServiceStep2" />
+        <action
+            android:id="@+id/action_createServiceStep3Intro_to_createServiceStep3"
+            app:destination="@id/createServiceStep3"
+            app:enterAnim="@anim/slide_in_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createServiceStep3"
+        android:name="com.yatenesturno.activities.services.step3.CreateServiceStep3"
+        android:label="fragment_create_service_step3"
+        tools:layout="@layout/fragment_create_service_step3" >
+        <action
+            android:id="@+id/action_createServiceStep3_to_createServiceStep3Intro"
+            app:destination="@id/createServiceStep3Intro" />
+        <action
+            android:id="@+id/action_createServiceStep3_to_createServiceConfirmAndCreate"
+            app:destination="@id/createServiceConfirmAndCreate"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/action_createServiceConfirmAndCreate_to_createServiceStep3"
+            app:enterAnim="@anim/slide_in_right" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/createServiceConfirmAndCreate"
+        android:name="com.yatenesturno.activities.services.step3.CreateServiceConfirmAndCreate"
+        android:label="fragment_create_service_confirm_and_create"
+        tools:layout="@layout/fragment_create_service_confirm_and_create" >
+        <action
+            android:id="@+id/action_createServiceConfirmAndCreate_to_createServiceStep3"
+            app:destination="@id/createServiceStep3" />
+    </fragment>
+</navigation>

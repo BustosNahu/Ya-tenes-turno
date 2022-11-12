@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activities.job_edit.ServiceConfigureFragment">
+
+    <ScrollView
+        android:id="@+id/scrollViewConfigService"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnConfirmServiceConfig"
+        android:animateLayoutChanges="true"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.PriceConfiguration
+                android:id="@+id/priceConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.BookingConfiguration
+                android:id="@+id/bookingConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" >
+
+                <com.yatenesturno.activities.job_edit.service_configs.configurations.ConcurrencyConfiguration
+                    android:id="@+id/concurrencyConfiguration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true" />
+            </com.yatenesturno.activities.job_edit.service_configs.configurations.BookingConfiguration>
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.EmergencyConfiguration
+                android:id="@+id/emergencyConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.CreditsConfiguration
+                android:id="@+id/creditsConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.DaysAndDurationConfiguration
+                android:id="@+id/daysAndDurationConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.ReminderConfiguration
+                android:id="@+id/reminderConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.ConcurrentServicesConfiguration
+                android:id="@+id/concurrentServicesConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.FixedScheduleConfiguration
+                android:id="@+id/fixedScheduleConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.ClassConfiguration
+                android:id="@+id/classConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.IntervalConfiguration
+                android:id="@+id/intervalConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.TimeSlotConfiguration
+                android:id="@+id/timeSlotConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.yatenesturno.custom_views.LoadingButton
+        android:id="@+id/btnConfirmServiceConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:allCaps="true"
+        app:buttonBackground="@color/colorPrimary"
+        app:buttonText="@string/confirm" />
+
+</RelativeLayout>

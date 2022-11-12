@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/onboardingbacksvg">
+
+
+    <TextView
+        android:id="@+id/onboarding_title"
+        style="@style/ExtraBold"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/monserrat_bold"
+        android:gravity="center_horizontal"
+        android:lineHeight="30dp"
+        android:lineSpacingExtra="-15sp"
+        android:text="@string/somos_el_as"
+        android:textAppearance="@style/somos_el_as"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/onboarding_description"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="84dp"
+        android:gravity="center_horizontal|top"
+        android:lineHeight="19dp"
+        android:lineSpacingExtra="-10sp"
+        android:text="@string/ten_organiz"
+        android:textAppearance="@style/ten_organiz"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/onboarding_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onboarding_title"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <ImageView
+        android:id="@+id/onboarding_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:scaleX="1.13"
+        android:src="@drawable/onboarding3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onboarding_title"
+        app:layout_constraintVertical_bias="0.763" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

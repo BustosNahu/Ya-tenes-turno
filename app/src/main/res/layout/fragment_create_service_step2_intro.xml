@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".activities.place_register.step_1.NewPlaceIntroStep1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_new_service_intro_step1"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:paddingStart="24dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_btn_new_service_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/bakc_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/new_service_intro_step2_title1"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn_new_service_intro" />
+
+        <TextView
+            style="@style/Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="start"
+            android:text="@string/new_service_intro_step2_title"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn_new_service_intro" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="130dp"
+        android:background="@drawable/new_place_intro_frame">
+
+        <LinearLayout
+            android:id="@+id/indicator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="24dp"
+            android:paddingBottom="12dp">
+
+            <ImageView
+                android:layout_width="192dp"
+                android:layout_height="29dp"
+
+                android:layout_gravity="center|center_horizontal"
+                android:src="@drawable/step_count_place_shop_2" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/child_root_new_place_intro"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:layout_below="@+id/indicator_layout"
+            android:layout_alignParentBottom="true"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/NormalBold"
+                android:layout_width="312dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/new_service_intro_step2_description"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.535"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/new_service_intro_step_2_image"
+                android:layout_width="304dp"
+                android:layout_height="208dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/create_service_step2_intro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/tv_new_service_step1"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:lineSpacingExtra="7dp"
+                android:text="@string/new_servcice_intro_step2_description_22"
+                android:textAlignment="center"
+                android:textColor="@color/grey_ui"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_service_intro_step_2_image" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnCreate_service_step2_1"
+                android:layout_width="312dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/child_root_new_place_intro"
+
+                android:background="@drawable/border_outline_rounded_primary"
+                android:clickable="true"
+                android:elevation="20dp"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.454"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_new_service_step1"
+                app:layout_constraintVertical_bias="0.701">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Medium"
+                    android:layout_width="299dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="9dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:drawablePadding="4dp"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+                    android:text="@string/continuar_paso_2"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/infoDuration"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_outline_info_24" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelDays"
+            style="@style/ServiceConfigLabel"
+            android:layout_toStartOf="@id/infoDuration"
+            android:text="@string/ofrecido_en_los_dias" />
+
+        <LinearLayout
+            android:id="@+id/dayPicker"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/labelDays"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/labelDuration"
+        style="@style/ServiceConfigLabel"
+        android:layout_below="@id/containerDays"
+        android:text="@string/info_duracion_del_servicio" />
+
+    <LinearLayout
+        android:id="@+id/durationPicker"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/labelDuration"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+</RelativeLayout>

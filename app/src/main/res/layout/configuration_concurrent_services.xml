@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerConcurrentServices"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/infoConcurrentServices"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_outline_info_24" />
+
+    <TextView
+        android:id="@+id/labelOtherServicesConcurrency"
+        style="@style/ServiceConfigLabel"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_toStartOf="@id/infoConcurrentServices"
+        android:text="@string/label_other_service_concurrency" />
+
+    <com.yatenesturno.custom_views.ServiceSelectionView
+        android:id="@+id/serviceSelectionView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelOtherServicesConcurrency"
+        android:layout_marginTop="8dp" />
+
+</RelativeLayout>

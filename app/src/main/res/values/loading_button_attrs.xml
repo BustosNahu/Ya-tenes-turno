@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingButton">
+        <attr name="buttonText" format="string" localization="suggested" />
+        <attr name="buttonBackground" format="color" />
+        <attr name="allCaps" format="boolean" />
+    </declare-styleable>
+
+</resources>

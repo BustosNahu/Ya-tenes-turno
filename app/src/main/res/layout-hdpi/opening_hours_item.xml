@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="185dp"
+    android:padding="3dp"
+    android:layout_height="400dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_openhours_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@drawable/border_opening_hours_cardview"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/close_no_active">
+
+
+
+            <TextView
+                style="@style/NormalBold"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="CERRADO/NO ACTIVO"
+                android:textColor="#8C8A8A"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/day_and_switch">
+            <TextView
+                android:id="@+id/tv_day"
+                style="@style/NormalBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/lunes"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/switch_active"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="RtlCompat" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+
+                android:checked="true"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.753"
+                app:layout_constraintStart_toEndOf="@+id/tv_day"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_all_openHoursItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:visibility="visible"
+            android:padding="4dp">
+
+
+            <TextView
+                android:id="@+id/start_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="1dp"
+                android:gravity="center_vertical"
+                android:text="@string/hora_de_ape"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/open_time_edit_view"
+                android:layout_width="155dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:focusable="true"
+                android:foreground="@drawable/boder_opening_hours_select_time"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/end_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/start_tv"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/open_time_edit_tv"
+                    style="@style/Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textAllCaps="true"
+                    android:textColor="@color/grey_ui"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="15dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/open_time"
+                style="@style/NormalBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:text="00:00"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/start_tv" />
+
+
+            <TextView
+                android:id="@+id/end_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/hora_de_cierre"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/open_time" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/close_time_edit_view"
+                android:layout_width="155dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:focusable="true"
+                android:foreground="@drawable/boder_opening_hours_select_time"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/close_mit_day"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/end_tv"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/close_time_edit"
+                    style="@style/Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textAllCaps="true"
+                    android:textColor="@color/grey_ui"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="15dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/close_time"
+                style="@style/NormalBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:text="00:00"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/end_tv" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider"
+                android:layout_width="155dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/close_time" />
+
+
+            <TextView
+                android:id="@+id/close_mit_day"
+                style="@style/NormalBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/close_mitday"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.086"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+            <CheckBox
+                android:id="@+id/midtime_state"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/close_mit_day"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/close_mit_day"
+                app:layout_constraintTop_toTopOf="@+id/close_mit_day" />
+
+            <TextView
+                android:id="@+id/startMidTime_tv"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/hora_de_descanso"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/close_mit_day" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/open_midtime_time_edit_view_cv"
+                android:layout_width="155dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:focusable="true"
+                android:foreground="@drawable/boder_opening_hours_select_time"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/endMidTimeTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startMidTime_tv">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/open_midtime_time_edit_view_tv"
+                    style="@style/Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textAllCaps="true"
+                    android:textColor="@color/grey_ui"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="15dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/mitday_close_time"
+                style="@style/NormalBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:text="00:00"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startMidTime_tv" />
+
+
+            <TextView
+                android:id="@+id/endMidTimeTv"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/mitday_finish"
+                android:textColor="@color/grey_ui"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mitday_close_time" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/close_midtime_time_edit_view_cv"
+                android:layout_width="155dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:focusable="true"
+                android:foreground="@drawable/boder_opening_hours_select_time"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/endMidTimeTv"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/close_midtime_time_edit_view_tv"
+                    style="@style/Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+                    android:text="00:00"
+
+                    android:textAllCaps="true"
+                    android:textColor="@color/grey_ui"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="15dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/mitday_open_time"
+                style="@style/NormalBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:text="00:00"
+                android:textColor="#757474"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/endMidTimeTv" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/clock_cv"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.888"
+                app:layout_constraintStart_toStartOf="parent">
+
+                                <ImageButton
+                                    android:id="@+id/clock_ic"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:background="@color/transparent"
+                                    android:src="@drawable/ic_clock_outline" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ok_cv"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.714"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageButton
+                    android:id="@+id/ok_ic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ic_okey" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cancel_cv"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.248"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageButton
+                    android:id="@+id/cancel_ic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ic_cancel" />
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,273 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".activities.services.CreateServiceActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059">
+
+
+        <RelativeLayout
+            android:id="@+id/topBar_LL_new_place"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#F4F4F4"
+            android:padding="16dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/topBar_RL_new_place"
+                android:layout_width="314dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp">
+
+                <ImageButton
+                    android:id="@+id/back_btn_create_service_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentEnd="false"
+                    android:backgroundTint="@color/transparent"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/bakc_arrow"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/step_title_new_place_a"
+                    style="@style/Normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_toEndOf="@+id/back_btn_create_service_3"
+                    android:gravity="center"
+                    android:text="Paso 03"
+                    android:textAlignment="center"
+                    android:textColor="@color/grey_ui"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginStart="147dp"
+                    android:layout_marginTop="9dp"
+
+                    android:layout_toEndOf="@+id/step_title_new_place_a"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_create_service_step3_indicator" />
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/Medium"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topBar_RL_new_place"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:gravity="start"
+                android:text="@string/new_service_step3_title"
+                android:textColor="@color/grey_ui"
+                android:textSize="24sp" />
+
+
+        </RelativeLayout>
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/new_place_intro_frame"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topBar_LL_new_place"
+            app:layout_constraintVertical_bias="0.926">
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:layout_anchor="@+id/scrollView2"
+                app:layout_anchorGravity="center">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp">
+
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        style="@style/Normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@string/servicio"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/serviceName"
+                        style="@style/NormalBold"
+                        android:layout_width="250dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="40dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.132"
+                        app:layout_constraintStart_toEndOf="@+id/textView10"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.yatenesturno.activities.services.step3.objects.BasicServiceInfoConfigurator
+                        android:id="@+id/basicServiceInfoConfigurator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:minHeight="56dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/serviceName" />
+
+                    <com.yatenesturno.activities.services.step3.objects.SimultShiftsConfigurator
+                        android:id="@+id/simultaneous_shifts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="12dp"
+                        android:minHeight="56dp"
+                        app:layout_constraintStart_toStartOf="@+id/basicServiceInfoConfigurator"
+                        app:layout_constraintEnd_toEndOf="@+id/basicServiceInfoConfigurator"
+                        app:layout_constraintTop_toBottomOf="@+id/basicServiceInfoConfigurator" />
+
+                    <com.yatenesturno.activities.services.step3.objects.ClientPermissions
+                        android:id="@+id/customers_permits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+
+                        android:minHeight="56dp"
+
+                        app:layout_constraintEnd_toEndOf="@+id/simultaneous_shifts"
+                        app:layout_constraintStart_toStartOf="@+id/simultaneous_shifts"
+                        app:layout_constraintTop_toBottomOf="@+id/simultaneous_shifts" />
+
+                    <com.yatenesturno.activities.services.step3.objects.CreditSystemConfigurator
+                        android:id="@+id/credits_system"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:minHeight="56dp"
+
+                        app:layout_constraintEnd_toEndOf="@+id/customers_permits"
+                        app:layout_constraintStart_toStartOf="@+id/customers_permits"
+                        app:layout_constraintTop_toBottomOf="@+id/customers_permits" />
+
+
+                    <com.yatenesturno.activities.services.step3.objects.AdditionalsConfigurator
+                        android:id="@+id/additionals_configurator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:minHeight="56dp"
+
+                        app:layout_constraintEnd_toEndOf="@+id/credits_system"
+                        app:layout_constraintStart_toStartOf="@+id/credits_system"
+                        app:layout_constraintTop_toBottomOf="@+id/credits_system" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btnCreate_service_step3"
+                        android:layout_width="312dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/border_outline_rounded_primary"
+                        android:clickable="true"
+                        android:elevation="20dp"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="#C5C3C3"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/additionals_configurator">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Medium"
+                            android:layout_width="299dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="9dp"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="9dp"
+                            android:layout_marginBottom="9dp"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/white"
+                            android:gravity="center"
+                            android:text="@string/create_service"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

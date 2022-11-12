@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ToggleButton
+        style="@style/toggleButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:textOff="@string/domingo_letter"
+        android:textOn="@string/domingo_letter" />
+
+    <ToggleButton
+        style="@style/toggleButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:textOff="@string/lunes_letter"
+        android:textOn="@string/lunes_letter" />
+
+    <ToggleButton
+        style="@style/toggleButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:textOff="@string/martes_letter"
+        android:textOn="@string/martes_letter" />
+
+    <ToggleButton
+        style="@style/toggleButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:textOff="@string/miercoles_letter"
+        android:textOn="@string/miercoles_letter" />
+
+    <ToggleButton
+        style="@style/toggleButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:textOff="@string/jueves_letter"
+        android:textOn="@string/jueves_letter" />
+
+    <ToggleButton
+        style="@style/toggleButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:textOff="@string/viernes_letter"
+        android:textOn="@string/viernes_letter" />
+
+    <ToggleButton
+        style="@style/toggleButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:textOff="@string/sabado_letter"
+        android:textOn="@string/sabado_letter" />
+
+</LinearLayout>

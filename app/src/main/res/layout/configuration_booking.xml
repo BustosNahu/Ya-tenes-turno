@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/containerCredits"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/infoBooking"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="end"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_outline_info_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchMaxAppsPerDay"
+        style="@style/ServiceConfigLabel"
+        android:layout_width="0dp"
+        android:text="@string/limit_same_day"
+        app:layout_constraintEnd_toStartOf="@id/infoBooking"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:switchPadding="8dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerMaxAppsPerDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchMaxAppsPerDay" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/infoBookingSimultaneously"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="end"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_outline_info_24"
+        app:layout_constraintBottom_toBottomOf="@id/switchMaxAppsSimultaneously"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/switchMaxAppsSimultaneously" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchMaxAppsSimultaneously"
+        style="@style/ServiceConfigLabel"
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/limit_simultaneous_appointments"
+        app:layout_constraintEnd_toStartOf="@id/infoBookingSimultaneously"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerMaxAppsPerDay"
+        app:switchPadding="8dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerMaxAppsSimultaneously"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchMaxAppsSimultaneously" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollViewDaily"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:id="@+id/timesContainer"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical"
+                android:paddingBottom="30dp" />
+
+        <RelativeLayout
+                android:paddingTop="@dimen/quarter_hour"
+                android:id="@+id/nowIndicatorContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@id/timesContainer"
+                android:layout_alignBottom="@id/timesContainer"
+                android:layout_toEndOf="@id/timesContainer"
+                android:paddingTop="@dimen/quarter_hour">
+
+            <LinearLayout
+                    android:id="@+id/timeLineContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+
+            <RelativeLayout
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/appointmentsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

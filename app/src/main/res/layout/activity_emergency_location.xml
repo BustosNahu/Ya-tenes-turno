@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".activities.job_edit.emergency_location.EmergencyLocationActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/darker_grey"
+            android:id="@+id/label"
+            android:text="Ubicaciones guardadas"
+            android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_margin="16dp"
+            android:id="@+id/recyclerViewEmergencyLocations"
+            android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:text="Nueva Ubicación"
+            android:id="@+id/btnNewEmergencyLocation"
+            android:layout_gravity="end"
+            android:drawableStart="@drawable/ic_baseline_add_24"
+            android:textColor="@color/black"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:text="Confirmar Seleccion"
+                android:id="@+id/btnConfirmSelection"
+                android:layout_gravity="bottom"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_height="wrap_content" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "485729116640",
+    "firebase_url": "https://yatenesturno.firebaseio.com",
+    "project_id": "yatenesturno",
+    "storage_bucket": "yatenesturno.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485729116640:android:f71b4ed08204d497f20b85",
+        "android_client_info": {
+          "package_name": "com.adminturnos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485729116640-4990ijoltdltgrp83a29vul73ikg2bee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adminturnos",
+            "certificate_hash": "456ae8e565b4d80a2a0239fe14b05f3a2f3ad29f"
+          }
+        },
+        {
+          "client_id": "485729116640-h9mn6o4dh8qsj1bpo8r7k6joqpiusfnp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adminturnos",
+            "certificate_hash": "6859792d6b7da2c402f63e2d460e20c13c70fb7d"
+          }
+        },
+        {
+          "client_id": "485729116640-jbi59esp2dcvt943t6mhtjh8psb11s6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTe28MWkezAiKd1iOupOrsF3G9afpi_78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485729116640-jbi59esp2dcvt943t6mhtjh8psb11s6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

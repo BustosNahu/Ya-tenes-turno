@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FED2C9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.first_shop.FirstShop">
+
+
+    <TextView
+        android:id="@+id/onboarding_title"
+        style="@style/NormalBold"
+        android:layout_width="360dp"
+        android:layout_height="135dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/monserrat_bold"
+        android:gravity="center_horizontal"
+        android:lineHeight="30dp"
+        android:lineSpacingExtra="-15sp"
+        android:text="@string/first_shop_title"
+        android:textAppearance="@style/somos_el_as"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="240dp"
+        android:src="@drawable/woman"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout_background_first_shop"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/background2"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/existent_shop_btn"
+            style="@style/Normal"
+            android:layout_width="312dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/ui_btn_backgorund"
+            android:elevation="20dp"
+            android:outlineProvider="bounds"
+            android:text="@string/registrar_mi_tienda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/register_my_shop"
+            style="@style/Normal"
+            android:layout_width="312dp"
+            android:layout_height="48dp"
+
+            android:layout_marginTop="44dp"
+            android:background="@drawable/ui_2_btn_background"
+            android:elevation="10dp"
+            android:text="@string/unirse_a_tienda"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/existent_shop_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

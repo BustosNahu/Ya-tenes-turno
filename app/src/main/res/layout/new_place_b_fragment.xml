@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+    <TextView
+        style="@style/NormalBold"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:id="@+id/labelInfoSelectAddress"
+            android:text="@string/seleccione_su_ubicacion"
+            android:textAlignment="center"
+        android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+
+            map:mapType="normal"
+            map:uiCompass="false"
+            map:uiRotateGestures="true"
+            map:uiScrollGestures="true"
+            map:uiTiltGestures="false"
+            map:uiZoomControls="true"
+            map:uiZoomGestures="true"
+
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            tools:context=".activities.place_register.NewPlaceLocationFragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment" >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:gravity="bottom|end"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:background="@drawable/rounded_background_okeybtn"
+                android:id="@+id/finish_location_btn"
+                android:layout_gravity="center_vertical|end"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_baseline_check_24"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginEnd="40dp"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+
+    </fragment>
+
+
+
+</LinearLayout>

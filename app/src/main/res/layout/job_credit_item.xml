@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="desde"
+            android:textColor="@color/darker_grey"
+            android:drawablePadding="4dp"
+            android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+            android:gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="@id/labelPeriodFrom"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelPeriodFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:gravity="bottom"
+            android:text="11/11/2021"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/label1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hasta"
+            android:textColor="@color/darker_grey"
+            android:drawablePadding="4dp"
+            android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+            android:gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="@id/labelPeriodUntil"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelPeriodUntil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="bottom"
+            android:text="11/12/2021"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/labelPeriodFrom"
+            app:layout_constraintTop_toBottomOf="@id/labelPeriodFrom" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelCredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="créditos"
+            android:textColor="@color/darker_grey"
+            app:layout_constraintBottom_toTopOf="@id/labelCreditsCount"
+            app:layout_constraintEnd_toStartOf="@id/labelCreditsTotal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelCreditsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="35"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/labelCredits"
+            app:layout_constraintStart_toStartOf="@id/labelCredits"
+            app:layout_constraintTop_toBottomOf="@id/labelCredits" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelCreditsTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="/40"
+            android:textColor="@color/darker_grey"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/labelCreditsCount"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

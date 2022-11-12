@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/border_outline_rounded_primary.xml" value="0.2935185185185185" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/day_off_indicator.xml" value="0.27870370370370373" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic__.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.26851851851851855" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_access_time_24_grey.xml" value="0.26851851851851855" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_attach_money_24.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_content_copy_24.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_edit_24_black.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_emergency_24.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_location_on_24_grey.xml" value="0.26851851851851855" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.36567926455566907" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_logo1.xml" value="0.3453703703703704" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_logo_100x96.xml" value="0.3453703703703704" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_outline_email_24.xml" value="0.24444444444444444" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_outline_verified_16.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_outline_work_off_24.xml" value="0.2640625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_power_off.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_power_on.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/ic_whatsapp.xml" value="0.36567926455566907" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/logo.xml" value="0.3333333333333333" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/rounded_background_error.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/rounded_background_grey.xml" value="0.36567926455566907" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/rounded_background_grey_all.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/rounded_background_primary.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/rounded_border_black.xml" value="0.36567926455566907" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/rounded_border_primary.xml" value="0.2935185185185185" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/rounded_border_white.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/splash_screen.xml" value="0.3729166666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/drawable/white_border_rounded.xml" value="0.2935185185185185" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_admin_places.xml" value="0.2916666666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_anonymous_app.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_booking_config.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_chat.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_client_info.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_days_off.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_edit_hours.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_edit_job.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_emergency_location.xml" value="0.24375" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_employee.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_get_premium.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_help.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_job_request.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_month_view.xml" value="0.34933605720122574" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_new_place.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_payments.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_place_client_credits.xml" value="0.21388888888888888" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_purchase_credit_pack.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_purchase_view.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_purchases.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_service_config.xml" value="0.33611111111111114" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_subscription_web_view.xml" value="0.24351851851851852" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_subscriptions_templates.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_view_appointment.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_view_place.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/activity_view_subscription_template.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/add_job_credits_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/appointment_class_client_slot.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/appointment_observation_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/class_time_add.xml" value="0.21666666666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/client_layout.xml" value="0.25" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/concurrency_configuration.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/concurrent_service_item.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_booking.xml" value="0.19940476190476192" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_concurrency.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_concurrent_services.xml" value="0.3074074074074074" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_credits.xml" value="0.1" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_days_and_duration.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_emergency.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_fixed_schedule.xml" value="0.3074074074074074" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_interval.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_is_class.xml" value="0.3074074074074074" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_price.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_reminder.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/configuration_time_slot.xml" value="0.34933605720122574" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/credit_pack_list_item.xml" value="0.34576098059244126" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/daily_appointment_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/daily_appointment_view_class.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/daily_calendar_layout.xml" value="0.33055555555555555" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/daily_calendar_now_indicator.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/date_selection_dialog.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/date_selection_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/day_job_edit_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/day_off_layout_setting.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/day_schedule_service_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_add_job_credits.xml" value="0.2601851851851852" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_administrate_client.xml" value="0.19895833333333332" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_adminstrate_client.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_anonymous_app_overview.xml" value="0.5" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_change_place_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_job_credits_details.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_more_info.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/dialog_select_services.xml" value="0.30648148148148147" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/emergency_configuration.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/emergency_location_view.xml" value="0.264" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/employee_messages_list_item.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_appointment_date_selection.xml" value="0.25833333333333336" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_chat.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_client.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_client_appointments.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_client_info.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_client_info_selection.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_client_job_credits.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_credits_packs.xml" value="0.5" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_emergency_setup.xml" value="0.25" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_job_view.xml" value="0.34739583333333335" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_main_configure.xml" value="0.34576098059244126" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_main_view_pager.xml" value="0.2" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_new_emergancy_location.xml" value="0.1" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_new_emergency_location.xml" value="0.264" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_new_place_a.xml" value="0.26373626373626374" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_new_place_d.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_place_client_credits.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_place_clients.xml" value="0.30925925925925923" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_service_configure.xml" value="0.256631708821715" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_service_selection.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_settings_list.xml" value="0.34074074074074073" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_view_subscriptions.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/fragment_view_tutorials.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/inner_appointment_class_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/inner_appointment_impl_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/job_credit_item.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/job_date_selection_button.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/job_item_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/jobtype_item.xml" value="0.10572916666666667" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/label.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/loading_button.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/main_drawer_header.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/main_place_item_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/month_picker_layout.xml" value="0.20092592592592592" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/monthly_day_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/monthly_day_layout_day_off.xml" value="0.75" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/new_place_b_fragment.xml" value="0.1" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/new_promo_dialog.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/number_counter_layout.xml" value="0.32314814814814813" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/other_sign_in_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/price_configuration.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/service_configurator_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/service_selection_layout.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/sign_in_activity.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/spinner_job_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/sub_template_combo.xml" value="0.3351851851851852" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/sub_template_individual.xml" value="0.5" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/timestamp_view.xml" value="0.25833333333333336" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/tutorial_pager_item.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/tutorial_view_pager.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/upcoming_event_service_class_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/upcoming_event_service_view.xml" value="0.33" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/view_observation_dialog.xml" value="0.67" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/view_observation_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/layout/view_service_layout.xml" value="0.24375" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/menu/main_activity_drawer.xml" value="0.35260416666666666" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/menu/main_menu.xml" value="0.35625" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/menu/menu_client_info.xml" value="0.287962962962963" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/menu/menu_close.xml" value="0.2935185185185185" />
+        <entry key="..\:/D_Drive/Eze/Programacion/AdminTurnos/Android/app/src/main/res/menu/menu_edit_job.xml" value="0.35260416666666666" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable-xxxhdpi/google_svgrepo_com.xml" value="0.2055" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable-xxxhdpi/person_svg.xml" value="0.2655" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/add_pic.xml" value="0.241" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/arrow_back_black.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/arrow_back_white.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/arrow_view_pager_back.xml" value="0.2945" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/arrow_view_pager_forward.xml" value="0.2945" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/background2.xml" value="0.1785" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/boder_opening_hours_select_time.xml" value="0.254" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_cv_opening_hours.xml" value="0.2565" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_opening_hours_cardview.xml" value="0.254" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_outline_black.xml" value="0.3275" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_outline_primary_greyinto.xml" value="0.2565" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_outline_recyclerview.xml" value="0.1675" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_outline_rounded_primary.xml" value="0.2985" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_outline_work_here_cv.xml" value="0.2555" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_outline_work_here_cv_inactive.xml" value="0.2165" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/border_outline_work_here_cv_selected.xml" value="0.258" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/bottom_circle.xml" value="0.194" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/circle_step_indicator.xml" value="0.2655" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/continue_arrow.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/continue_arroz.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/create_shop_popup.xml" value="0.1785" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/dont_show_password.xml" value="0.2055" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/drawer_main_corners.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/dropshadow.xml" value="0.2725" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/fondo.xml" value="0.1785" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/fowrard.xml" value="0.2945" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/google_signin_button.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_arrow_bottom.xml" value="0.1525" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_arrow_closerv.xml" value="0.3365" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_baseline_arrow_back_ios.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_baseline_badge_24_filled.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1755" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_baseline_people_24_filled.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.214" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_baseline_today_24_filled.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_calendar_ic.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_clients_tablayout.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_first_step_status_bar.xml" value="0.311" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_forward_arrow.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_outline_today_24.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_search_ic.xml" value="0.1525" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_share_ic.xml" value="0.247" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ic_turnos_diarios.xml" value="0.2145" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/new_place_intro_frame.xml" value="0.2655" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/new_place_intro_indicador_active.xml" value="0.2945" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/new_place_intro_indicador_inactive.xml" value="0.2945" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/onboarding1.xml" value="0.194" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/onboarding_.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/onboarding_indicator_active.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/onboarding_indicator_inactive.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/onboardingbacksvg.xml" value="0.161" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/password_icon.xml" value="0.2055" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/popup_background.xml" value="0.1785" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/question_woman.xml" value="0.1785" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/rounded_background_grey.xml" value="0.206" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/rounded_background_okeybtn.xml" value="0.1755" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/show_password.xml" value="0.2055" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/splash_animation.xml" value="0.1" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/splash_screen.xml" value="0.208" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/step_count_place_shop_1.xml" value="0.2985" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ui_2_btn_background.xml" value="0.1785" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/ui_btn_backgorund.xml" value="0.1785" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/user_cardview_boders.xml" value="0.1715" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/view_pager_container_arrow.xml" value="0.2945" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/basic_service_info_card.xml" value="0.35989583333333336" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_create_service_step1.xml" value="0.35625" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_create_service_step3.xml" value="0.35625" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_new_place_intro_step3.xml" value="0.2" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_new_place_intro_steps.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/opening_hours_item.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/sign_in_activity.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-land/fragment_create_service_step3.xml" value="0.30158730158730157" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-ldpi/sign_in_activity.xml" value="1.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-normal/fragment_create_service_step3.xml" value="0.29243266353142366" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-small/basic_service_info_card.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-small/fragment_create_service_step3.xml" value="0.35625" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-small/sign_in_activity.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-v28/create_popup.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-v28/item_container_onboarding.xml" value="0.22239583333333332" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-v29/fragment_job_view.xml" value="0.245018115942029" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xhdpi/basic_service_info_card.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xhdpi/fragment_create_service_confirm_and_create.xml" value="0.2359375" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xhdpi/fragment_create_service_step3.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xhdpi/fragment_main_view_pager.xml" value="0.35989583333333336" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xhdpi/fragment_new_place_intro_step3.xml" value="0.22" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xxhdpi/basic_service_info_card.xml" value="0.21458333333333332" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xxhdpi/fragment_new_place_intro_step3.xml" value="0.26875" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-xxxhdpi/fragment_new_place_intro_step3.xml" value="0.26875" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/active_days_layout.xml" value="0.2864471996579735" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_admin_places.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_anonymous_app.xml" value="0.29200513039760584" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_create_service.xml" value="0.2620778110303549" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_days_off.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_edit_hours.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_edit_job.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_employee.xml" value="0.29243266353142366" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_first_shop.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_job_request.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_month_view.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_new_job_request.xml" value="0.2736212056434374" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_new_place.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_service_config.xml" value="0.2736212056434374" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_settings_a_ctivity.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_subscriptions_templates.xml" value="0.2954253954681488" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/activity_view_place.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/additional_configurator_layout.xml" value="0.2941427960666952" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/additional_layout_configurator.xml" value="0.2941427960666952" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/basic_service_info_card.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/class_time_add.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/client_layout.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/client_permissions.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/concurrent_service_item.xml" value="0.1658828559213339" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_booking.xml" value="0.29200513039760584" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_concurrency.xml" value="0.26421547669944423" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_concurrent_services.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_credits.xml" value="0.67" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_days_and_duration.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_interval.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_is_class.xml" value="0.3009833262077811" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_price.xml" value="0.26421547669944423" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_reminder.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/configuration_time_slot.xml" value="0.67" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/content_splash.xml" value="0.18541666666666667" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/create_popup.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/create_service_popup.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/create_shop_popup.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/credit_system.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/credit_system_config.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/date_selection_layout.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/day_job_edit_layout.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/day_picker_layout.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/dialog_anonymous_app_overview.xml" value="0.29200513039760584" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/dialog_change_place_layout.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/dialog_select_services.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/dropshadow.xml" value="0.30012825994014536" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/emergency_location_view.xml" value="0.1658828559213339" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/finish_place_creation_popup.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/finished_create_place_popup.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_appointment_date_selection.xml" value="0.29200513039760584" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_chat.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_client.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_client_info_selection.xml" value="0.29200513039760584" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_confirm_scheduled_hours.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_confirm_and_create.xml" value="0.5530660377358491" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step1.xml" value="0.75" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step1_intro.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step2.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step2_intro.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step3.xml" value="0.40456674473067916" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step3_intro.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_first.xml" value="0.22239583333333332" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_job_view.xml" value="0.22" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_main_configure.xml" value="0.3009833262077811" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_main_view_pager.xml" value="0.44166666666666665" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_emergency_location.xml" value="0.29200513039760584" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_a.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_c.xml" value="0.29243266353142366" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_d.xml" value="0.29243266353142366" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_e.xml" value="0.29243266353142366" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_intro_step1.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_intro_step2.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_intro_step3.xml" value="0.75" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_intro_steps.xml" value="0.9" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_step2.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_new_place_step3.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_onboarding.xml" value="0.18" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_second.xml" value="0.3009833262077811" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_service_configure.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_service_selection.xml" value="0.3009833262077811" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_setting_view.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_settings_list.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/info_btn_pupup.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/item_container_new_place_intro_vp.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/item_container_onboarding.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/jobtype_item.xml" value="0.4850187265917603" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/loading_button.xml" value="0.9" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/main_drawer_header.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/main_place_item_layout.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/month_picker_layout.xml" value="0.11970927746900385" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/new_place_b_fragment.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/new_promo_dialog.xml" value="0.3009833262077811" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/new_ui_day_picker_layout.xml" value="0.75" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/new_ui_number_counter_layout.xml" value="0.67" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/normal_button_ui.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/number_counter_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/onboarding_fragment.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/opening_hours_item.xml" value="0.40773809523809523" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/opening_hours_revision_items_rv.xml" value="0.22" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/other_sign_in_layout.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/place_layout.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/progress_view.xml" value="0.3572916666666667" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/remember_create_service_popup.xml" value="0.29243266353142366" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/service_configurator_new_view.xml" value="0.29243266353142366" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/service_configurator_view.xml" value="0.26421547669944423" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/service_selection_layout.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/settings_layout.xml" value="0.2484134179510426" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/sign_in_activity.xml" value="0.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/simult_shifts.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/spinner_job_layout.xml" value="0.24524025385312784" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/tablayout_custom_view.xml" value="1.25" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/test_layout.xml" value="0.2" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/timestamp_view.xml" value="0.75" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/timestamp_view_original.xml" value="0.67" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/timpickertest.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/view_service_layout.xml" value="0.5" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/view_service_original_layout.xml" value="0.29157759726378796" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/week_day_layout.xml" value="0.2975630611372381" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/menu/main_activity_drawer.xml" value="0.29200513039760584" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/menu/main_menu.xml" value="0.33" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/xml/file_paths.xml" value="0.28858486532706284" />
+        <entry key="..\:/Programacion/sdk/platforms/android-31/data/res/layout/auto_complete_list.xml" value="0.29243266353142366" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="NullableNotNullManager">
+    <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
+    <option name="myDefaultNotNull" value="android.annotation.NonNull" />
+    <option name="myNullables">
+      <value>
+        <list size="15">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
+          <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
+          <item index="2" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
+          <item index="3" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.Nullable" />
+          <item index="4" class="java.lang.String" itemvalue="android.support.annotation.Nullable" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.Nullable" />
+          <item index="6" class="java.lang.String" itemvalue="android.annotation.Nullable" />
+          <item index="7" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNullable" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.Nullable" />
+          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableDecl" />
+          <item index="10" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableType" />
+          <item index="11" class="java.lang.String" itemvalue="com.android.annotations.Nullable" />
+          <item index="12" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.Nullable" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.annotations.Nullable" />
+          <item index="14" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.Nullable" />
+        </list>
+      </value>
+    </option>
+    <option name="myNotNulls">
+      <value>
+        <list size="15">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
+          <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
+          <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
+          <item index="3" class="java.lang.String" itemvalue="android.support.annotation.NonNull" />
+          <item index="4" class="java.lang.String" itemvalue="androidx.annotation.NonNull" />
+          <item index="5" class="java.lang.String" itemvalue="android.annotation.NonNull" />
+          <item index="6" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNonNull" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullDecl" />
+          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
+          <item index="10" class="java.lang.String" itemvalue="com.android.annotations.NonNull" />
+          <item index="11" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.NonNull" />
+          <item index="12" class="java.lang.String" itemvalue="io.reactivex.annotations.NonNull" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.NonNull" />
+          <item index="14" class="java.lang.String" itemvalue="lombok.NonNull" />
+        </list>
+      </value>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

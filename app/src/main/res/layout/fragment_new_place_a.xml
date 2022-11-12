@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:fillViewport="true"
+        tools:context=".activities.place_register.step_1.NewPlaceStep1">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059">
+
+        <RelativeLayout
+            android:id="@+id/topBar_LL_new_place"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#F4F4F4"
+            android:padding="24dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/topBar_RL_new_place"
+                android:layout_width="314dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp">
+
+                <ImageButton
+                    android:id="@+id/back_btn_new_place_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/transparent"
+                    android:src="@drawable/bakc_arrow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/step_title_new_place_a"
+                    style="@style/Normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_toEndOf="@+id/back_btn_new_place_a"
+                    android:gravity="center"
+                    android:text="Paso 01"
+                    android:textAlignment="center"
+                    android:textColor="@color/grey_ui"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="137dp"
+                    android:layout_toEndOf="@+id/step_title_new_place_a"
+                    android:src="@drawable/ic_first_step_status_bar" />
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/Medium"
+                android:layout_width="272dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/topBar_RL_new_place"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/new_place_step1_title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp" />
+
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/new_place_intro_frame"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topBar_LL_new_place">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="323dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="150dp"
+                    android:gravity="center"
+                    android:hint="@string/nombre_del_sitio"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="7dp"
+                    app:boxCornerRadiusBottomStart="7dp"
+                    app:boxCornerRadiusTopEnd="7dp"
+                    app:boxCornerRadiusTopStart="7dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shop_name_et"
+                        style="@style/Medium"
+                        android:layout_width="312dp"
+                        android:layout_height="55dp"
+
+                        android:layout_marginBottom="5dp"
+                        android:drawableStart="@drawable/ic_shop"
+                        android:drawablePadding="20dp"
+                        android:inputType="textCapWords"
+                        android:maxLength="29"
+                        android:textColor="@color/grey_ui"
+                        android:textSize="15sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_card_view"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/add_pic" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/slogan_textInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="323dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="230dp"
+                    android:gravity="center"
+                    android:hint="@string/slogan_del_sitio"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="7dp"
+                    app:boxCornerRadiusBottomStart="7dp"
+                    app:boxCornerRadiusTopEnd="7dp"
+                    app:boxCornerRadiusTopStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivBusiness">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/slogan_et_new_place"
+                        style="@style/Medium"
+                        android:layout_width="312dp"
+                        android:layout_height="52dp"
+                        android:layout_marginBottom="5dp"
+                        android:drawableStart="@drawable/ic_slogan"
+                        android:drawablePadding="20dp"
+                        android:inputType="textCapWords"
+                        android:maxLength="29"
+                        android:textColor="@color/grey_ui"
+                        android:textSize="15sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phone_textInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="323dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="310dp"
+                    android:gravity="center"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="7dp"
+                    app:boxCornerRadiusBottomStart="7dp"
+                    app:boxCornerRadiusTopEnd="7dp"
+                    app:boxCornerRadiusTopStart="7dp"
+                    app:hintEnabled="false"
+                    app:prefixText="+54 9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivBusiness">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone_et_new_place"
+                        style="@style/Medium"
+                        android:hint="@string/telefono"
+
+                        android:layout_width="312dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:drawableStart="@drawable/ic_outline_phone_iphone"
+                        android:drawablePadding="20dp"
+                        android:inputType="phone"
+                        android:maxLength="29"
+                        android:textColor="@color/grey_ui"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/location_textInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="312dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="387dp"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/location"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="7dp"
+                    app:boxCornerRadiusBottomStart="7dp"
+                    app:boxCornerRadiusTopEnd="7dp"
+                    app:boxCornerRadiusTopStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address_et_new_place"
+                        style="@style/Medium"
+                        android:layout_width="312dp"
+                        android:layout_height="55dp"
+                        android:drawableStart="@drawable/ic_location_icon"
+                        android:drawablePadding="20dp"
+                        android:focusableInTouchMode="false"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/grey_ui"
+                        android:textSize="15sp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/category_constraintLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="460dp">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/category_textInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="323dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:hint="@string/category"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="7dp"
+                        app:boxCornerRadiusBottomStart="7dp"
+
+                        app:boxCornerRadiusTopEnd="7dp"
+                        app:boxCornerRadiusTopStart="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/category_et_new_place"
+                            style="@style/Medium"
+                            android:layout_width="312dp"
+                            android:layout_height="55dp"
+                            android:layout_marginBottom="5dp"
+                            android:drawableStart="@drawable/ic_shop"
+                            android:drawableEnd="@drawable/ic_arrow_bottom"
+                            android:drawablePadding="20dp"
+                            android:enabled="true"
+                            android:focusableInTouchMode="false"
+                            android:maxLength="29"
+                            android:textColor="@color/grey_ui"
+                            android:textSize="15sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="312dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="519dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewJobTypes"
+                        android:layout_width="312dp"
+                        android:layout_height="360dp"
+                        android:background="@drawable/border_outline_recyclerview"
+                        android:padding="3dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_continue_step1"
+                        android:layout_width="312dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="50dp"
+                        android:background="@drawable/border_outline_rounded_primary"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerViewJobTypes">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="299dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="9dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/white"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:paddingTop="3dp"
+                            android:text="@string/conti_nue"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

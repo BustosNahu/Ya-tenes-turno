@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:id="@+id/root"
+        android:layout_height="match_parent">
+
+    <com.yatenesturno.custom_views.NonSwipeableViewPager
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:id="@+id/viewPagerAnonymousAppointment"
+            android:layout_height="match_parent"
+            tools:context=".activities.job_appointment_book.AnonymousAppActivity" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

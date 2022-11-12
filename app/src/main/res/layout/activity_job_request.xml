@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:id="@+id/root"
+    android:animateLayoutChanges="true"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".activities.job_request.JobRequestActivity">
+
+        <TextView
+                android:id="@+id/textviewJobRequestInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="@string/solicitudes_de_trabajo"
+                android:textSize="22sp" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/containerRequests"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/textviewJobRequestInfo">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewJobRequests"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/noPlaces"
+                    android:layout_below="@id/textviewJobRequestInfo" />
+
+            <TextView
+                    android:id="@+id/labelNoJobRequests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textviewJobRequestInfo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:text="@string/aun_no_hay_nada_por_aqu"
+                    android:textColor="@android:color/tab_indicator_text"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/noPlaces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/nueva_solicitud_de_trabajo"
+                android:textColor="@color/white"
+                app:shapeAppearanceOverlay="@style/CustomExtendedFab" />
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

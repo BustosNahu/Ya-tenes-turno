@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.059"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/topBar_LL_new_place"
+        android:layout_width="match_parent"
+        android:layout_height="169dp"
+        android:background="#F4F4F4"
+        android:padding="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/topBar_RL_new_place"
+            android:layout_width="314dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp">
+
+            <ImageButton
+                android:id="@+id/back_btn_new_place_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/bakc_arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.044"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#BABABA" />
+
+            <TextView
+                android:id="@+id/step_title_new_place_a"
+                style="@style/Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@+id/back_btn_new_place_a"
+                android:gravity="center"
+                android:text="Paso 02"
+                android:textAlignment="center"
+                android:textColor="#BFBFBF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="137dp"
+                android:layout_toEndOf="@+id/step_title_new_place_a"
+                android:src="@drawable/ic_progress_step_2" />
+        </RelativeLayout>
+
+
+        <TextView
+            style="@style/Medium"
+            android:layout_width="272dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/topBar_RL_new_place"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="40dp"
+
+            android:layout_marginTop="10dp"
+            android:text="@string/new_place_step2_title_1"
+            android:textColor="@color/grey_ui"
+            android:textSize="24sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="4dp"
+        android:background="@drawable/new_place_intro_frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar_LL_new_place">
+
+
+        <LinearLayout
+            android:id="@+id/horarios_atencion_ll"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                style="@style/Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_place_step2_title_2"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:layout_marginStart="140dp"
+                android:id="@+id/foward_recycler_idk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fowrard"
+                android:backgroundTint="@color/transparent"/>
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contraint_top_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/horarios_atencion_ll"
+            android:layout_alignParentStart="true"
+           >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/attention_hours_rv"
+                android:layout_width="370dp"
+                android:layout_height="440dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnStep2_continue"
+            android:layout_width="312dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/contraint_top_btn"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_outline_rounded_primary"
+            android:clickable="true"
+            android:elevation="25dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#C1C1C1"
+            app:cardCornerRadius="30dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="11dp"
+                android:drawablePadding="3dp"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+
+                android:text="@string/save_hours"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

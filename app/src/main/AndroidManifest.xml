@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yatenesturno">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup"
+        tools:targetApi="s">
+        <activity
+            android:name=".activities.splash_activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.services.CreateServiceActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".activities.TestImageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_test_image"
+            android:theme="@style/AppTheme"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".activities.first_shop.FirstShop"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.place_credits.PlaceClientCreditsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.place_credits.PaymentsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.job_edit.days_off.DaysOffActivity"
+            android:exported="true"
+            android:theme="@style/BlackColoredAppTheme" />
+        <activity
+            android:name=".activities.help.HelpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.get_premium.ViewSubscriptionTemplateActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.purchases.single_purchase.PurchaseCreditPackActivity"
+            android:exported="true"
+            android:theme="@style/BlackColoredAppTheme" />
+        <activity
+            android:name=".activities.purchases.single_purchase.PurchaseViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.purchases.PurchasesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.job_edit.emergency_location.EmergencyLocationActivity"
+            android:exported="true" />
+        <activity android:name=".activities.settings.AboutActivity" />
+        <activity
+            android:name=".activities.main_screen.ActivityViewQR"
+            android:theme="@style/BlackNoActionBar" />
+        <activity android:name=".activities.settings.SettingsActivity" />
+        <activity
+            android:name=".activities.get_premium.SubscriptionWebViewActivity"
+            android:theme="@style/BlackColoredAppTheme" />
+        <activity
+            android:name=".activities.get_premium.SubscriptionsTemplatesActivity"
+            android:theme="@style/BlackColoredAppTheme" />
+        <activity android:name=".activities.job_appointment_book.AnonymousAppActivity" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_logo1" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <service
+            android:name=".functionality.push_notification.AppointmentNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name=".activities.get_premium.GetPremiumActivity"
+            android:theme="@style/BlackColoredAppTheme" />
+        <activity android:name=".activities.job_edit.EditHoursActivity" />
+        <activity android:name=".activities.employee.client.ClientInfoActivity" />
+        <activity
+            android:name=".activities.main_screen.SendMessageActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.employee.EmployeeActivity" />
+        <activity
+            android:name=".activities.appointment_view.MonthViewActivity"
+            android:parentActivityName=".activities.main_screen.MainActivity"
+            android:theme="@style/BlackColoredAppTheme" />
+        <activity android:name=".activities.place_view.AdminPlacesActivity" />
+        <activity
+            android:name=".activities.job_edit.ServiceConfigActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.appointment_view.ViewAppointmentActivity" />
+        <activity
+            android:name=".activities.job_edit.EditJobActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activities.job_request.NewJobRequestActivity" />
+        <activity android:name=".activities.job_request.JobRequestActivity" />
+        <activity
+            android:name=".activities.place_register.NewPlaceActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" /> <!-- cache directory file provider paths -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activities.place_view.EditPlaceActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.place_view.PlaceViewActivity" />
+        <activity
+            android:name=".activities.sign_in.ActivitySignIn"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activities.main_screen.MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+    </application>
+
+</manifest>

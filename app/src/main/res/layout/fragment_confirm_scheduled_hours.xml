@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ff8672"
+    tools:context=".activities.place_register.step_2.ConfirmScheduledHours">
+
+    <RelativeLayout
+        android:id="@+id/topBar_LL_new_place"
+        android:layout_width="match_parent"
+        android:layout_height="199dp"
+        android:background="#ff8672"
+        android:padding="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/topBar_RL_new_place"
+            android:layout_width="314dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp">
+
+            <ImageButton
+                android:id="@+id/back_btn_new_place_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/arrow_back_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.044"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/step_title_new_place_a"
+                style="@style/Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@+id/back_btn_new_place_a"
+                android:gravity="center"
+                android:text="Paso 02"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="137dp"
+                android:layout_toEndOf="@+id/step_title_new_place_a"
+                android:src="@drawable/ic_endofstep2" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            style="@style/Medium"
+            android:layout_width="272dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/topBar_RL_new_place"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/new_place_stepConformation_title_2"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+
+        <TextView
+            style="@style/Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_below="@+id/topBar_RL_new_place"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="fill_vertical"
+            android:text="@string/new_place_stepConformation_title_1"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_marginTop="180dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/new_place_intro_frame"
+
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            app:cardElevation="20dp"
+            android:padding="20dp"
+            android:background="@drawable/new_place_intro_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/NormalBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/new_place_step2_title_2"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.202"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
+                android:layout_width="320dp"
+                android:layout_height="323dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/border_outline_primary_greyinto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/revision_to_confirm_hours_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/editScheduledHours_Cv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                android:layout_marginTop="398dp"
+                android:layout_marginStart="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.879"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+                <ImageButton
+                    android:id="@+id/editScheduledHours_Ib"
+                    android:src="@drawable/ic_edit_pencil"
+                    android:background="@color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnStep2_confirmScheduletHours"
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="462dp"
+                android:background="@drawable/border_outline_rounded_primary"
+                android:clickable="true"
+                android:layout_gravity="center_horizontal"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="30dp"
+          >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="11dp"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+
+                    android:text="@string/confirm_hours"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>
