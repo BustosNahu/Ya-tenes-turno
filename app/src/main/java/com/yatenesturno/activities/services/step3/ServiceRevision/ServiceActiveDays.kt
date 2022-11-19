@@ -30,7 +30,6 @@ class ActiveDaysAdapter(private val mList: List<String>) : RecyclerView.Adapter<
             holder.dayText.text = "$activeDays | "
         }else{
             holder.dayText.text = activeDays
-
         }
 
     }

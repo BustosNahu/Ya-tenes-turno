@@ -53,6 +53,13 @@ class SimultShiftsConfigurator  @JvmOverloads constructor(context: Context, attr
         return R.layout.simult_shifts
     }
 
+    fun getMaxAppsSimultaneously(): Int {
+        return if (counter > 0) {
+            counter
+        } else -1
+    }
+
+
     override fun onViewInflated(view: View?) {
 
        btnDecrease = view!!.findViewById(R.id.btnDecreaseSimultShift)

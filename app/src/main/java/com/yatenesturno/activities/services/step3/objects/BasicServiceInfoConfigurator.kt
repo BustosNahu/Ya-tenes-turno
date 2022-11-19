@@ -20,6 +20,7 @@ import android.widget.*
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
@@ -852,6 +853,33 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
 
     }
 
+    override fun setActive() {
+        title = rootViewV.findViewById(R.id.textView9)
+        mainCardVIew = rootViewV.findViewById(R.id.basicServiceInfocardview)
+        scrollContainer = rootViewV.findViewById(R.id.needed_service_info_scrollV)
+        val act = context as CreateServiceActivity
+
+        basicServiceInfoCompletedIcon.imageTintList = ColorStateList.valueOf(Color.parseColor("#D8F7C2C5"))
+        title.setTextColor(Color.parseColor("#FF8672"))
+        mainCardVIew.foreground = ContextCompat.getDrawable(context,R.drawable.border_outline_work_here_cv_selected)
+
+        title.setOnClickListener {
+            scrollContainer.visibility =View.VISIBLE
+            act.serviceConfigureFragment?.hideAllServices(configurationId())
+
+        }
+        mainCardVIew.setOnClickListener {
+            scrollContainer.visibility =View.VISIBLE
+            act.serviceConfigureFragment?.hideAllServices(configurationId())
+
+        }
+        rootViewV.setOnClickListener {
+            scrollContainer.visibility =View.VISIBLE
+            act.serviceConfigureFragment?.hideAllServices(configurationId())
+
+        }
+        wasEdited = true
+    }
 
     override fun setCompleted() {
         super.setCompleted()

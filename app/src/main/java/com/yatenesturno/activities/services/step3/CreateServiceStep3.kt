@@ -12,6 +12,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -25,6 +26,7 @@ import com.yatenesturno.activities.services.CreateServiceActivity
 import com.yatenesturno.activities.services.step2.CreateServiceStep2
 import com.yatenesturno.activities.services.step2.CreateServiceStep2Intro
 import com.yatenesturno.activities.services.step3.objects.*
+import com.yatenesturno.activities.services.step3.viewModel.Step3ViewModel
 import com.yatenesturno.object_interfaces.*
 import com.yatenesturno.objects.DayScheduleImpl
 import com.yatenesturno.objects.ServiceInstanceImpl
@@ -35,9 +37,7 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
     /**
      * Argument keys
      */
-    val JOB_KEY = "job"
-    val PLACE_KEY = "place"
-    val SERVICE_KEY = "service"
+    private val sharedVm : Step3ViewModel by activityViewModels()
 
     var handler = Handler(Looper.getMainLooper())
     private lateinit var job: Job
@@ -60,13 +60,13 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
     private lateinit var serviceName: TextView
 
     var mActivity : Context? = null
+    val newList: MutableList<ServiceConfigurationKt> = mutableListOf()
 
     private lateinit var createServiceBtn: CardView
     private lateinit var backBtn: ImageButton
     private lateinit var servicesList : java.util.ArrayList<ServiceConfigurationKt>
 
     fun serviceConfigureFragment(place: Place, job: Job, service: Service) {
-
         this.job = job
         this.place = place
         this.service = service
@@ -94,13 +94,10 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
 
     }
     private fun finishConfiguration() {
-        //findNavController().navigate(R.id.action_createServiceStep3_to_createServiceConfirmAndCreate)
-
         removeUnselectedDays()
         removeEmptyDaySchedules()
         val act = activity as CreateServiceActivity
-        act.navigateToConfirmation(service)
-
+        act.navigateToConfirmation(service, job , getSelectedDays())
 
     }
 
@@ -115,6 +112,7 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
         for (ds in toRemove) {
             job.daySchedules.remove(ds)
         }
+        sharedVm.saveData(job,service!!)
     }
 
     private fun removeUnselectedDays() {
@@ -212,8 +210,6 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
         createServiceBtn = view.findViewById(R.id.btnCreate_service_step3)
 
         serviceName = view.findViewById(R.id.serviceName)
-//        backBtn = view.findViewById(R.id.back_btn_service_3)
-
         simultShifts = view.findViewById(R.id.simultaneous_shifts)
         basicServiceInfo = view.findViewById(R.id.basicServiceInfoConfigurator)
         clientPermissions = view.findViewById(R.id.customers_permits)
@@ -244,7 +240,6 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
         Snackbar.make(requireView(), requireContext().resources.getString(stringResourceId), Snackbar.LENGTH_SHORT).show()
     }
 
-    val newList: MutableList<ServiceConfigurationKt> = mutableListOf()
 
     private fun initConfigurations() {
 
@@ -293,7 +288,7 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
             newList.clear()
             newList.addAll(list)
         }
-
+        newList[0].setActive()
 
         Log.d("indexOfCurrentService", lastIndex.toString())
         if (index < 5){
@@ -396,8 +391,9 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
             si.maxAppsSimultaneously = -1
             si.maxAppsPerDay = -1
         } else {
-            si.maxAppsSimultaneously = clientPermissions.getMaxAppsSimultaneously()
+            si.maxAppsSimultaneously = simultShifts.getMaxAppsSimultaneously()
             si.maxAppsPerDay = clientPermissions.getMaxAppsPerDay()
+
         }
         if (basicServiceInfo.isClass()) {
             si.isFixedSchedule = true

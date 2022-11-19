@@ -27,7 +27,7 @@ class CreateServiceStep1Intro : Fragment() {
 
         createServiceBtn.setOnClickListener {
             findNavController()
-                .navigate(R.id.action_createServiceStep1Intro_to_createServiceConfirmAndCreate)
+                .navigate(R.id.action_createServiceStep1Intro_to_createServiceStep1)
         }
 
         backBtn.setOnClickListener {

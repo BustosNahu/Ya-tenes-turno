@@ -93,7 +93,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="180dp"
-
         android:background="@drawable/new_place_intro_frame">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,7 +101,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/new_place_intro_frame"
             android:minHeight="700dp"
-            android:padding="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+
             app:cardElevation="20dp">
 
             <TextView
@@ -382,7 +383,7 @@
                             app:cardCornerRadius="16dp">
 
                             <TextView
-                                android:id="@+id/service_open_cv"
+                                android:id="@+id/service_open_tv"
                                 style="@style/Medium"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -429,7 +430,7 @@
                             app:cardCornerRadius="16dp">
 
                             <TextView
-                                android:id="@+id/labelTimeStamp"
+                                android:id="@+id/service_close_tv"
                                 style="@style/Medium"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -444,7 +445,7 @@
                     <LinearLayout
                         android:id="@+id/service_class_format_list_layout"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="4dp"
                         android:layout_marginTop="8dp"
@@ -455,14 +456,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_clock_outline"
-                            app:tint="@color/colorPrimary" />
+                            app:tint="@color/colorPrimary"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="10dp"
+
+                            />
 
                         <TextView
                             style="@style/NormalBold"
+                            android:layout_marginTop="11dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
-                            android:gravity="center_vertical"
+                            android:layout_gravity="top"
                             android:text="Horario:"
                             android:textColor="@color/grey_ui"
                             android:textSize="14sp" />
@@ -679,27 +685,27 @@
                 android:id="@+id/editScheduledHours_Cv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="32dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.956"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cs_stp_3_cyc"
+                app:layout_constraintStart_toEndOf="@+id/cs_stp_3_cyc"
+                app:layout_constraintTop_toTopOf="@+id/cs_stp_3_cyc">
 
-                <ImageButton
-                    android:id="@+id/editScheduledHours_Ib"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/transparent"
-                    android:src="@drawable/ic_edit_pencil" />
+                                <ImageButton
+                                    android:id="@+id/editService"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/transparent"
+                                    android:src="@drawable/ic_edit_pencil" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnStep2_confirmScheduletHours"
+                android:id="@+id/cs_stp_3_cyc"
                 android:layout_width="277dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/border_outline_rounded_primary"
                 android:clickable="true"
                 android:focusable="true"

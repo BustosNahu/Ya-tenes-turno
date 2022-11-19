@@ -47,7 +47,6 @@ class CreateServiceStep3Intro : Fragment() {
         val backBtn : ImageButton = view.findViewById(com.yatenesturno.R.id.back_btn_step3_intro)
 
         continueBtn.setOnClickListener {
-            //findNavController().navigate(R.id.action_createServiceStep3_to_createServiceConfirmAndCreate)
             val mainActivity = requireActivity() as CreateServiceActivity
             mainActivity.navigateToStep3(null, false)
         }

@@ -398,7 +398,7 @@ Modo recomendado para lugares que brinden este servicio a más de 2 clientes por
     <string name="service_close">Horario cierre de servicio:</string>
     <string name="confirm_service">Confirmar y Crear servicio</string>
     <string name="simult">Clientes que pueda brindar este servicio en simultanéo:</string>
-    <string name="clientes_turnos_por_d_a">Clientes| turnos por día:</string>
+    <string name="clientes_turnos_por_d_a">Clientes | turnos por día:</string>
     <string name="clientes_turnos_simultan_os">Clientes| turnos simultanéos:</string>
     <string name="corte_de_pelo_de_mujer">Corte de pelo de mujer</string>
     <string name="enviar_recordatorio_a_cliente_de_turno">Enviar recordatorio del turno:</string>

@@ -165,7 +165,6 @@ class CreateServiceActivity : AppCompatActivity() {
         val intent = Intent()
         intent.putExtras(bundle)
         intent.putExtra("fromCreatedService", true)
-        Log.d("returnOKFrom", "lol")
         setResult(RESULT_OK, intent)
         finish()
     }
@@ -185,17 +184,11 @@ class CreateServiceActivity : AppCompatActivity() {
 
     fun setService(service: Service) {
         this.mainService = service
+
         serviceConfigureFragment =  CreateServiceStep3()
         serviceConfigureFragment?.serviceConfigureFragment(place!!,job!!, service)
-        Log.d("serviceShow", "main service" )
     }
 
-    private fun setConfirmService(service: Service) {
-        this.mainService = service
-        serviceConfirmFragment =  CreateServiceConfirmAndCreate()
-        serviceConfirmFragment?.serviceConfirmFragment(place!!,job!!, service)
-
-    }
 
     fun getService() : Service? {
         return mainService
@@ -253,25 +246,31 @@ class CreateServiceActivity : AppCompatActivity() {
         this.supportFragmentManager.executePendingTransactions()
     }
 
-    fun navigateToConfirmation(obj: Service?) {
-        if (mainService == null){
-            mainService = obj
+    fun toStep3(){
+        serviceConfigureFragment?.let {
+            this
+                .supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.CreateServiceFragmentContainer , it)
+                .commit()
         }
-        if (obj == null){
-            setConfirmService(mainService!!)
-        }else{
-            setConfirmService(obj)
-        }
+    }
 
-            CreateServiceConfirmAndCreate().let {
+    fun navigateToConfirmation(obj: Service?, job: Job, selectedDays : List<Int>) {
+        Log.d("serviceIdnavigateToConfirmation", obj!!.id)
+
+        serviceConfirmFragment = CreateServiceConfirmAndCreate.newInstance(job,obj)
+        serviceConfirmFragment.let {
                 this
                     .supportFragmentManager
                     .beginTransaction()
-                    .add(R.id.CreateServiceFragmentContainer, it)
+                    .add(R.id.CreateServiceFragmentContainer, serviceConfirmFragment!!)
                     .commit()
             }
         this.supportFragmentManager.executePendingTransactions();
     }
+
+
 
     private class ServiceConfigPagerAdapter(
         fm: FragmentManager?,
