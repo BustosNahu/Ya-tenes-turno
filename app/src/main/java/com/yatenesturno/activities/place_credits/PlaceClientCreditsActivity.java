@@ -17,7 +17,7 @@ import com.yatenesturno.Parser.ParserGeneric;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.employee.client.PlaceClientCreditsFragment;
 import com.yatenesturno.custom_views.NonSwipeableViewPager;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.Place;

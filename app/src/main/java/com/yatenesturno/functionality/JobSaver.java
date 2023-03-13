@@ -3,7 +3,7 @@ package com.yatenesturno.functionality;
 import android.util.Log;
 
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.listeners.RepositorySaveListener;
 import com.yatenesturno.object_interfaces.DaySchedule;

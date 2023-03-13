@@ -3,7 +3,6 @@ package com.yatenesturno.activities.main_screen;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -43,8 +42,8 @@ import com.yatenesturno.R;
 import com.yatenesturno.activities.job_edit.EditJobActivity;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.custom_views.NonSwipeableViewPager;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.ImageLoaderRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.interfaces.ImageLoaderRead;
 import com.yatenesturno.database.ImageLoaderReadImpl;
 import com.yatenesturno.functionality.ManagerPlace;
 import com.yatenesturno.functionality.PlacePremiumManager;

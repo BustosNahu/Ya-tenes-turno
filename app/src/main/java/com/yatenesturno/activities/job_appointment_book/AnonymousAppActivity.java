@@ -20,7 +20,7 @@ import com.yatenesturno.R;
 import com.yatenesturno.custom_views.LoadingButton;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.custom_views.NonSwipeableViewPager;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.Job;

@@ -1,4 +1,4 @@
-package com.yatenesturno.database;
+package com.yatenesturno.database.interfaces;
 
 import com.yatenesturno.listeners.DatabaseCallback;
 

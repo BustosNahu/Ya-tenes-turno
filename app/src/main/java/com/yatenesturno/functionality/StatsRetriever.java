@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.user_auth.UserManagement;
 

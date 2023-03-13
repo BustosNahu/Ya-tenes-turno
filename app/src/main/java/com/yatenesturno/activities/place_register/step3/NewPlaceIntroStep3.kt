@@ -189,13 +189,7 @@ class NewPlaceIntroStep3 : Fragment() {
                 )
             ), 19, 43, Spannable.SPAN_INCLUSIVE_INCLUSIVE
         )
-        description3.setSpan(StyleSpan(Typeface.BOLD), 85, 121, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
-        description3.setSpan(
-            StyleSpan(Typeface.BOLD),
-            133,
-            description3.length,
-            Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
+
         val introItem3 = NewPlaceIntroItem()
         introItem3.description = description3
         introItem3.image = R.drawable.place_shop_step3_vp_3

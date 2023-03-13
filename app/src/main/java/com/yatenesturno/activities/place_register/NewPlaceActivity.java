@@ -2,7 +2,6 @@ package com.yatenesturno.activities.place_register;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,7 +28,6 @@ import com.yatenesturno.Constants;
 import com.yatenesturno.Flags;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.ObjectConfiguratorCoordinator;
-import com.yatenesturno.activities.first_shop.FirstShop;
 import com.yatenesturno.activities.main_screen.MainActivity;
 import com.yatenesturno.activities.place_register.step3.NewPlaceIntroStep3;
 import com.yatenesturno.activities.place_register.step3.NewPlaceStep3;
@@ -38,10 +36,8 @@ import com.yatenesturno.activities.place_register.step_1.NewPlaceStep1;
 import com.yatenesturno.activities.place_register.step_2.ConfirmScheduledHours;
 import com.yatenesturno.activities.place_register.step_2.NewPlaceIntroStep2;
 import com.yatenesturno.activities.place_register.step_2.NewPlaceStep2;
-import com.yatenesturno.activities.tutorial_screen.ScreenImpl;
-import com.yatenesturno.activities.tutorial_screen.TutorialScreenImpl;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.database.ImageLoaderWriteImpl;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.JobType;
@@ -50,7 +46,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,8 +65,10 @@ public class NewPlaceActivity extends AppCompatActivity {
 
     public Boolean savedBundle = false;
 
-    private LoadingOverlay loadingOverlay;
+    LoadingOverlay loadingOverlay;
     private boolean isRunning;
+     public boolean isLoading;
+
     private View view;
 
 
@@ -288,6 +285,7 @@ public class NewPlaceActivity extends AppCompatActivity {
     }
 
     public  void createNewPlace() {
+        isLoading = true;
         showLoadingOverlay();
         Map<String, String> body = new HashMap<>();
 
@@ -353,6 +351,7 @@ public class NewPlaceActivity extends AppCompatActivity {
                             this::returnOK);
         } else {
             returnOK();
+            isLoading = false;
         }
     }
 
@@ -381,7 +380,6 @@ public class NewPlaceActivity extends AppCompatActivity {
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             try {
                 placeId = response.getString("place_id");
-
                 createPlaceDoes(placeId);
             } catch (JSONException e) {
                 Log.d("coonectErrorJson", e.toString());
@@ -406,8 +404,9 @@ public class NewPlaceActivity extends AppCompatActivity {
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             Log.d("ONSUCCESCALLBACKPLACEDOES", "status" + statusCode+ "headers" + headers+ "responseSTR" + response);
-            saveImage();
             hideLoadingOverlay();
+            saveImage();
+
         }
 
         @Override

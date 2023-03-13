@@ -11,7 +11,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/simultShift_cardview"
-        android:layout_width="328dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="false"
         android:layout_alignParentEnd="false"
@@ -21,8 +21,8 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
             android:padding="16dp">
 
             <TextView
@@ -43,10 +43,12 @@
                 android:id="@+id/simultaneousShiftsCompletedIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:src="@drawable/ic_okey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 app:tint="@color/grey_inactive"
                 tools:ignore="ContentDescription" />
 
@@ -75,20 +77,6 @@
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="12dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="36dp"
-                android:text="*"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView11"
-                app:layout_constraintEnd_toEndOf="@+id/textView11"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.8" />
 
             <ImageButton
                 android:id="@+id/simultaneousShiftsInfo"

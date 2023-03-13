@@ -90,19 +90,25 @@ class NewPlaceStep3 : Fragment() {
         }
 
 
+
+
         return view
     }
 
-    fun createPlace(){
+    private fun createPlace(){
+
         val activity = requireActivity() as NewPlaceActivity
-        val bd = Bundle()
-        bd.putBoolean("worksHere", workHere!!)
-        activity.saveBundleFromStep3(bd)
-        activity.createNewPlace()
-        sharedPreferences = requireActivity().getSharedPreferences("firstShop", Context.MODE_PRIVATE)
-        sharedPreferences.let {
-            it?.edit()?.putBoolean("firstShop", false)?.apply()
+        if (!activity.isLoading){
+            val bd = Bundle()
+            bd.putBoolean("worksHere", workHere!!)
+            activity.saveBundleFromStep3(bd)
+            activity.createNewPlace()
+            sharedPreferences = requireActivity().getSharedPreferences("firstShop", Context.MODE_PRIVATE)
+            sharedPreferences.let {
+                it?.edit()?.putBoolean("firstShop", false)?.apply()
+            }
         }
+
     }
 
 

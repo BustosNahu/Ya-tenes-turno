@@ -3,7 +3,7 @@ package com.yatenesturno.activities.purchases.single_purchase;
 import com.yatenesturno.Constants;
 import com.yatenesturno.Parser.Parser;
 import com.yatenesturno.Parser.ParserGeneric;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 
 import org.json.JSONObject;

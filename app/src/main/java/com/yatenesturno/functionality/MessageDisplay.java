@@ -17,7 +17,7 @@ import com.google.gson.reflect.TypeToken;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.main_screen.MainActivity;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 

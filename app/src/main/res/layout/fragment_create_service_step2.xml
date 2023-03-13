@@ -135,7 +135,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="342dp"
+                    android:layout_width="352dp"
                     android:layout_height="56dp"
                     android:padding="16dp">
 
@@ -166,7 +166,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/rv_create_service_step2_layout"
-                    android:layout_width="305dp"
+                    android:layout_width="325dp"
                     android:layout_height="485dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="57dp"

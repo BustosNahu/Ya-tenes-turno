@@ -47,10 +47,11 @@
             app:layout_constraintVertical_bias="0.343" />
 
         <androidx.appcompat.widget.AppCompatButton
+
             android:id="@+id/google_sign_in_button"
             android:layout_width="322dp"
             android:layout_height="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="334dp"
             android:background="@drawable/style_circular_texts"
             android:drawableStart="@drawable/google_svgrepo_com"
             android:fontFamily="@font/monserrat_bold"
@@ -60,7 +61,7 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.divider.MaterialDivider
@@ -102,40 +103,25 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tv_userpassword"
-            android:visibility="gone"
-
             android:layout_width="312dp"
+
             android:layout_height="50dp"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/style_circular_texts"
             android:drawableStart="@drawable/password_icon"
             android:drawableEnd="@drawable/show_password"
             android:drawablePadding="20dp"
             android:drawableTint="@color/white"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:textColor="@color/white"
-            android:hint="@string/password"
             android:textColorHint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/login_btn"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/login_btn"
 
-            android:layout_width="312dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="204dp"
-            android:background="@drawable/style_circular_button"
-            android:fontFamily="@font/monserrat_bold"
-            android:text="@string/ingresar"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.434"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tv_username"

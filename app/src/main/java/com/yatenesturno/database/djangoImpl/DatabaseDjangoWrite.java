@@ -1,11 +1,10 @@
-package com.yatenesturno.database;
-
-import android.util.Log;
+package com.yatenesturno.database.djangoImpl;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
-import com.loopj.android.http.SyncHttpClient;
 import com.yatenesturno.Constants;
+import com.yatenesturno.database.interfaces.Database;
+import com.yatenesturno.database.interfaces.DatabaseWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.user_auth.UserManagement;
 

@@ -26,8 +26,8 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoWrite;
-import com.yatenesturno.database.ImageLoaderRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
+import com.yatenesturno.database.interfaces.ImageLoaderRead;
 import com.yatenesturno.database.ImageLoaderReadImpl;
 import com.yatenesturno.functionality.ManagerPlace;
 import com.yatenesturno.listeners.DatabaseCallback;

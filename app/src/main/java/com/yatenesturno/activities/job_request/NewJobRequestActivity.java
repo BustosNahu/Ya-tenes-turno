@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,8 +18,8 @@ import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.main_screen.MainActivity;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Place;
 import com.yatenesturno.object_views.ViewPlace;

@@ -1,8 +1,12 @@
-package com.yatenesturno.database;
+package com.yatenesturno.database.djangoImpl;
+
+import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.yatenesturno.Constants;
+import com.yatenesturno.database.interfaces.Database;
+import com.yatenesturno.database.interfaces.DatabaseRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.user_auth.UserManagement;
 
@@ -51,6 +55,7 @@ public class DatabaseDjangoRead implements DatabaseRead {
                 params,
                 callback
         );
+        Log.d("GETFUNCTION", callback.toString() );
     }
 
     @Override

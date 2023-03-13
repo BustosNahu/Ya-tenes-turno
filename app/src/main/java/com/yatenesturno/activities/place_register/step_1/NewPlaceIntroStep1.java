@@ -104,22 +104,14 @@ public class NewPlaceIntroStep1 extends ObjectConfigurator {
             }
         });
 
-        backwardArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
-            }
-        });
+        backwardArrow.setOnClickListener(v -> viewPager.setCurrentItem(viewPager.getCurrentItem() - 1));
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO CAMBIAR STEP1
-                Fragment fragment = new NewPlaceStep1();
-                getParentFragmentManager().beginTransaction()
-                        .replace(R.id.new_place_fragment_main, fragment)
-                        .commit();
-            }
+        btnStart.setOnClickListener(v -> {
+            //TODO CAMBIAR STEP1
+            Fragment fragment = new NewPlaceStep1();
+            getParentFragmentManager().beginTransaction()
+                    .replace(R.id.new_place_fragment_main, fragment)
+                    .commit();
         });
 
 

@@ -4,7 +4,6 @@ import static android.app.Activity.RESULT_OK;
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -37,10 +35,9 @@ import com.yatenesturno.activities.appointment_view.MonthViewActivity;
 import com.yatenesturno.activities.appointment_view.ViewAppointmentActivity;
 import com.yatenesturno.activities.job_appointment_book.AnonymousAppActivity;
 import com.yatenesturno.activities.services.CreateServiceActivity;
-import com.yatenesturno.activities.services.step3.objects.InfoPopUp;
 import com.yatenesturno.custom_views.AdapterRecyclerViewUpcomingEvents;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.functionality.DayScheduleManager;
 import com.yatenesturno.functionality.ManagerAppointment;
 import com.yatenesturno.listeners.DatabaseCallback;
@@ -59,7 +56,6 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,8 +74,6 @@ public class FragmentUpcomingEvents extends Fragment {
         put(6, "Vie");
         put(7, "Sab");
     }};
-
-    //TODO implementar funciones de botones etc , remember cada tantos ingresos
 
     private static final int RC_VIEW_APPOINTMENT = 1, RC_MONTH_VIEW = 2;
 

@@ -16,26 +16,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.Toast;
 
-import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.job_request.JobRequestActivity;
 import com.yatenesturno.activities.main_screen.MainActivity;
 import com.yatenesturno.activities.place_register.NewPlaceActivity;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.listeners.DatabaseCallback;
-import com.yatenesturno.object_interfaces.JobRequest;
 import com.yatenesturno.object_views.ViewJobRequest;
-import com.yatenesturno.serializers.BuilderListJobRequest;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import cz.msebera.android.httpclient.Header;
 
 public class FirstShop extends AppCompatActivity {
 

@@ -1,8 +1,8 @@
 package com.yatenesturno.custom_views;
 
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.functionality.LabelHandler;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Label;

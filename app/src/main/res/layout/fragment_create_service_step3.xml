@@ -54,7 +54,8 @@
                     android:backgroundTint="@color/transparent"
                     android:contentDescription="TODO"
                     android:src="@drawable/bakc_arrow"
-                    app:tint="@color/black" />
+                    app:tint="@color/black"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/step_title_new_place_a"
@@ -165,9 +166,11 @@
 
                     <com.yatenesturno.activities.services.step3.objects.BasicServiceInfoConfigurator
                         android:id="@+id/basicServiceInfoConfigurator"
-                        android:layout_width="wrap_content"
+                        android:layout_width="338dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         android:minHeight="56dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -175,7 +178,7 @@
 
                     <com.yatenesturno.activities.services.step3.objects.SimultShiftsConfigurator
                         android:id="@+id/simultaneous_shifts"
-                        android:layout_width="wrap_content"
+                        android:layout_width="338dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_horizontal"
@@ -187,10 +190,11 @@
 
                     <com.yatenesturno.activities.services.step3.objects.ClientPermissions
                         android:id="@+id/customers_permits"
-                        android:layout_width="wrap_content"
+                        android:layout_width="338dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         android:minHeight="56dp"
 
                         app:layout_constraintEnd_toEndOf="@+id/simultaneous_shifts"
@@ -199,11 +203,12 @@
 
                     <com.yatenesturno.activities.services.step3.objects.CreditSystemConfigurator
                         android:id="@+id/credits_system"
-                        android:layout_width="wrap_content"
+                        android:layout_width="338dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:minHeight="56dp"
-
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         app:layout_constraintEnd_toEndOf="@+id/customers_permits"
                         app:layout_constraintStart_toStartOf="@+id/customers_permits"
                         app:layout_constraintTop_toBottomOf="@+id/customers_permits" />
@@ -211,11 +216,12 @@
 
                     <com.yatenesturno.activities.services.step3.objects.AdditionalsConfigurator
                         android:id="@+id/additionals_configurator"
-                        android:layout_width="wrap_content"
+                        android:layout_width="338dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:minHeight="56dp"
-
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         app:layout_constraintEnd_toEndOf="@+id/credits_system"
                         app:layout_constraintStart_toStartOf="@+id/credits_system"
                         app:layout_constraintTop_toBottomOf="@+id/credits_system" />

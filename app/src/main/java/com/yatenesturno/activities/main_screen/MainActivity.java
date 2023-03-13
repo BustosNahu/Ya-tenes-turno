@@ -1,11 +1,7 @@
 package com.yatenesturno.activities.main_screen;
 
 import android.app.Activity;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,13 +23,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
-import com.google.android.play.core.install.model.AppUpdateType;
-import com.google.android.play.core.install.model.InstallStatus;
-import com.google.android.play.core.install.model.UpdateAvailability;
-import com.google.android.play.core.tasks.Task;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.get_premium.GetPremiumActivity;
@@ -47,13 +37,10 @@ import com.yatenesturno.activities.purchases.PurchasesActivity;
 import com.yatenesturno.activities.settings.AboutActivity;
 import com.yatenesturno.activities.settings.SettingsActivity;
 import com.yatenesturno.activities.sign_in.ActivitySignIn;
-import com.yatenesturno.activities.tutorial_screen.Screen;
-import com.yatenesturno.activities.tutorial_screen.ScreenImpl;
-import com.yatenesturno.activities.tutorial_screen.TutorialScreenImpl;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
-import com.yatenesturno.database.ImageLoaderRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
+import com.yatenesturno.database.interfaces.ImageLoaderRead;
 import com.yatenesturno.database.ImageLoaderReadImpl;
 import com.yatenesturno.functionality.ManagerPlace;
 import com.yatenesturno.functionality.MessageDisplay;
@@ -62,7 +49,6 @@ import com.yatenesturno.functionality.StatsRetriever;
 import com.yatenesturno.object_interfaces.Place;
 import com.yatenesturno.user_auth.UserManagement;
 
-import java.util.Arrays;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;

@@ -6,6 +6,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Html
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
@@ -37,6 +38,7 @@ class SimultShiftsConfigurator  @JvmOverloads constructor(context: Context, attr
     private lateinit var btnDecrease :  ImageButton
     private lateinit var clientsTv :  TextView
     private lateinit var title :  TextView
+    private lateinit var simultClientsText :  TextView
     private lateinit var mainCardVIew :  CardView
     private lateinit var simultShiftsInfo :  ImageButton
     lateinit var simultShiftsCompletedIcon :  ImageView
@@ -70,6 +72,11 @@ class SimultShiftsConfigurator  @JvmOverloads constructor(context: Context, attr
         title = view.findViewById(R.id.simultShiftTitle)
         mainCardVIew = view.findViewById(R.id.simultShift_cardview)
         cointainer = view.findViewById(R.id.containerViewSimultShifts)
+        simultClientsText  = view.findViewById(R.id.textView11)
+        val noClassesTitleText = "¿A cuántos clientes puede brindar este servicio al mismo tiempo?"
+        val noClassesTitleText2 = "<font color='#FF8672'>*</font>"
+        simultClientsText.text = Html.fromHtml(noClassesTitleText + noClassesTitleText2)
+
 
 
         btnIncrease.setOnClickListener {

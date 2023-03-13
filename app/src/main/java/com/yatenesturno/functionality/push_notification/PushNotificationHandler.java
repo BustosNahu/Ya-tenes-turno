@@ -1,11 +1,9 @@
 package com.yatenesturno.functionality.push_notification;
 
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.SyncHttpClient;
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 
 import org.json.JSONObject;

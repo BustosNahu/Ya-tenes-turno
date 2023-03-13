@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.CustomUser;
 

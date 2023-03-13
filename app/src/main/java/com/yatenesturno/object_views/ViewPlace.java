@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.LayoutRes;
 
 import com.yatenesturno.R;
-import com.yatenesturno.database.ImageLoaderRead;
+import com.yatenesturno.database.interfaces.ImageLoaderRead;
 import com.yatenesturno.database.ImageLoaderReadImpl;
 import com.yatenesturno.object_interfaces.Place;
 

@@ -26,7 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Job;
 import com.yatenesturno.object_interfaces.SubscriptionToken;
@@ -115,16 +115,19 @@ public class SubscriptionsTemplatesActivity extends AppCompatActivity {
     }
 
     public void handleResponse(JSONObject response) {
+
         try {
             JSONArray placeSubTemplates = response.getJSONArray("place_sub_templates");
             JSONArray jobSubTemplates = response.getJSONArray("job_sub_templates");
 
             placeSubscriptionList = new BuilderListSubscriptionToken().build(placeSubTemplates);
             jobSubscriptionList = new BuilderListSubscriptionToken().build(jobSubTemplates);
+            Log.d("susbcriptionResponse", response.toString());
 
             loadingOverlay.hide();
         } catch (JSONException e) {
             e.printStackTrace();
+            Log.d("susbcriptionErr", e.getLocalizedMessage());
             Toast.makeText(getApplicationContext(),"ERROR: " + e,Toast.LENGTH_LONG).show();
 
         }

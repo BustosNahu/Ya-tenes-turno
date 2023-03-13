@@ -70,7 +70,7 @@ class NewPlaceStep2 : Fragment() {
                             active = i.active,
                             isEditing = false,
                             isAnotherEditing = false,
-                            restTime = i.openMidTime != "00:00" || i.openMidTime != "" || i.closeMidTime != "00:00" || i.closeMidTime != "00:00",
+                            restTime = i.openMidTime != "13:00"  || i.closeMidTime != "14:00" ,
                             open_time = i.openTime,
                             close_time = i.closeTime,
                             rest_end_time = i.closeMidTime!!,
@@ -78,6 +78,7 @@ class NewPlaceStep2 : Fragment() {
                             weekDayIndex = i.weekDayIndex
                         )
                     )
+                    Log.e("RestTime", "${i.openMidTime}  & ${i.closeMidTime}")
                 }
                 hoursList.sortBy { it.weekDayIndex }
                 Log.d("hourlistFromDbRead", hoursList.toString())
@@ -100,7 +101,7 @@ class NewPlaceStep2 : Fragment() {
     }
 
 
-    fun addSchedule(placeSchedule: SchedulePlaceTime) {
+    private fun addSchedule(placeSchedule: SchedulePlaceTime) {
         lifecycleScope.launch(context = Dispatchers.IO) {
             dbRepo?.addPlaceSchedule(placeSchedule)
         }
@@ -152,9 +153,9 @@ class NewPlaceStep2 : Fragment() {
                             day = i.day_name,
                             openTime = i.open_time,
                             closeTime = i.close_time,
-                            closeMidTime = if (i.rest_start_time != null) i.rest_start_time else null,
-                            openMidTime = if (i.rest_end_time != null) i.rest_end_time else null,
-                            haveMidTime = i.restTime && i.rest_end_time != null,
+                            closeMidTime = i.rest_end_time,
+                            openMidTime = i.rest_start_time,
+                            haveMidTime = i.restTime,
                             weekDayIndex = i.weekDayIndex
                         )
                     )
@@ -164,10 +165,10 @@ class NewPlaceStep2 : Fragment() {
                     .beginTransaction()
                     .replace(R.id.new_place_fragment_main, ConfirmScheduledHours())
                     .commit()
+                Log.d("mockList", mockList.toString())
 
             } else {
                 nextBtn.setCardBackgroundColor(Color.parseColor("#F3F3F3"))
-
             }
 
         }
@@ -266,10 +267,12 @@ class NewPlaceStep2 : Fragment() {
             daySchedule.dayEnd?.get(Calendar.HOUR_OF_DAY),
             daySchedule.dayEnd?.get(Calendar.MINUTE)
         )
+
         day.open_time = if ("null:null" == startStr) {
             daySchedule.dayStart?.set(Calendar.HOUR_OF_DAY, 8)
             "08:00"
         } else startStr
+
         day.close_time = if ("null:null" == endStr) {
             daySchedule.dayEnd?.set(Calendar.HOUR_OF_DAY, 20)
             "20:00"
@@ -333,7 +336,7 @@ class NewPlaceStep2 : Fragment() {
     private fun configEndTime(daySchedule: CompDaySchedule, day: OpenHoursObject, position: Int) {
         val cal = Calendar.getInstance()
         val calMock = Calendar.getInstance()
-        calMock.set(Calendar.HOUR_OF_DAY, 0)
+        calMock.set(Calendar.HOUR_OF_DAY, 8)
         calMock.set(Calendar.MINUTE, 0)
         val materialTimePicker: MaterialTimePicker = MaterialTimePicker.Builder()
             .setTitleText("Ingresa el horario de cierre")
@@ -369,6 +372,9 @@ class NewPlaceStep2 : Fragment() {
         position: Int
     ) {
         val cal = Calendar.getInstance()
+        val calMock = Calendar.getInstance()
+        calMock.set(Calendar.HOUR_OF_DAY, 13)
+        calMock.set(Calendar.MINUTE, 0)
         val materialTimePicker: MaterialTimePicker = MaterialTimePicker.Builder()
             .setTitleText("Ingresa el horario del comienzo de descanso")
             .setHour(13)
@@ -486,7 +492,7 @@ class NewPlaceStep2 : Fragment() {
         return true
     }
 
-    fun isAValidPauseEndTime(hourOfDay: Int, daySchedule: CompDaySchedule): Boolean {
+    private fun isAValidPauseEndTime(hourOfDay: Int, daySchedule: CompDaySchedule): Boolean {
         if (!isMidNight(
                 daySchedule!!.dayEnd?.get(Calendar.HOUR_OF_DAY) ?: Calendar.HOUR_OF_DAY,
                 daySchedule!!.dayEnd?.get(Calendar.MINUTE) ?: Calendar.MINUTE,
@@ -497,16 +503,16 @@ class NewPlaceStep2 : Fragment() {
                 daySchedule
             )
         ) {
-            if (!isAnHourEarlierThanCalendar(hourOfDay, daySchedule!!.dayEnd)) {
+            if (!isAnHourEarlierThanCalendar(hourOfDay, daySchedule.dayEnd)) {
                 showSnackBar("El horario de fin de pausa debe ser anterior al cierre")
                 return false
             }
         }
-        if (!isAnHourLaterThanCalendar(hourOfDay, daySchedule!!.pauseStart)) {
+        if (!isAnHourLaterThanCalendar(hourOfDay, daySchedule.pauseStart)) {
             showSnackBar("El horario de fin de pausa debe ser posterior al comienzo de la pausa")
             return false
          }
-        if (!isAnHourLaterThanCalendar(hourOfDay, daySchedule!!.dayStart)) {
+        if (!isAnHourLaterThanCalendar(hourOfDay, daySchedule.dayStart)) {
             showSnackBar("El horario de fin de pausa debe ser posterior a la apertura")
             return false
         }
@@ -591,8 +597,8 @@ class NewPlaceStep2 : Fragment() {
                 "Lunes",
                 open_time = "08:00",
                 close_time = "20:00",
-                rest_start_time = "00:00",
-                rest_end_time = "00:00",
+                rest_start_time = "13:00",
+                rest_end_time = "14:00",
                 active = true,
                 isEditing = false,
                 restTime = false,
@@ -604,8 +610,8 @@ class NewPlaceStep2 : Fragment() {
                 "Martes",
                 open_time = "08:00",
                 close_time = "20:00",
-                rest_start_time = "00:00",
-                rest_end_time = "00:00",
+                rest_start_time = "13:00",
+                rest_end_time = "14:00",
                 active = true,
                 isEditing = false,
                 restTime = false,
@@ -614,11 +620,11 @@ class NewPlaceStep2 : Fragment() {
         )
         hoursList.add(
             OpenHoursObject(
-                "Miercoles",
+                "Miércoles",
                 open_time = "08:00",
                 close_time = "20:00",
-                rest_start_time = "00:00",
-                rest_end_time = "00:00",
+                rest_start_time = "13:00",
+                rest_end_time = "14:00",
                 active = true,
                 isEditing = false,
                 restTime = false,
@@ -630,8 +636,8 @@ class NewPlaceStep2 : Fragment() {
                 "Jueves",
                 open_time = "08:00",
                 close_time = "20:00",
-                rest_start_time = "00:00",
-                rest_end_time = "00:00",
+                rest_start_time = "13:00",
+                rest_end_time = "14:00",
                 active = true,
                 isEditing = false,
                 restTime = false,
@@ -643,8 +649,8 @@ class NewPlaceStep2 : Fragment() {
                 "Viernes",
                 open_time = "08:00",
                 close_time = "20:00",
-                rest_start_time = "00:00",
-                rest_end_time = "00:00",
+                rest_start_time = "13:00",
+                rest_end_time = "14:00",
                 active = true,
                 isEditing = false,
                 restTime = false,
@@ -656,8 +662,8 @@ class NewPlaceStep2 : Fragment() {
                 "Sábado",
                 open_time = "08:00",
                 close_time = "13:00",
-                rest_start_time = "00:00",
-                rest_end_time = "00:00",
+                rest_start_time = "13:00",
+                rest_end_time = "14:00",
                 active = false,
                 isEditing = false,
                 restTime = false,
@@ -669,8 +675,8 @@ class NewPlaceStep2 : Fragment() {
                 "Domingo",
                 open_time = "08:00",
                 close_time = "13:00",
-                rest_start_time = "00:00",
-                rest_end_time = "00:00",
+                rest_start_time = "13:00",
+                rest_end_time = "14:00",
                 active = false,
                 isEditing = false,
                 restTime = false,

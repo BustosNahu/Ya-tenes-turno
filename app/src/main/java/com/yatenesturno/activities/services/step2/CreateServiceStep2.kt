@@ -23,8 +23,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yatenesturno.Constants
 import com.yatenesturno.R
 import com.yatenesturno.activities.services.CreateServiceActivity
-import com.yatenesturno.custom_views.LoadingButton
-import com.yatenesturno.database.DatabaseDjangoRead
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead
 import com.yatenesturno.listeners.DatabaseCallback
 import com.yatenesturno.object_interfaces.Job
 import com.yatenesturno.object_interfaces.Service

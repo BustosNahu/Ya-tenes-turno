@@ -1,4 +1,4 @@
-package com.yatenesturno.database;
+package com.yatenesturno.database.interfaces;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -28,8 +28,8 @@ android {
         applicationId "com.adminturnos"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 85
-        versionName "8.2"
+        versionCode 102
+        versionName "8.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
@@ -38,20 +38,19 @@ android {
         properties.load(project.rootProject.file("local.properties").newDataInputStream())
 
         defaultConfig {
-
             resValue "string", "MAPS_API_KEY", properties.getProperty("MAPS_API_KEY", "")
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            shrinkResources false
+//            minifyEnabled false
+//            shrinkResources false
 
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
@@ -65,7 +64,7 @@ android {
         compose true
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version

@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.yatenesturno.R;
 import com.yatenesturno.custom_views.ListViewForBottomSheet;
-import com.yatenesturno.database.ImageLoaderRead;
+import com.yatenesturno.database.interfaces.ImageLoaderRead;
 import com.yatenesturno.database.ImageLoaderReadImpl;
 import com.yatenesturno.functionality.ManagerPlace;
 import com.yatenesturno.object_interfaces.Place;

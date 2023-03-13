@@ -1,7 +1,7 @@
 package com.yatenesturno.functionality.app_observation;
 
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 
 import org.json.JSONObject;

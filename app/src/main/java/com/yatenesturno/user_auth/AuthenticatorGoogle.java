@@ -6,18 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.yatenesturno.Constants;
 import com.yatenesturno.Flags;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.serializers.BuilderObjectCustomUser;
@@ -78,7 +75,6 @@ public class AuthenticatorGoogle implements Authenticator {
         try {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             account = task.getResult(ApiException.class);
-
             listener.onSuccess();
         } catch (ApiException e) {
             listener.onFailure();

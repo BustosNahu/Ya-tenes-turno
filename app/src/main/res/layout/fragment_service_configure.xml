@@ -36,14 +36,13 @@
                 android:id="@+id/bookingConfiguration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:animateLayoutChanges="true" >
+                android:animateLayoutChanges="true" />
 
-                <com.yatenesturno.activities.job_edit.service_configs.configurations.ConcurrencyConfiguration
-                    android:id="@+id/concurrencyConfiguration"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true" />
-            </com.yatenesturno.activities.job_edit.service_configs.configurations.BookingConfiguration>
+            <com.yatenesturno.activities.job_edit.service_configs.configurations.ConcurrencyConfiguration
+                android:id="@+id/concurrencyConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true" />
 
             <com.yatenesturno.activities.job_edit.service_configs.configurations.EmergencyConfiguration
                 android:id="@+id/emergencyConfiguration"
@@ -108,10 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_margin="8dp"
         app:allCaps="true"
         app:buttonBackground="@color/colorPrimary"
         app:buttonText="@string/confirm" />

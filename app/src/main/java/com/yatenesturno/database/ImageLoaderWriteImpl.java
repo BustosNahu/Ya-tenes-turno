@@ -18,6 +18,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.yatenesturno.Constants;
+import com.yatenesturno.database.interfaces.ImageLoaderWrite;
 import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.Place;
 

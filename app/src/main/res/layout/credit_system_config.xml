@@ -10,7 +10,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/credits_system_cardView"
-        android:layout_width="328dp"
+        android:layout_width="350dp"
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
         android:layout_alignParentEnd="false"

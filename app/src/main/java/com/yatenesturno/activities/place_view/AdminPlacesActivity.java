@@ -14,14 +14,13 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.ImageLoaderRead;
+import com.yatenesturno.database.interfaces.ImageLoaderRead;
 import com.yatenesturno.database.ImageLoaderReadImpl;
 import com.yatenesturno.functionality.ManagerPlace;
 import com.yatenesturno.object_interfaces.Place;

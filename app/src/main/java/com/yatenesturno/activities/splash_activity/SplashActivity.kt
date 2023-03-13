@@ -1,10 +1,10 @@
 package com.yatenesturno.activities.splash_activity
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -21,7 +21,6 @@ import com.yatenesturno.functionality.PlacePremiumManager
 import com.yatenesturno.object_interfaces.Place
 import com.yatenesturno.user_auth.UserManagement
 import com.yatenesturno.user_auth.UserManagement.UserManagementAuthenticateListener
-import com.yatenesturno.databinding.SignInActivityBinding
 import kotlinx.coroutines.*
 
 class SplashActivity : AppCompatActivity() {
@@ -58,6 +57,7 @@ class SplashActivity : AppCompatActivity() {
 
     private var userCallback = (object : UserManagementAuthenticateListener{
         override fun userNotAuthenticated() {
+
             CoroutineScope(Dispatchers.Main).launch {
                 if (isFirstTime) {
                     delay(3400)
@@ -86,7 +86,9 @@ class SplashActivity : AppCompatActivity() {
     private fun checkCanCreateNewPlace() {
         ManagerPlace.getInstance().getOwnedPlaces(object : OnPlaceListFetchListener {
             override fun onFetch(placeList: List<Place>) {
-                Handler().postDelayed({ binding!!.lottieSplashAnimation.animate() }, 2000)
+                Log.d("checkCanCreateNewPlace", "OnFetch , $placeList" )
+
+                Handler().postDelayed({ binding.lottieSplashAnimation.animate() }, 2000)
                 var hasAtLeastOnePremium = false
                 for (place in placeList) {
                     if (PlacePremiumManager.getInstance()
@@ -129,6 +131,8 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onFailure() {
+                Log.d("checkCanCreateNewPlace", "onFailure" ) /* !!! Hit visitElement for element type: class org.jetbrains.kotlin.nj2k.tree.JKErrorExpression !!! */
+
                 Toast.makeText(applicationContext, "Error de Conexion", Toast.LENGTH_SHORT).show()
             }
         })

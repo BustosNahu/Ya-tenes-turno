@@ -6,6 +6,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Html
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
@@ -26,9 +27,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import com.google.android.play.core.internal.t
 import com.yatenesturno.R
 import com.yatenesturno.activities.job_edit.service_configs.*
-import com.yatenesturno.activities.job_edit.service_configs.configurations.ServiceConfiguration
 import com.yatenesturno.activities.services.CreateServiceActivity
 import com.yatenesturno.activities.services.step3.objects.objects_views.NewDayPicker
 import com.yatenesturno.activities.services.step3.objects.objects_views.NewTimePicker
@@ -37,6 +38,7 @@ import com.yatenesturno.object_interfaces.Job
 import com.yatenesturno.object_interfaces.ServiceInstance
 import java.util.*
 import com.yatenesturno.activities.services.step3.objects.classConfigs.AdapterClassTimes as AdapterClassTimes1
+
 
 class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) :
     ServiceConfigurationKt(context, attrs),
@@ -67,6 +69,8 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
     private lateinit var serviceWithFixedTimeYesBtnTv: TextView
     private lateinit var serviceWithFixedTimeNoBtn: CardView
     private lateinit var serviceWithFixedTimeNoBtnTv: TextView
+    private lateinit var bringClassesTitle: TextView
+
 
     ////////////////////////////////////////////////////////
     private var serviceClassFormatInfo: ImageButton? = null
@@ -75,6 +79,11 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
     private lateinit var serviceClassFormatYesBtnTv: TextView
     private lateinit var serviceClassFormatNoBtn: CardView
     private lateinit var serviceClassFormatNoBtnTv: TextView
+    private lateinit var NoClassesTitle: TextView
+    private lateinit var attentionDaysTitle: TextView
+    private lateinit var serviceDurationTitle : TextView
+    private lateinit var fixedSchedules : TextView
+
     private lateinit var recyclerViewClassTimes: RecyclerView
 
     private lateinit var contraintServiceClass: ConstraintLayout
@@ -128,6 +137,8 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
         serviceDurationContraintLayout = view.findViewById(R.id.serviceDurationConstraintLayout)
         serviceDurationInfo = view.findViewById(R.id.service_duration_info)
         serviceWithFixedTimeInfo = view.findViewById(R.id.service_fixed_time_info)
+        bringClassesTitle = view.findViewById(R.id.tv_bring_classes_title)
+
 
         serviceWithFixedTimeYesBtn = view.findViewById(R.id.service_fixed_time_yes_btn)
         serviceWithFixedTimeNoBtn = view.findViewById(R.id.service_fixed_time_no_btn)
@@ -147,6 +158,11 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
         serviceClassIntervalsFormat = view.findViewById(R.id.clServiceClassIntervalsFormat)
         serviceIntervalsDurationLayout = view.findViewById(R.id.serviceAppointmentIntervals)
         serviceIntervalsDurationInfo = view.findViewById(R.id.serviceAppointmentIntervalsInfo)
+        attentionDaysTitle = view.findViewById(R.id.textView11)
+        serviceDurationTitle = view.findViewById(R.id.textView16)
+        fixedSchedules = view.findViewById(R.id.textView13)
+
+
 
 
 
@@ -157,7 +173,7 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
         serviceNoClassFormatEndTimeTv = view.findViewById(R.id.service_end_time_tv)
         serviceNoClassFormatEndTimeCv = view.findViewById(R.id.service_end_time_btn)
         scrollContainer = view.findViewById(R.id.needed_service_info_scrollV)
-
+        NoClassesTitle = view.findViewById(R.id.tv_no_classes_title_2)
         basicServiceInfoCompletedIcon = view.findViewById(R.id.basicServiceInfoCompletedIcon)
 
         serviceNoClassFormatStartTimeTv.setOnClickListener {
@@ -207,6 +223,17 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
         initTimeSlot()
         active = true
 
+        val noClassesTitleText = "Determina horarios de atención en que brinda este servicio "
+        val noClassesTitleText2 = "<font color='#FF8672'>*</font>"
+        NoClassesTitle.text = Html.fromHtml(noClassesTitleText + noClassesTitleText2)
+        val attentionDaysTitleText = "Días de atención para este servicio"
+        attentionDaysTitle.text =Html.fromHtml(attentionDaysTitleText + noClassesTitleText2)
+        val serviceDurationTitleText = "Duracion del servicio"
+        serviceDurationTitle.text =Html.fromHtml(serviceDurationTitleText + noClassesTitleText2)
+        val fixedSchedulesText = "Servicio con horarios fijos"
+        fixedSchedules.text = Html.fromHtml(fixedSchedulesText + noClassesTitleText2)
+        val bringClassesTitleText = "¿Este servicio se brinda en formato de clases?"
+        bringClassesTitle.text = Html.fromHtml(bringClassesTitleText + noClassesTitleText2)
 
 
     }
@@ -626,12 +653,10 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
         scrollContainer.visibility =View.GONE
     }
     private fun showSnackBar(stringResourceId: Int) {
-        val act = context as CreateServiceActivity
         try {
-            val string : String = context.resources.getString(stringResourceId)
+            val string : String = root.context.resources.getString(stringResourceId)
             string.let { str ->
-                act.window?.decorView?.rootView?.let { Snackbar.make(it, str, Snackbar.LENGTH_SHORT).show() }
-                Log.d("showScnackerror", str)
+               Snackbar.make(root, str, Snackbar.LENGTH_SHORT).show()
             }
         }catch (e : Exception){
 
@@ -677,7 +702,6 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
     private fun updateValidation(){
 
         if (validate().result){
-
             basicServiceInfoCompletedIcon.imageTintList = ColorStateList.valueOf(Color.parseColor("#FF8672"))
             val act = context as CreateServiceActivity
             if(!completed){
@@ -782,7 +806,7 @@ class BasicServiceInfoConfigurator @JvmOverloads constructor(context: Context, a
     }
 
     private fun inflatePopupBtn(view: View, iInfoPopUp: InfoPopUp) {
-        val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val inflater = root.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         @SuppressLint("InflateParams") val popupView =
             inflater.inflate(R.layout.info_btn_pupup, null)
         val width = LinearLayout.LayoutParams.MATCH_PARENT

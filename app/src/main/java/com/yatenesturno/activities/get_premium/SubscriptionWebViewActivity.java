@@ -23,8 +23,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.SubscriptionToken;
 

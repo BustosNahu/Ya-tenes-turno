@@ -1,7 +1,7 @@
 package com.yatenesturno.functionality;
 
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Appointment;
 import com.yatenesturno.object_interfaces.Job;

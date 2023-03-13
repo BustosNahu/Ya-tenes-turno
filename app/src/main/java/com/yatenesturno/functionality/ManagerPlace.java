@@ -1,8 +1,8 @@
 package com.yatenesturno.functionality;
 
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Job;
 import com.yatenesturno.object_interfaces.Place;

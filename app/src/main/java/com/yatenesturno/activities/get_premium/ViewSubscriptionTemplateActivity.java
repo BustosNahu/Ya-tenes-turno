@@ -16,7 +16,7 @@ import androidx.cardview.widget.CardView;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.functionality.PlacePremiumManager;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Job;

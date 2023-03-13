@@ -7,10 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.yatenesturno.Constants;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.functionality.PlacePremiumManager;
 import com.yatenesturno.functionality.push_notification.PushNotificationHandler;
 import com.yatenesturno.object_interfaces.CustomUser;
@@ -70,22 +71,31 @@ public class UserManagement {
 
                         saveUserDataToLocal(context, userData);
                         refreshPremium(listener);
+                        Log.d("UserManagment", "onUserDataFetch fetch user data  good");
+
                     }
 
                     @Override
                     public void onFailure(Context context) {
                         listener.userNotAuthenticated();
                         invalidateUserData(context);
+                        Log.d("UserManagment", "onfailure fetch user data ");
                     }
                 });
             } else if (accessToken != null && user != null) {
                 setupFCM();
                 refreshPremium(listener);
+                Log.d("UserManagment", "onfailure fetch user data ");
+
             } else {
                 listener.userNotAuthenticated();
+                Log.d("UserManagment", "No authenticated");
+
             }
 
         } else {
+            Log.d("UserManagment", "No authenticated");
+
             listener.userNotAuthenticated();
             invalidateUserData(context);
         }
@@ -118,6 +128,7 @@ public class UserManagement {
 
             @Override
             public void onFailure() {
+                Log.d("signIn", "No authenticated FAILURE");
 
                 listener.onFailure();
             }

@@ -27,7 +27,7 @@ import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.main_screen.SendMessageActivity;
 import com.yatenesturno.custom_views.LabelHandlerImpl;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.functionality.LabelHandler;
 import com.yatenesturno.functionality.LabelSelectorView;
 import com.yatenesturno.listeners.DatabaseCallback;

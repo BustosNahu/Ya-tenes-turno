@@ -1,5 +1,7 @@
 package com.yatenesturno.activities.sign_in;
 
+import static com.yatenesturno.Flags.DEBUG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -21,20 +23,15 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.first_shop.FirstShop;
 import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.main_screen.MainActivity;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.functionality.ManagerPlace;
 import com.yatenesturno.functionality.PlacePremiumManager;
 import com.yatenesturno.object_interfaces.Place;
@@ -54,7 +51,7 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
      */
     private LoadingOverlay loadingOverlay;
     private boolean passwordVisible;
-     ConstraintLayout constraintLayout;
+    ConstraintLayout constraintLayout;
     ProgressBar progressBar;
     SharedPreferences sharedPreferences;
 
@@ -86,42 +83,22 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
     private void initUI() {
         findViewById(R.id.google_sign_in_button).setOnClickListener(this);
 
-        AppCompatButton btnSignIn = findViewById(R.id.login_btn);
         TextInputEditText inputEmail = findViewById(R.id.tv_username);
         TextInputEditText inputPassword = findViewById(R.id.tv_userpassword);
 
-        btnSignIn.setOnClickListener(view1 -> {
-            if (TextUtils.isEmpty(Objects.requireNonNull(inputEmail.getText()).toString())) {
-                inputEmail.setError("");
-                hideLoading();
-                return;
-            } else {
-                inputEmail.setError(null);
-            }
-
-            if (TextUtils.isEmpty(Objects.requireNonNull(inputPassword.getText()).toString())) {
-                inputPassword.setError("");
-                hideLoading();
-                return;
-            } else {
-                inputPassword.setError(null);
-            }
-
-            signInWithEmailAndPassword(btnSignIn, inputEmail, inputPassword);
-        });
 
         inputPassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 final int right = 2;
                 if (event.getAction() == MotionEvent.ACTION_UP) {
-                    if (event.getRawX() >= inputPassword.getRight()-inputPassword.getCompoundDrawables()[right].getBounds().width() - 50) {
+                    if (event.getRawX() >= inputPassword.getRight() - inputPassword.getCompoundDrawables()[right].getBounds().width() - 50) {
                         int selection = inputPassword.getSelectionEnd();
-                        if (passwordVisible){
+                        if (passwordVisible) {
                             inputPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.password_icon, 0, R.drawable.dont_show_password, 0);
                             inputPassword.setTransformationMethod(null);
                             passwordVisible = false;
-                        }else{
+                        } else {
                             inputPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.password_icon, 0, R.drawable.show_password, 0);
                             inputPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
                             passwordVisible = true;
@@ -138,23 +115,10 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
 
     /**
      * mock sign in
-     *
-     * @param btn      loading btn
-     * @param email    email
-     * @param password pwd
      */
-    private void signInWithEmailAndPassword(AppCompatButton btn, TextInputEditText email, TextInputEditText password) {
+    private void signInWithEmailAndPassword() {
         showLoading();
-//        if (!verifyCredentials(email.getText().toString(), password.getText().toString())) {
-//            hideLoading();
-//            email.setError("Error");
-//            password.setError("Error");
-//            return;
-//        }
-        email.setError(null);
-        password.setError(null);
-
-        Authenticator authenticator = new MockAuthenticator();
+        Authenticator authenticator = new AuthenticatorGoogle();
         authenticator.init(this);
         UserManagement.getInstance().setAuthenticatorInUse(authenticator);
         UserManagement.getInstance().signIn(this, new UserManagement.UserManagementListener() {
@@ -173,21 +137,11 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
         });
     }
 
-    /**
-//     * Mock auth
-//     *
-//     * @param email    email
-//     * @param password pwd
-//     * @return valid mock creds
-//     */
-////    private boolean verifyCredentials(String email, String password) {
-////        return email.equals("a") && password.equals("a");
-////    }
-
-    private Boolean isFirstShop(){
+    private Boolean isFirstShop() {
         sharedPreferences = getSharedPreferences("firstShop", Context.MODE_PRIVATE);
         return sharedPreferences.getBoolean("firstShop", true);
     }
+
     private void checkCanCreateNewPlace() {
         ManagerPlace.getInstance().getPlaces(new ManagerPlace.OnPlaceListFetchListener() {
             @Override
@@ -224,17 +178,19 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
         });
     }
 
-
-
+    Boolean localDebug = true;
     @Override
     public void onClick(View v) {
         loadingOverlay.show();
         if (v.getId() == R.id.google_sign_in_button) {
-            onGoogleSignInClickListener();
+            if (localDebug) {
+                signInWithEmailAndPassword();
+            } else onGoogleSignInClickListener();
         }
     }
 
     public void onGoogleSignInClickListener() {
+
         Authenticator authenticatorGoogle = new AuthenticatorGoogle();
         authenticatorGoogle.init(this);
 
@@ -268,12 +224,12 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
     }
 
 
-
-    private void hideLoading(){
+    private void hideLoading() {
         progressBar.setVisibility(View.GONE);
         constraintLayout.setVisibility(View.VISIBLE);
     }
-    private void showLoading(){
+
+    private void showLoading() {
         constraintLayout.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
 

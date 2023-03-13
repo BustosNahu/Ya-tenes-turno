@@ -22,14 +22,13 @@ import com.yatenesturno.custom_views.JobDateSelectionButton;
 import com.yatenesturno.custom_views.LoadingButton;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.custom_views.ServiceSelectionView;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.functionality.LabelSelectorView;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Job;
 import com.yatenesturno.object_interfaces.Label;
 import com.yatenesturno.object_interfaces.ServiceInstance;
-import com.yatenesturno.object_views.TimestampView;
 import com.yatenesturno.serializers.BuilderListServiceInstance;
 import com.yatenesturno.serializers.BuilderListTimestamps;
 

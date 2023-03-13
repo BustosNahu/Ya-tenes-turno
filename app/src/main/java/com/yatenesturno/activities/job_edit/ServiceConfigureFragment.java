@@ -4,7 +4,6 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -135,7 +134,7 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
             }
             initConfigurations();
 
-        }, 200);
+        }, 100);
     }
 
     private void initConfigurations() {
@@ -194,11 +193,9 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
         initMoreInfo();
     }
 
-
     private void initMoreInfo() {
         new MoreInfoHelper((ViewGroup) getView(), getChildFragmentManager());
     }
-
 
     private void setScrollViewScrollListener() {
         hasReachedBottomOfScrollView = false;
@@ -337,13 +334,10 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
 
         List<Integer> selectedDays;
         selectedDays = getSelectedDays();
-        Log.d("step3serviceOLDCONFIGURE", selectedDays.toString());
 
         for (Integer day : selectedDays) {
             DaySchedule ds = getOrCreateDaySchedule(day);
             updateServiceInstanceInDaySchedule(serviceInstance, ds);
-            Log.d("step3serviceOLDCONFIGURE DS", ds.toString());
-
         }
 
         finishConfiguration();
@@ -463,6 +457,7 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
     @Override
     public void onPause() {
         super.onPause();
+
         scrollUp();
     }
 
@@ -511,7 +506,7 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
     }
 
     private void showSnackBar(int stringResourceId) {
-        Snackbar.make(requireView(), getString(stringResourceId), Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(getView(), getString(stringResourceId), Snackbar.LENGTH_SHORT).show();
     }
 
     public interface ListenerConfirm {

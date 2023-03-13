@@ -240,7 +240,7 @@
                 android:gravity="center_vertical"
                 android:text="@string/close_mitday"
                 android:textColor="@color/grey_ui"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.086"
                 app:layout_constraintStart_toStartOf="parent"

@@ -98,7 +98,7 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
         removeEmptyDaySchedules()
         val act = activity as CreateServiceActivity
         act.navigateToConfirmation(service, job , getSelectedDays())
-
+        sharedVm.saveData(job, service!!)
     }
 
 
@@ -219,7 +219,7 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
         job.let {
             basicServiceInfo.setJob(it)
         }
-
+        basicServiceInfo
 
         val act = requireActivity() as CreateServiceActivity
         serviceName.text = act.getService()?.name
@@ -299,11 +299,9 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
             }
             lastIndex = index
             index++
-            Log.d("indexOfNext", index.toString())
         }
 
         if (validateContinueAndCreateService(newList)){
-            Log.d("serviceValide", "ValidatedService")
             createServiceBtn = this.requireActivity().findViewById(R.id.btnCreate_service_step3)
             createServiceBtn.isEnabled = true
             createServiceBtn.setCardBackgroundColor(android.graphics.Color.parseColor("#FF8672"))
@@ -391,7 +389,7 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
             si.maxAppsSimultaneously = -1
             si.maxAppsPerDay = -1
         } else {
-            si.maxAppsSimultaneously = simultShifts.getMaxAppsSimultaneously()
+            si.maxAppsSimultaneously = clientPermissions.getMaxAppsSimultaneously()
             si.maxAppsPerDay = clientPermissions.getMaxAppsPerDay()
 
         }
@@ -406,6 +404,7 @@ class CreateServiceStep3 : Fragment(), ServiceConfigCoordinatorKt {
             si.isFixedSchedule = basicServiceInfo.isFixedSchedule()
             si.startTime = basicServiceInfo.getStartTime()
             si.endTime = basicServiceInfo.getEndTime()
+
             si.classTimes = null
         }
         if (!basicServiceInfo.isFixedSchedule()) {

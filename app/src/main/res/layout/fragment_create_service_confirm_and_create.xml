@@ -123,7 +123,7 @@
             <TextView
                 android:id="@+id/generalServiceTitle"
                 style="@style/NormalBold"
-                android:layout_width="wrap_content"
+                android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:ellipsize="end"
@@ -141,7 +141,9 @@
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
+                android:layout_marginBottom="70dp"
                 android:background="@drawable/border_outline_primary_greyinto"
+                app:layout_constraintBottom_toTopOf="@+id/cs_stp_3_cyc"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/generalService"
@@ -195,9 +197,9 @@
                                 android:id="@+id/active_days_rv"
                                 android:layout_width="match_parent"
                                 android:layout_height="30dp"
-                                android:layout_alignParentBottom="true"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginBottom="1dp" />
@@ -218,6 +220,7 @@
                             app:tint="@color/colorPrimary" />
 
                         <TextView
+                            style="@style/NormalBold"
 
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -229,7 +232,6 @@
 
                         <TextView
                             android:id="@+id/tv_service_duration"
-                            style="@style/NormalBold"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginStart="4dp"
@@ -248,6 +250,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            style="@style/NormalBold"
                             android:layout_width="190dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -258,7 +261,6 @@
 
                         <TextView
                             android:id="@+id/tv_service_sameInterval"
-                            style="@style/NormalBold"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginStart="4dp"
@@ -455,20 +457,20 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_clock_outline"
-                            app:tint="@color/colorPrimary"
                             android:layout_gravity="top"
                             android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_clock_outline"
+                            app:tint="@color/colorPrimary"
 
                             />
 
                         <TextView
                             style="@style/NormalBold"
-                            android:layout_marginTop="11dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
                             android:layout_gravity="top"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="11dp"
                             android:text="Horario:"
                             android:textColor="@color/grey_ui"
                             android:textSize="14sp" />
@@ -556,8 +558,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="8dp"
                             android:gravity="center_vertical"
-                            android:text="00"
                             android:maxLines="1"
+                            android:text="00"
                             android:textColor="@color/grey_ui"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -685,12 +687,13 @@
                 android:id="@+id/editScheduledHours_Cv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+
+                android:layout_marginStart="30dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_stp_3_cyc"
-                app:layout_constraintStart_toEndOf="@+id/cs_stp_3_cyc"
-                app:layout_constraintTop_toTopOf="@+id/cs_stp_3_cyc">
+                app:layout_constraintBottom_toTopOf="@+id/cs_stp_3_cyc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
 
                                 <ImageButton
                                     android:id="@+id/editService"
@@ -705,7 +708,7 @@
                 android:layout_width="277dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/border_outline_rounded_primary"
                 android:clickable="true"
                 android:focusable="true"
@@ -715,10 +718,7 @@
                 app:cardElevation="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.447"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
-                app:layout_constraintVertical_bias="1.0">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/Medium"

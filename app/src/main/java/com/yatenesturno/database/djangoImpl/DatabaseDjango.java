@@ -1,6 +1,7 @@
-package com.yatenesturno.database;
+package com.yatenesturno.database.djangoImpl;
 
 import com.yatenesturno.Flags;
+import com.yatenesturno.database.interfaces.Database;
 
 public class DatabaseDjango implements Database {
 

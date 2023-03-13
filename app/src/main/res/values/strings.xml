@@ -305,7 +305,7 @@ Modo recomendado para lugares que brinden este servicio a más de 2 clientes por
     <string name="mitday_finish">Fin descanso</string>
     <string name="new_place_stepConformation_title_1">Confirma los horarios de atención de tu tienda</string>
     <string name="new_place_stepConformation_title_2">¡Estupendo!</string>
-    <string name="confirm_hours">Confrimar horarios</string>
+    <string name="confirm_hours">Confirmar horarios</string>
     <string name="new_place_intro_step3_description">¿Trabajas en la tienda?</string>
     <string name="paso_03">Paso 03</string>
     <string name="new_placeo_step3">Si, atiendo a mis clientes</string>
@@ -338,7 +338,7 @@ Modo recomendado para lugares que brinden este servicio a más de 2 clientes por
     <string name="create_service">Crear servicio</string>
     <string name="new_service_step1_title">¿Qué tipo de servicio brindarás?</string>
     <string name="general_service_cv_title">Servicio general</string>
-    <string name="general_service_cv_description">Este servicio está orientado para todos los profesionales que brindan su atención de forma regular.</string>
+    <string name="general_service_cv_description">Este servicio está orientado para todos los profesionales que brindan su atención de forma regular. </string>
     <string name="emergency_service_cv_title">Servicio de emergencia</string>
     <string name="emergency_service_cv_description">Este servicio está pensado para profesionales que se les ha liberado un turno de último momento, y activan esta opción para dar a conocer la disponibilidad momentánea e inmediata del servicio.</string>
     <string name="new_servcice_intro_step2_description_2">Este paso es sumamente importante, <b>ingresa el primer servicio que compartiras a los clientes de tu sitio!</b></string>
@@ -403,5 +403,6 @@ Modo recomendado para lugares que brinden este servicio a más de 2 clientes por
     <string name="corte_de_pelo_de_mujer">Corte de pelo de mujer</string>
     <string name="enviar_recordatorio_a_cliente_de_turno">Enviar recordatorio del turno:</string>
     <string name="clientes_que_pueda_brindar_este_servicio_en_simultan_o">Clientes que pueda brindar este servicio en simultanéo:</string>
+    <string name="hs_de_fin_de_servicio">Hs de Fin De Servicio</string>
 
 </resources>

@@ -229,7 +229,7 @@
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/user_cardview_boders.xml" value="0.1715" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/drawable/view_pager_container_arrow.xml" value="0.2945" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/basic_service_info_card.xml" value="0.35989583333333336" />
-        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_create_service_step1.xml" value="0.35625" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_create_service_step1.xml" value="0.2" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_create_service_step3.xml" value="0.35625" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_new_place_intro_step3.xml" value="0.2" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout-hdpi/fragment_new_place_intro_steps.xml" value="0.25" />
@@ -310,11 +310,11 @@
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_client_info_selection.xml" value="0.29200513039760584" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_confirm_scheduled_hours.xml" value="0.33" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_confirm_and_create.xml" value="0.3079268292682927" />
-        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step1.xml" value="0.75" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step1.xml" value="0.536" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step1_intro.xml" value="0.33" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step2.xml" value="0.25" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step2_intro.xml" value="0.25" />
-        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step3.xml" value="0.40456674473067916" />
+        <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step3.xml" value="0.19410004275331338" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_create_service_step3_intro.xml" value="0.25" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_first.xml" value="0.22239583333333332" />
         <entry key="..\:/Desktop/F/WORK/app/AdminTurnosAndroid-master/app/src/main/res/layout/fragment_job_view.xml" value="0.22" />
@@ -381,7 +381,6 @@
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
     <option name="myDefaultNotNull" value="android.annotation.NonNull" />

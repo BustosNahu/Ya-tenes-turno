@@ -2,8 +2,8 @@ package com.yatenesturno.functionality.place_credits;
 
 import com.yatenesturno.Constants;
 import com.yatenesturno.Parser.ParserGeneric;
-import com.yatenesturno.database.DatabaseDjangoRead;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.ServiceInstance;
 import com.yatenesturno.objects.PlaceCreditsImpl;

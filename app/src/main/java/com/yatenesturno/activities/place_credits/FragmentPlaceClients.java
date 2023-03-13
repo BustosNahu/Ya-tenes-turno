@@ -22,7 +22,7 @@ import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.main_screen.FragmentAdminClients;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoRead;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.Place;

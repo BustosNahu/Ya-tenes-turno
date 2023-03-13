@@ -5,6 +5,7 @@ import static android.app.Activity.RESULT_OK;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.main_screen.SendMessageActivity;
 import com.yatenesturno.custom_views.LabelHandlerImpl;
 import com.yatenesturno.custom_views.LoadingOverlay;
-import com.yatenesturno.database.DatabaseDjangoWrite;
+import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.functionality.LabelHandler;
 import com.yatenesturno.functionality.LabelSelectorView;
 import com.yatenesturno.functionality.app_observation.AppObservationController;
@@ -307,6 +308,7 @@ public class InnerViewAppointment extends Fragment {
     private void onCancelAppointment() {
         showLoadingOverlay();
         Map<String, String> body = getBody();
+        Log.d("onSEndBody",body.toString());
 
         DatabaseDjangoWrite.getInstance().POST(
                 Constants.DJANGO_URL_DROP_APPOINTMENT,
@@ -315,10 +317,13 @@ public class InnerViewAppointment extends Fragment {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         onDropAppointment();
+                        Log.d("onSuccess", response.toString());
+
                     }
 
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                        Log.d("OnFailureResponse", responseString, throwable);
                         hideLoadingOverlay();
                         showConnectionError();
                     }

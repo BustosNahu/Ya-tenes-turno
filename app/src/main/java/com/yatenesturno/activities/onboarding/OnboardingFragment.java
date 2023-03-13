@@ -130,13 +130,13 @@ public class OnboardingFragment extends Fragment {
         OnboardingItem itemAssistant = new OnboardingItem();
 
         itemAssistant.setTitle("Somos el asistente virtual para tu negocio");
-        itemAssistant.setDescription("Tené organizado todos los turnos de tus clientes de manera automatica las 24hs del día");
+        itemAssistant.setDescription("Tené organizado todos los turnos de tus clientes de manera automática las 24hs del día");
         itemAssistant.setImage(R.drawable.onboarding1);
 
 
         OnboardingItem itemClients = new OnboardingItem();
         itemClients.setTitle("Fútbol , Barberías, Padel, Lavaderos, Estéticas, Tatto y muchos más");
-        itemClients.setDescription("Obtené clientes nuevos a través de nuetra comunidad");
+        itemClients.setDescription("Obtené clientes nuevos a través de nuestra comunidad");
         itemClients.setImage(R.drawable.onboarding2);
 
         OnboardingItem itemIdeals = new OnboardingItem();
