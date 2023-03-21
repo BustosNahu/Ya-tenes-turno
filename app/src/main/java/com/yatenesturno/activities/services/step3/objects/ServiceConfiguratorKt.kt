@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.yatenesturno.R
 import com.yatenesturno.activities.job_edit.service_configs.ConfigurationId
-import com.yatenesturno.activities.job_edit.service_configs.ServiceConfigCoordinator
 import com.yatenesturno.activities.job_edit.service_configs.ValidationResult
 import com.yatenesturno.activities.job_edit.service_configs.VisitorServiceConfiguration
 import com.yatenesturno.object_interfaces.ServiceInstance

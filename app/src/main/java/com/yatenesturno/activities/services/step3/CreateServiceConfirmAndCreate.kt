@@ -2,7 +2,6 @@ package com.yatenesturno.activities.services.step3
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,6 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,15 +20,9 @@ import com.yatenesturno.activities.services.CreateServiceActivity
 import com.yatenesturno.activities.services.step3.ServiceRevision.ActiveDaysAdapter
 import com.yatenesturno.activities.services.step3.ServiceRevision.ServiceClassesAdapter
 import com.yatenesturno.activities.services.step3.viewModel.Step3ViewModel
-import com.yatenesturno.object_interfaces.DaySchedule
 import com.yatenesturno.object_interfaces.Job
-import com.yatenesturno.object_interfaces.Place
 import com.yatenesturno.object_interfaces.Service
 import com.yatenesturno.object_interfaces.ServiceInstance
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 

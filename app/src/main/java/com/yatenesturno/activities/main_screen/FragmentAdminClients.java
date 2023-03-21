@@ -221,7 +221,6 @@ public class FragmentAdminClients extends Fragment {
                     adapter.setFilter(newText);
                     adapter.filterItems(100);
                 }
-
                 return true;
             }
         });

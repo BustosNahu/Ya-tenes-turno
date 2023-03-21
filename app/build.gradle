@@ -11,10 +11,10 @@ android {
     signingConfigs {
 
         debug {
-            storeFile file('D:\\Desktop\\F\\WORK\\app\\debug.keystore')
+            storeFile file('C:\\Users\\Nahuel\\Desktop\\appTurnos\\keystore\\debug.keystore')
         }
         release {
-            storeFile file("D:\\Desktop\\F\\WORK\\android_key_store\\key_store.jks")
+            storeFile file("C:\\Users\\Nahuel\\Desktop\\appTurnos\\keys\\key_store.jks")
             storePassword 'turnos2020'
             keyAlias 'play_store_signing'
             keyPassword 'turnos2020%'
@@ -22,7 +22,6 @@ android {
     }
 
     compileSdkVersion 31
-    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.adminturnos"

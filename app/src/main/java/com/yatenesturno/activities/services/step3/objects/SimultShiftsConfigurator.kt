@@ -25,7 +25,6 @@ import com.yatenesturno.R
 import com.yatenesturno.activities.job_edit.service_configs.ConfigurationId
 import com.yatenesturno.activities.job_edit.service_configs.ValidationResult
 import com.yatenesturno.activities.job_edit.service_configs.VisitorServiceConfiguration
-import com.yatenesturno.activities.job_edit.service_configs.configurations.ServiceConfiguration
 import com.yatenesturno.activities.services.CreateServiceActivity
 import com.yatenesturno.object_interfaces.ServiceInstance
 

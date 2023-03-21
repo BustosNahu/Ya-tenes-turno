@@ -174,7 +174,9 @@
             android:theme="@style/MainDrawer"
             app:headerLayout="@layout/main_drawer_header"
             app:itemTextColor="@color/black"
-            app:menu="@menu/main_activity_drawer" />
+            app:menu="@menu/main_activity_drawer"
+
+            />
 
     </androidx.drawerlayout.widget.DrawerLayout>
 

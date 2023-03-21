@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yatenesturno.R
-import com.yatenesturno.object_interfaces.Service
 
 class ServiceClassesAdapter(private val mList: List<String>) : RecyclerView.Adapter<ServiceClassesAdapter.ServiceClassesViewHolder>() {
 
