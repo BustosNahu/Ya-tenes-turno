@@ -255,6 +255,7 @@ public class FragmentUpcomingEvents extends Fragment {
             );
     }
 
+
     public void setServicesFloatingBtn(){
         Log.d("fragmentEvents", "setServicesFloatingBtn");
         scheduleAppointmentFAB.setOnClickListener(new View.OnClickListener() {

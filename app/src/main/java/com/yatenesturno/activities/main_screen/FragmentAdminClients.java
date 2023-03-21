@@ -228,9 +228,7 @@ public class FragmentAdminClients extends Fragment {
 
     private void setNewPromoListener() {
         btnNewPromo.setOnClickListener(v -> {
-//            if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
             displayNewPromoDialog();
-            //}
         });
     }
 
@@ -312,6 +310,7 @@ public class FragmentAdminClients extends Fragment {
         requireActivity().startActivityForResult(intent, Constants.RC_NEW_ANONYMOUS_APP);
     }
 
+
     private void createServiceBtn(View view) {
         CardView popUpBtnCreateService;
         CardView popUpBtnDecline;
@@ -343,7 +342,7 @@ public class FragmentAdminClients extends Fragment {
                 popupWindow.dismiss();
             }
         });
-// dismiss the popup window when touched
+        // dismiss the popup window when touched
         popUpBtnDecline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -41,6 +41,14 @@ public class GetPremiumActivity extends AppCompatActivity {
         activity.startActivityForResult(intent, Constants.RC_GET_PREMIUM);
     }
 
+
+    /**
+     * Method to validate if the user is premium or not, if not it show you get premium screen
+     * @param activity
+     * @param placeId
+     * @param userId
+     * @return
+     */
     public static boolean hasPremiumInPlaceOrShowScreen(Activity activity, String placeId, String userId) {
         if (!PlacePremiumManager.getInstance().getIsPremium(placeId, userId)) {
             showPremiumInfoFromActivity(activity, placeId);

@@ -1,5 +1,4 @@
 package com.yatenesturno.activities.job_appointment_book;
-
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,7 +21,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.object_interfaces.CustomUser;
+import com.yatenesturno.object_interfaces.Place;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.ValidationUtils;
 
 import java.util.ArrayList;
@@ -37,8 +39,12 @@ public class ClientInfoSelectionFragment extends Fragment {
     public static final String PHONE = "phone";
     public static final String EMAIL = "email";
     public static final String CLIENT_LIST = "clientList";
+
     private ArrayList<CustomUser> clientList;
 
+    private String placeId;
+
+    private Place place;
     private OnConfirmedListener listener;
     private TextInputLayout tilName, tilEmail, tilPhone;
     private TextInputEditText tietName, tietEmail, tietPhone;
@@ -68,6 +74,7 @@ public class ClientInfoSelectionFragment extends Fragment {
 
     private Bundle saveState() {
         Bundle bundle = new Bundle();
+
 
         bundle.putParcelableArrayList(CLIENT_LIST, clientList);
         bundle.putString(NAME, tietName.getText().toString());
@@ -107,6 +114,7 @@ public class ClientInfoSelectionFragment extends Fragment {
         tilName = getView().findViewById(R.id.text_input_layout_name);
         tilEmail = getView().findViewById(R.id.text_input_layout_email);
         tilPhone = getView().findViewById(R.id.text_input_layout_phone);
+
 
         tietName = getView().findViewById(R.id.editTextName);
         tietEmail = getView().findViewById(R.id.editTextEmail);
@@ -154,18 +162,27 @@ public class ClientInfoSelectionFragment extends Fragment {
         containerClientInfo.setVisibility(View.GONE);
     }
 
+
     private void setBtnConfirmListener() {
         btnConfirm.setOnClickListener(v -> onConfirmClicked());
     }
 
+
+    /**
+     * Method to know when the btnConfirm is clicked
+     */
+    //////////////////////////////////////////ARREGLAR/////////////////////////////////////////////
     public void onConfirmClicked() {
         if (selectedClient == null) {
-            if (validateClientInfo()) {
-                listener.onConfirm(
-                        tietName.getText().toString(),
-                        tietEmail.getText().toString(),
-                        "+549" + tietPhone.getText().toString()
-                );
+            //if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
+                if (validateClientInfo()) {
+
+                    listener.onConfirm(
+                            tietName.getText().toString(),
+                            tietEmail.getText().toString(),
+                            "+549" + tietPhone.getText().toString()
+                    );
+
             }
         } else {
             listener.onConfirm(
@@ -176,6 +193,12 @@ public class ClientInfoSelectionFragment extends Fragment {
         }
     }
 
+
+    /**
+     * Metod to validate if user has all fields completed
+     *
+     * @return
+     */
     private boolean validateClientInfo() {
         boolean isValid = true;
 
@@ -206,6 +229,7 @@ public class ClientInfoSelectionFragment extends Fragment {
         } else {
             tilPhone.setError(null);
         }
+
 
         return isValid;
     }

@@ -128,6 +128,7 @@ public class AnonymousAppActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         dateSelectionFragment = (AppointmentDateSelectionFragment) fragmentManager.getFragment(bundle, DATE_SELECTION_FRAGMENT);
         clientInfoSelectionFragment = (ClientInfoSelectionFragment) fragmentManager.getFragment(bundle, CLIENT_INFO_SELECTION_FRAGMENT);
+
     }
 
     private void initViews() {
