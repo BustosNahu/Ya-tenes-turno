@@ -21,6 +21,7 @@ import com.yatenesturno.activities.job_edit.service_configs.ValidationResult
 import com.yatenesturno.activities.services.CreateServiceActivity
 import com.yatenesturno.activities.services.step3.objects.*
 import com.yatenesturno.activities.services.step3.viewModel.Step3ViewModel
+import com.yatenesturno.object_interfaces.*
 import com.yatenesturno.objects.DayScheduleImpl
 import com.yatenesturno.objects.ServiceInstanceImpl
 import java.util.*

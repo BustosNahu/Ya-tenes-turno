@@ -228,14 +228,15 @@ public class FragmentAdminClients extends Fragment {
 
     private void setNewPromoListener() {
         btnNewPromo.setOnClickListener(v -> {
-            if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
-                displayNewPromoDialog();
-            }
+//            if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
+            displayNewPromoDialog();
+            //}
         });
     }
+
     List<ServiceInstance> providedServices;
 
-    void hasServices(){
+    void hasServices() {
         Map<String, String> body = new HashMap<>();
         body.put("job_id", job.getId());
         showLoadingOverlay();
@@ -255,10 +256,10 @@ public class FragmentAdminClients extends Fragment {
                             hideLoadingOverlay();
                         }
 
-                        if (providedServices.isEmpty()){
+                        if (providedServices.isEmpty()) {
                             //hasn't services
                             setNoServicesBtn();
-                        }else{
+                        } else {
                             setServicesFloatingBtn();
                         }
                         hideLoadingOverlay();
@@ -278,26 +279,30 @@ public class FragmentAdminClients extends Fragment {
         return job.canEdit() || isPlaceOwner;
     }
 
-    private void setNoServicesBtn(){
+    private void setNoServicesBtn() {
         btnNewAnonymousApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( canEditJob()) createServiceBtn(view); else Toast.makeText(requireContext(),"No tienes acceso a esta sección, pídele al dueño de la tienda que te de acceso o que configure los servicios",Toast.LENGTH_LONG).show();
+                if (canEditJob()) createServiceBtn(view);
+                else
+                    Toast.makeText(requireContext(), "No tienes acceso a esta sección, pídele al dueño de la tienda que te de acceso o que configure los servicios", Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    public void setServicesFloatingBtn(){
+    public void setServicesFloatingBtn() {
         Log.d("fragmentEvents", "setServicesFloatingBtn");
         btnNewAnonymousApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( canEditJob()   ) navigateToAppointments();  else Toast.makeText(requireContext(),"No tienes acceso a esta sección, pídele al dueño de la tienda que te de acceso o que configure los servicios",Toast.LENGTH_LONG).show();
+                if (canEditJob()) navigateToAppointments();
+                else
+                    Toast.makeText(requireContext(), "No tienes acceso a esta sección, pídele al dueño de la tienda que te de acceso o que configure los servicios", Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private void navigateToAppointments(){
+    private void navigateToAppointments() {
         Intent intent = new Intent(getContext(), AnonymousAppActivity.class);
         Bundle bundle = new Bundle();
         bundle.putParcelable("job", job);
@@ -307,9 +312,9 @@ public class FragmentAdminClients extends Fragment {
         requireActivity().startActivityForResult(intent, Constants.RC_NEW_ANONYMOUS_APP);
     }
 
-    private void createServiceBtn(View view){
-         CardView popUpBtnCreateService;
-         CardView popUpBtnDecline;
+    private void createServiceBtn(View view) {
+        CardView popUpBtnCreateService;
+        CardView popUpBtnDecline;
 
         LayoutInflater inflater = (LayoutInflater)
                 requireActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -332,7 +337,9 @@ public class FragmentAdminClients extends Fragment {
         popUpBtnCreateService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ( canEditJob()) navigateToNewService(); else Toast.makeText(requireContext(),"No tienes acceso a esta sección, pídele al dueño de la tienda que te de acceso o que configure los servicios",Toast.LENGTH_LONG).show();
+                if (canEditJob()) navigateToNewService();
+                else
+                    Toast.makeText(requireContext(), "No tienes acceso a esta sección, pídele al dueño de la tienda que te de acceso o que configure los servicios", Toast.LENGTH_LONG).show();
                 popupWindow.dismiss();
             }
         });
@@ -346,7 +353,7 @@ public class FragmentAdminClients extends Fragment {
     }
 
 
-    private void navigateToNewService(){
+    private void navigateToNewService() {
         fetchDaySchedules();
 
     }
@@ -357,13 +364,14 @@ public class FragmentAdminClients extends Fragment {
             hideLoadingOverlay();
             job.setDaySchedules(dayScheduleList);
             loadingOverlay.hide();
-            Intent i = new Intent( requireActivity(), CreateServiceActivity.class);
+            Intent i = new Intent(requireActivity(), CreateServiceActivity.class);
             i.putExtra("job", (Serializable) job);
             i.putExtra("place", (Serializable) place);
-            requireActivity().overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_right);
+            requireActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             startActivity(i);
         }), 300);
     }
+
     private void sendNewPromo(String description) {
         StringBuilder toEmails = new StringBuilder();
         for (CustomUser c : clientList) {
@@ -425,7 +433,7 @@ public class FragmentAdminClients extends Fragment {
             getClients();
             hasServices();
         }
-        Log.d(TAG,selectedJob.getEmployee().getName());
+        Log.d(TAG, selectedJob.getEmployee().getName());
     }
 
     private void getClients() {
@@ -540,6 +548,10 @@ public class FragmentAdminClients extends Fragment {
         }
     }
 
+
+    /**
+     * Metod who inflates a dialog, and before to confirm promotion, it validates premium or not premium user.
+     */
     public void displayNewPromoDialog() {
         final View view = getLayoutInflater().inflate(R.layout.new_promo_dialog, null);
         LoadingButton btnConfirm = view.findViewById(R.id.btnConfirm);
@@ -551,18 +563,24 @@ public class FragmentAdminClients extends Fragment {
                         .setView(view);
 
         btnConfirm.setOnClickListener(view1 -> {
-            String description = ((EditText) view.findViewById(R.id.etNewPromo)).getText().toString();
-            if (!TextUtils.isEmpty(description)) {
-                textInputLayout.setError(null);
-                sendNewPromo(description);
-                builder.dismiss();
-            } else {
-                textInputLayout.setError("Por favor ingrese un mensaje");
+            //Condition to validate if the user has any place yet, if the user has already make it,
+            // validate if it a premium user or not
+            if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
+
+                String description = ((EditText) view.findViewById(R.id.etNewPromo)).getText().toString();
+                if (!TextUtils.isEmpty(description)) {
+                    textInputLayout.setError(null);
+                    sendNewPromo(description);
+                    builder.dismiss();
+                } else {
+                    textInputLayout.setError("Por favor ingrese un mensaje");
+                }
+                btnConfirm.hideLoading();
             }
-            btnConfirm.hideLoading();
         });
 
         builder.show();
+
     }
 
 }
