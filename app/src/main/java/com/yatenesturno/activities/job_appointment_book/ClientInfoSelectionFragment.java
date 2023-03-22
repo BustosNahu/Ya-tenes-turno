@@ -1,4 +1,6 @@
 package com.yatenesturno.activities.job_appointment_book;
+import static android.content.Intent.getIntent;
+
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -40,11 +42,10 @@ public class ClientInfoSelectionFragment extends Fragment {
     public static final String EMAIL = "email";
     public static final String CLIENT_LIST = "clientList";
 
+    public static final String PLACE_ID = "placeId";
     private ArrayList<CustomUser> clientList;
 
     private String placeId;
-
-    private Place place;
     private OnConfirmedListener listener;
     private TextInputLayout tilName, tilEmail, tilPhone;
     private TextInputEditText tietName, tietEmail, tietPhone;
@@ -72,14 +73,14 @@ public class ClientInfoSelectionFragment extends Fragment {
         outState.putAll(saveState());
     }
 
+/////////////////////////////////////////////////////REVISAR/////////////////////////////////////////////////////////////------------------/////////////////////////////
     private Bundle saveState() {
         Bundle bundle = new Bundle();
-
-
         bundle.putParcelableArrayList(CLIENT_LIST, clientList);
         bundle.putString(NAME, tietName.getText().toString());
         bundle.putString(PHONE, tietPhone.getText().toString());
         bundle.putString(EMAIL, tietEmail.getText().toString());
+        bundle.putString(PLACE_ID, placeId);
 
         return bundle;
     }
@@ -95,19 +96,26 @@ public class ClientInfoSelectionFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        init();
         initViews();
+
 
         if (savedInstanceState != null) {
             recoverState(savedInstanceState);
         }
     }
 
+
     private void recoverState(Bundle bundle) {
         tietName.setText(bundle.getString(NAME));
         tietPhone.setText(bundle.getString(PHONE));
         tietEmail.setText(bundle.getString(EMAIL));
-
         clientList = bundle.getParcelableArrayList(CLIENT_LIST);
+        placeId = bundle.getString(PLACE_ID);
+    }
+
+    private void init(){
+        placeId = getActivity().getIntent().getStringExtra("placeId");
     }
 
     private void initViews() {
@@ -163,18 +171,25 @@ public class ClientInfoSelectionFragment extends Fragment {
     }
 
 
+    /**
+     * This method listen when the user click on the button,
+     * and it calls another method to validate dates,
+     * but first it validates if the user is premium or not, is answer es not,
+     * it shows the user getPremium screen
+     */
     private void setBtnConfirmListener() {
-        btnConfirm.setOnClickListener(v -> onConfirmClicked());
+        btnConfirm.setOnClickListener(v ->{
+            if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())){
+            onConfirmClicked();}
+        } );
     }
 
 
     /**
      * Method to know when the btnConfirm is clicked
      */
-    //////////////////////////////////////////ARREGLAR/////////////////////////////////////////////
     public void onConfirmClicked() {
-        if (selectedClient == null) {
-            //if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
+            if (selectedClient == null) {
                 if (validateClientInfo()) {
 
                     listener.onConfirm(
@@ -182,15 +197,16 @@ public class ClientInfoSelectionFragment extends Fragment {
                             tietEmail.getText().toString(),
                             "+549" + tietPhone.getText().toString()
                     );
+                }
 
+            } else {
+                listener.onConfirm(
+                        selectedClient.getName(),
+                        selectedClient.getEmail(),
+                        null
+                );
             }
-        } else {
-            listener.onConfirm(
-                    selectedClient.getName(),
-                    selectedClient.getEmail(),
-                    null
-            );
-        }
+        //}
     }
 
 
@@ -229,6 +245,8 @@ public class ClientInfoSelectionFragment extends Fragment {
         } else {
             tilPhone.setError(null);
         }
+
+
 
 
         return isValid;

@@ -29,6 +29,7 @@ import com.yatenesturno.object_interfaces.ServiceInstance;
 import com.yatenesturno.utils.CalendarUtils;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 import com.yatenesturno.utils.TimeZoneManager;
+import com.yatenesturno.object_interfaces.Place;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -115,6 +116,7 @@ public class AnonymousAppActivity extends AppCompatActivity {
         out.putParcelable(JOB, job);
         out.putParcelableArrayList(CLIENT_LIST, clientList);
         out.putSerializable(SELECTED_CALENDAR, selectedCalendar);
+
 
         return out;
     }

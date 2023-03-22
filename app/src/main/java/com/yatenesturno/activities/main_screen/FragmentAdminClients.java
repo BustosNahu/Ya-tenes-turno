@@ -1,6 +1,7 @@
 package com.yatenesturno.activities.main_screen;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+import static android.content.Intent.getIntent;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -550,11 +551,13 @@ public class FragmentAdminClients extends Fragment {
 
     /**
      * Metod who inflates a dialog, and before to confirm promotion, it validates premium or not premium user.
+     * if the user is not premium, it shows you getPremimum screen
      */
     public void displayNewPromoDialog() {
         final View view = getLayoutInflater().inflate(R.layout.new_promo_dialog, null);
         LoadingButton btnConfirm = view.findViewById(R.id.btnConfirm);
         TextInputLayout textInputLayout = view.findViewById(R.id.textInputExtraInfo);
+
 
         CustomAlertDialogBuilder builder =
                 new CustomAlertDialogBuilder(getContext())
@@ -563,7 +566,7 @@ public class FragmentAdminClients extends Fragment {
 
         btnConfirm.setOnClickListener(view1 -> {
             //Condition to validate if the user has any place yet, if the user has already make it,
-            // validate if it a premium user or not
+            // validate if it a premium user or not, if the user don't has it, it shows the getPremium screen to the user.
             if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
 
                 String description = ((EditText) view.findViewById(R.id.etNewPromo)).getText().toString();
@@ -581,5 +584,6 @@ public class FragmentAdminClients extends Fragment {
         builder.show();
 
     }
+
 
 }
