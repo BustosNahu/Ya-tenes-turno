@@ -34,9 +34,9 @@
     </group>
     <group>
         <item
+            android:id="@+id/web"
             android:title="Mi PC - IPhone"
-
-
+            android:icon="@drawable/ic_pc"
             />
 
     </group>

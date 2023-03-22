@@ -25,6 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.yatenesturno.Constants;
+import com.yatenesturno.OpenWebActivity;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.get_premium.SubscriptionsTemplatesActivity;
@@ -409,6 +410,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void startWebActivity(){
+        Intent intent = new Intent(this, OpenWebActivity.class);
+        startActivity(intent);
+    }
+
     private void startPaymentsActivity() {
         Intent intent = new Intent(this, PaymentsActivity.class);
 
@@ -468,6 +474,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.help:
                     startHelpActivity();
+                    break;
+
+                case R.id.web:
+                    startWebActivity();
                     break;
             }
 
