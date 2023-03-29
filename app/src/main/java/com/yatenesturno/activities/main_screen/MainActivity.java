@@ -25,7 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.yatenesturno.Constants;
-import com.yatenesturno.OpenWebActivity;
+import com.yatenesturno.activities.web_view.OpenWebActivity;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.get_premium.SubscriptionsTemplatesActivity;

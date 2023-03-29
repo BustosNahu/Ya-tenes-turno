@@ -1,0 +1,49 @@
+package com.yatenesturno.activities.web_view;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.yatenesturno.R;
+
+public class OpenWebActivity extends AppCompatActivity {
+
+
+
+    String uri = "https://yatenesturno.com.ar/login";
+    ImageView iv_web;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_open_web);
+
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setTitle("Mi PC - IPhone");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        initViews();
+        linkClicked();
+    }
+
+    /**
+     * Method to know if the image view URL is clicked
+     * and it opens login web
+     */
+    private void linkClicked() {
+        iv_web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(i);
+            }
+        });
+    }
+
+    private void initViews() {
+        iv_web = findViewById(R.id.iv_web_link);
+    }
+}
