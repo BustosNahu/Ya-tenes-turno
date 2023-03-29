@@ -74,6 +74,7 @@ public class PurchasesActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         initViews();
+
         new Handler(Looper.myLooper()).postDelayed(() -> {
             loadingOverlay.show();
             if (placePremiumList != null && !populated) {

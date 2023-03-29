@@ -28,6 +28,7 @@
         tools:targetApi="s">
         <activity
             android:name=".activities.web_view.OpenWebActivity"
+            android:theme="@style/BlackColoredAppTheme"
             android:exported="false" />
         <activity
             android:name=".activities.splash_activity.SplashActivity"
