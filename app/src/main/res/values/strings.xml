@@ -404,5 +404,6 @@ Modo recomendado para lugares que brinden este servicio a más de 2 clientes por
     <string name="enviar_recordatorio_a_cliente_de_turno">Enviar recordatorio del turno:</string>
     <string name="clientes_que_pueda_brindar_este_servicio_en_simultan_o">Clientes que pueda brindar este servicio en simultanéo:</string>
     <string name="hs_de_fin_de_servicio">Hs de Fin De Servicio</string>
+    <string name="tx_web_screen">Ahora, puedes controlar tu tienda y sus funciones desde tu PC o tu iPhone</string>
 
 </resources>

@@ -35,7 +35,7 @@
             android:layout_height="200dp"
             android:layout_below="@id/tv_first"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="50dp"
             android:src="@drawable/ic_pc_phone" />
 
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_pc_phone"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Para ello, sólo debes"
             android:textSize="24sp"/>
 
@@ -89,7 +89,7 @@
             android:layout_width="300dp"
             android:layout_height="43dp"
             android:layout_below="@id/tv_seventh"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:src="@drawable/ic_web_link"
             android:layout_centerHorizontal="true"/>
 
