@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.main_screen.MainActivity;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
@@ -24,6 +26,7 @@ import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.Place;
 import com.yatenesturno.object_views.ViewPlace;
 import com.yatenesturno.serializers.BuilderListPlace;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 
 import org.json.JSONException;
@@ -38,11 +41,15 @@ import eu.davidea.flexibleadapter.FlexibleAdapter;
 
 public class NewJobRequestActivity extends AppCompatActivity {
 
+    public static final String PLACE_ID = "placeId";
+
     private FlexibleAdapter<ViewPlace> adapter;
     private LoadingOverlay loadingOverlay;
     private boolean isRunning;
     private boolean fromFirstShop;
     Intent intent;
+
+    private String placeId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +64,17 @@ public class NewJobRequestActivity extends AppCompatActivity {
         fromFirstShop = getIntent().getBooleanExtra("fromFirstShop", false);
         intent = new Intent(this, MainActivity.class);
 
+
         initUI();
+
+        //SACAR TOAST
+        if (savedInstanceState == null) {
+            initUI();
+            Toast.makeText(this, "Estoy NULL", Toast.LENGTH_SHORT).show();
+        } else {
+            recoverState(savedInstanceState);
+            Toast.makeText(this, "Estoy RECOVERSTATE", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void initUI() {
@@ -73,6 +90,25 @@ public class NewJobRequestActivity extends AppCompatActivity {
         this.adapter = new FlexibleAdapter<>(null);
         adapter.mItemClickListener = new ItemClickListenerSearchPlace();
         recyclerView.setAdapter(adapter);
+
+        placeId = getIntent().getStringExtra("placeId");
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putAll(saveState());
+    }
+
+    private Bundle saveState() {
+        Bundle bundle = new Bundle();
+        bundle.putString(PLACE_ID, placeId);
+        return bundle;
+    }
+
+    private void recoverState(Bundle bundle){
+        placeId = bundle.getString(PLACE_ID);
     }
 
     @Override
@@ -97,6 +133,11 @@ public class NewJobRequestActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * this method is the final action which users makes to send a job request, when you click on ENVIAR, it's validates if you are premium or not, if not,
+     * it show GetPremiumActivity screen
+     * @param position
+     */
     private void showConfirmDialog(int position) {
         final ViewPlace vp = adapter.getItem(position);
 
@@ -113,9 +154,11 @@ public class NewJobRequestActivity extends AppCompatActivity {
                 .setPositiveButton(R.string.send, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        sendJobRequest(vp);
-                        dialog.dismiss();
-                        showLoadingOverlay();
+                        if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(NewJobRequestActivity.this, placeId, UserManagement.getInstance().getUser().getId())) {
+                            sendJobRequest(vp);
+                            dialog.dismiss();
+                            showLoadingOverlay();
+                        }
                     }
                 })
                 .show();
