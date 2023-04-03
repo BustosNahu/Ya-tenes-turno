@@ -22,6 +22,8 @@ import com.yatenesturno.activities.main_screen.MainActivity;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
+import com.yatenesturno.functionality.ManagerPlace;
+import com.yatenesturno.functionality.PlacePremiumManager;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.Place;
@@ -173,11 +175,38 @@ public class NewJobRequestActivity extends AppCompatActivity {
                 .setPositiveButton(R.string.send, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(NewJobRequestActivity.this, placeId, UserManagement.getInstance().getUser().getId())) {
-                            sendJobRequest(vp);
-                            dialog.dismiss();
-                            showLoadingOverlay();
-                        }
+                        ManagerPlace.getInstance().getOwnedPlaces(new ManagerPlace.OnPlaceListFetchListener() {
+                            @Override
+                            public void onFetch(List<Place> placeList) {
+                                boolean hasAtLeastOnePremium = false;
+                                for (Place place : placeList) {
+                                    if (PlacePremiumManager.getInstance().getIsPremium(place.getId(), UserManagement.getInstance().getUser().getId())) {
+                                        hasAtLeastOnePremium = true;
+                                        break;
+                                    }
+                                }
+
+                                if (hasAtLeastOnePremium) {
+                                    sendJobRequest(vp);
+                                    dialog.dismiss();
+                                    showLoadingOverlay();
+                                } else {
+                                    if (placeList.size() > 0) {
+                                        GetPremiumActivity.showPremiumInfoFromActivity(NewJobRequestActivity.this, null);
+                                    } else {
+                                        sendJobRequest(vp);
+                                        dialog.dismiss();
+                                        showLoadingOverlay();
+                                    }
+                                }
+
+                            }
+
+                            @Override
+                            public void onFailure() {
+                                Toast.makeText(NewJobRequestActivity.this, "Error en la base de datos", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 })
                 .show();

@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     Place place;
+
+
     private boolean isRunning;
 
     @Override
@@ -336,6 +338,7 @@ public class MainActivity extends AppCompatActivity {
         ManagerPlace.getInstance().getOwnedPlaces(new ManagerPlace.OnPlaceListFetchListener() {
             @Override
             public void onFetch(List<Place> placeList) {
+
                 boolean hasAtLeastOnePremium = false;
                 for (Place place : placeList) {
                     if (PlacePremiumManager.getInstance().getIsPremium(place.getId(), UserManagement.getInstance().getUser().getId())) {
@@ -369,14 +372,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void startJobRequestsActivity() {
-        Bundle bundle = new Bundle();
-        bundle.putString("placeId", place.getId());
+
+
         Intent intent = new Intent(this, JobRequestActivity.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
+        intent.putExtra("fromFirstShop", false);
+        //startActivity(intent);
 //        intent.putExtra("fromFirstShop", false);
 //        intent.putExtra("placeId" , place.getId());
-        //startActivityForResult(intent, Constants.RC_JOB_REQUESTS);
+        startActivityForResult(intent, Constants.RC_JOB_REQUESTS);
     }
 
     private void startAdminPlacesActivity() {

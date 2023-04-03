@@ -13,14 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.get_premium.GetPremiumActivity;
+import com.yatenesturno.activities.main_screen.MainActivity;
 import com.yatenesturno.activities.tutorial_screen.Screen;
 import com.yatenesturno.activities.tutorial_screen.ScreenImpl;
 import com.yatenesturno.activities.tutorial_screen.TutorialScreenImpl;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
+import com.yatenesturno.functionality.ManagerPlace;
+import com.yatenesturno.functionality.PlacePremiumManager;
 import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.JobRequest;
+import com.yatenesturno.object_interfaces.Place;
 import com.yatenesturno.object_views.ViewJobRequest;
 import com.yatenesturno.serializers.BuilderListJobRequest;
 import com.yatenesturno.user_auth.UserManagement;
@@ -48,7 +52,7 @@ public class JobRequestActivity extends AppCompatActivity {
     private boolean isRunning;
     private boolean fromFirstShop;
 
-    private String placeId;
+    private Place place;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,16 +68,19 @@ public class JobRequestActivity extends AppCompatActivity {
 
         loadingOverlay = new LoadingOverlay(findViewById(R.id.containerRequests));
 
-        fromFirstShop = getIntent().getBooleanExtra("fromFirstShop", false);
+        //fromFirstShop = getIntent().getBooleanExtra("fromFirstShop", false);
 
         initUI();
         Bundle bundle = this.getIntent().getExtras();
+//
 
         if(bundle != null){
+            place = bundle.getParcelable("place") ;
             Toast.makeText(this, "Lo TEEENGOO", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "No tengo unamierda", Toast.LENGTH_SHORT).show();
         }
+
 
         //REVISAR//////////////////////////////////////
 //        if (savedInstanceState != null) {
@@ -85,9 +92,8 @@ public class JobRequestActivity extends AppCompatActivity {
 //            Toast.makeText(this, "TOY MAL", Toast.LENGTH_SHORT).show();
 //        }
 
-//        if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(this, placeId, UserManagement.getInstance().getUser().getId())) {
-//            Toast.makeText(this, "SOS PREMIUM", Toast.LENGTH_SHORT).show();
-//        }
+
+
         //////////HASTA ACA////////////////////////////////////////
 
     }
