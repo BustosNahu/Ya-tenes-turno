@@ -23,6 +23,7 @@ import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
 import com.yatenesturno.listeners.DatabaseCallback;
+import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.Place;
 import com.yatenesturno.object_views.ViewPlace;
 import com.yatenesturno.serializers.BuilderListPlace;
@@ -49,6 +50,7 @@ public class NewJobRequestActivity extends AppCompatActivity {
     private boolean fromFirstShop;
     Intent intent;
 
+    Place place;
     private String placeId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,21 +66,33 @@ public class NewJobRequestActivity extends AppCompatActivity {
         fromFirstShop = getIntent().getBooleanExtra("fromFirstShop", false);
         intent = new Intent(this, MainActivity.class);
 
-
+        init();
         initUI();
 
-        //SACAR TOAST
-        if (savedInstanceState == null) {
-            initUI();
-            Toast.makeText(this, "Estoy NULL", Toast.LENGTH_SHORT).show();
-        } else {
+
+
+
+        if (savedInstanceState != null) {
             recoverState(savedInstanceState);
-            Toast.makeText(this, "Estoy RECOVERSTATE", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Estoy donde tengo que estar", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Troll", Toast.LENGTH_SHORT).show();
         }
+
+        //SACAR TOAST
+//        if (savedInstanceState == null) {
+//            initUI();
+//            Toast.makeText(this, "Estoy NULL", Toast.LENGTH_SHORT).show();
+//        } else {
+//            recoverState(savedInstanceState);
+//            Toast.makeText(this, "Estoy RECOVERSTATE", Toast.LENGTH_SHORT).show();
+//        }
     }
 
     private void initUI() {
         setTitle("");
+
+
         SearchView searchView = findViewById(R.id.searchViewNewJobRequest);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewNewJobRequest);
 
@@ -91,7 +105,11 @@ public class NewJobRequestActivity extends AppCompatActivity {
         adapter.mItemClickListener = new ItemClickListenerSearchPlace();
         recyclerView.setAdapter(adapter);
 
+
+    }
+    private void init(){
         placeId = getIntent().getStringExtra("placeId");
+        //intent.putExtras(bundle);
     }
 
     @Override
@@ -103,6 +121,7 @@ public class NewJobRequestActivity extends AppCompatActivity {
 
     private Bundle saveState() {
         Bundle bundle = new Bundle();
+        bundle.putString("placeId", place.getId());
         bundle.putString(PLACE_ID, placeId);
         return bundle;
     }

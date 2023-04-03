@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.job_edit.service_configs.ServiceConfigCoordinator;
 import com.yatenesturno.activities.job_edit.service_configs.ValidationResult;
 import com.yatenesturno.activities.job_edit.service_configs.configurations.BookingConfiguration;
@@ -38,6 +39,7 @@ import com.yatenesturno.object_interfaces.Service;
 import com.yatenesturno.object_interfaces.ServiceInstance;
 import com.yatenesturno.objects.DayScheduleImpl;
 import com.yatenesturno.objects.ServiceInstanceImpl;
+import com.yatenesturno.user_auth.UserManagement;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,6 +94,7 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
     public void setBtnConfirmListener(ListenerConfirm listenerBtnConfirm) {
         this.listenerBtnConfirm = listenerBtnConfirm;
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -243,14 +246,23 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
         btnConfirm.setOnClickListener(view -> onBtnConfirmClicked());
     }
 
+
+    /**
+     * This method is to know when the button is clicked, so user could
+     * save al info about service, but obly premium users could do it
+     * so here is a validation premuim user
+     */
     public void onBtnConfirmClicked() {
         btnConfirm.hideLoading();
-        if (hasReachedBottomOfScrollView) {
-            configureJob();
-        } else {
-            hasReachedBottomOfScrollView = true;
-            setBtnToConfirm();
-            scrollDown();
+        if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
+
+            if (hasReachedBottomOfScrollView) {
+                configureJob();
+            } else {
+                hasReachedBottomOfScrollView = true;
+                setBtnToConfirm();
+                scrollDown();
+            }
         }
     }
 

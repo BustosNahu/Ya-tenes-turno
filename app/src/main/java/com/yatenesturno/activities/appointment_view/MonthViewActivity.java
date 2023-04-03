@@ -79,6 +79,8 @@ public class MonthViewActivity extends AppCompatActivity {
 
         loadingOverlay = new LoadingOverlay(findViewById(R.id.coordinator));
 
+
+
         if (savedInstanceState == null) {
             init();
         } else {

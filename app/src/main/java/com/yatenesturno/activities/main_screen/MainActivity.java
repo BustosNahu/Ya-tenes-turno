@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -57,10 +58,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MainActivity extends AppCompatActivity {
     private static final String FRAGMENT_MAIN_NAME = "fragment_main";
 
+
+
     private DrawerLayout drawerLayout;
     private FragmentMainViewPager fragmentMain;
     private Toolbar toolbar;
 
+    Place place;
     private boolean isRunning;
 
     @Override
@@ -365,9 +369,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void startJobRequestsActivity() {
+        Bundle bundle = new Bundle();
+        bundle.putString("placeId", place.getId());
         Intent intent = new Intent(this, JobRequestActivity.class);
-        intent.putExtra("fromFirstShop", false);
-        startActivityForResult(intent, Constants.RC_JOB_REQUESTS);
+        intent.putExtras(bundle);
+        startActivity(intent);
+//        intent.putExtra("fromFirstShop", false);
+//        intent.putExtra("placeId" , place.getId());
+        //startActivityForResult(intent, Constants.RC_JOB_REQUESTS);
     }
 
     private void startAdminPlacesActivity() {

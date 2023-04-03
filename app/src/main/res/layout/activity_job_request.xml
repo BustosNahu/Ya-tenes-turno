@@ -53,16 +53,19 @@
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/noPlaces"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="16dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="@string/nueva_solicitud_de_trabajo"
-                android:textColor="@color/white"
-                app:shapeAppearanceOverlay="@style/CustomExtendedFab" />
+            android:id="@+id/noPlaces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/nueva_solicitud_de_trabajo"
+            android:textColor="@color/white"
+            app:shapeAppearanceOverlay="@style/CustomExtendedFab" />
 
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

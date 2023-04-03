@@ -29,6 +29,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.activities.job_edit.days_off.DaysOffActivity;
 import com.yatenesturno.activities.tutorial_screen.Screen;
 import com.yatenesturno.activities.tutorial_screen.ScreenImpl;
@@ -41,6 +42,7 @@ import com.yatenesturno.object_interfaces.DaySchedule;
 import com.yatenesturno.object_interfaces.Job;
 import com.yatenesturno.object_interfaces.Place;
 import com.yatenesturno.object_interfaces.ServiceInstance;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 
 import java.util.Arrays;
@@ -61,7 +63,8 @@ public class EditJobActivity extends AppCompatActivity {
     private Job originalJob;
     private Job editedJob;
 
-    public void SetJobActivity(Job job, Place place){
+
+    public void SetJobActivity(Job job, Place place) {
         this.originalJob = job;
         this.place = place;
     }
@@ -105,6 +108,7 @@ public class EditJobActivity extends AppCompatActivity {
             recoverState(savedInstanceState);
             initViews();
         }
+
     }
 
     private void initUI() {
@@ -190,6 +194,7 @@ public class EditJobActivity extends AppCompatActivity {
 
             Bundle bundle = new Bundle();
             bundle.putParcelable("job", editedJob);
+            bundle.putParcelable("place", place);
             intent.putExtras(bundle);
 
             configLauncher.launch(intent);
@@ -198,7 +203,15 @@ public class EditJobActivity extends AppCompatActivity {
 
     private void setUpSwitchCancellableApps() {
         switchUserCancellableApps.setChecked(originalJob.canUserCancelApps());
-        switchUserCancellableApps.setOnCheckedChangeListener((buttonView, isChecked) -> editedJob.setUserCanCancelApps(isChecked));
+        switchUserCancellableApps.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+                if (isChecked) {
+                    editedJob.setUserCanCancelApps(isChecked);
+                } else {
+                    //editedJob.setUserCanCancelApps(isChecked);
+                }
+            }
+        });
     }
 
     private void setEditServicesBtnListener() {

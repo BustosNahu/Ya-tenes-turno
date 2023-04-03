@@ -553,7 +553,7 @@ public class FragmentAdminClients extends Fragment {
      * Metod who inflates a dialog, and before to confirm promotion, it validates premium or not premium user.
      * if the user is not premium, it shows you getPremimum screen
      */
-    public void displayNewPromoDialog() {
+    public void  displayNewPromoDialog() {
         final View view = getLayoutInflater().inflate(R.layout.new_promo_dialog, null);
         LoadingButton btnConfirm = view.findViewById(R.id.btnConfirm);
         TextInputLayout textInputLayout = view.findViewById(R.id.textInputExtraInfo);

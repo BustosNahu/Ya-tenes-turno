@@ -16,6 +16,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.custom_views.JobDateSelection;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.functionality.ManagerAppointment;
@@ -23,6 +24,8 @@ import com.yatenesturno.functionality.days_off.DayOff;
 import com.yatenesturno.functionality.days_off.DaysOffManager;
 import com.yatenesturno.object_interfaces.Appointment;
 import com.yatenesturno.object_interfaces.Job;
+import com.yatenesturno.object_interfaces.Place;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 
 import java.util.Calendar;
@@ -31,6 +34,8 @@ import java.util.List;
 public class DaysOffActivity extends AppCompatActivity {
 
     private Job job;
+
+    private Place place;
 
 
     private AppCompatTextView labelDayStatus;
@@ -66,6 +71,7 @@ public class DaysOffActivity extends AppCompatActivity {
 
     private void setState(Bundle extras) {
         job = extras.getParcelable("job");
+        place = extras.getParcelable("place");
     }
 
     @Override
@@ -120,22 +126,30 @@ public class DaysOffActivity extends AppCompatActivity {
         ((ImageView) findViewById(R.id.imageViewDayOff)).setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.day_off));
     }
 
-    private void enableDay() {
-        showBtnProgressBar();
-        DaysOffManager.getInstance().removeFromDayOff(job, selectedDay, new DaysOffManager.OnUpdateDayOffListener() {
-            @Override
-            public void onUpdate() {
-                jobDateSelection.removeDayOff(selectedDay);
-                hideBtnProgressBar();
-                initDayOffView();
-                setResult(RESULT_OK);
-            }
 
-            @Override
-            public void onFailure() {
-                hideBtnProgressBar();
-            }
-        });
+    /**
+     * This method is to able a day, but first
+     * it checks if the user is or not premium,
+     * if not, it shows getPremium screen
+     */
+    private void enableDay() {
+        if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+            showBtnProgressBar();
+            DaysOffManager.getInstance().removeFromDayOff(job, selectedDay, new DaysOffManager.OnUpdateDayOffListener() {
+                @Override
+                public void onUpdate() {
+                    jobDateSelection.removeDayOff(selectedDay);
+                    hideBtnProgressBar();
+                    initDayOffView();
+                    setResult(RESULT_OK);
+                }
+
+                @Override
+                public void onFailure() {
+                    hideBtnProgressBar();
+                }
+            });
+        }
     }
 
     private void initSelectedDayIsActive() {
@@ -148,23 +162,30 @@ public class DaysOffActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method is to enable a day, but first
+     * it checks if the user is or not premium,
+     * if not, it shows getPremium screen
+     */
     private void verifyAppointments() {
-        showBtnProgressBar();
-        ManagerAppointment.getInstance().getAppointmentForJob(job, selectedDay, new ManagerAppointment.OnAppointmentFetchListener() {
-            @Override
-            public void onFetch(List<Appointment> appointmentList) {
-                if (appointmentList.size() > 0) {
-                    showWarning();
-                } else {
-                    disableDay();
+        if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+            showBtnProgressBar();
+            ManagerAppointment.getInstance().getAppointmentForJob(job, selectedDay, new ManagerAppointment.OnAppointmentFetchListener() {
+                @Override
+                public void onFetch(List<Appointment> appointmentList) {
+                    if (appointmentList.size() > 0) {
+                        showWarning();
+                    } else {
+                        disableDay();
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure() {
-                showWarning();
-            }
-        });
+                @Override
+                public void onFailure() {
+                    showWarning();
+                }
+            });
+        }
     }
 
     private void showWarning() {
