@@ -11,21 +11,23 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302">
 
         <TextView
             android:id="@+id/tv_first"
             style="@style/MontserratRegular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginLeft="80dp"
             android:gravity="center"
+            android:lineHeight="31dp"
+            android:lines="3"
             android:text="@string/tx_web_screen"
             android:textSize="24sp"
-            android:lines="3"
-            android:lineHeight="31dp"
 
             />
 
@@ -48,7 +50,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:text="Para ello, sólo debes"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_fifth"
@@ -57,9 +59,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_fourth"
             android:layout_centerHorizontal="true"
-            android:text="tener tu tienda"
             android:fontFamily="@font/product_thin"
-            android:textSize="24sp"/>
+            android:text="tener tu tienda"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_sixth"
@@ -68,9 +70,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_fifth"
             android:layout_centerHorizontal="true"
-            android:text="configurada y hacer click"
             android:fontFamily="@font/montserrat_semi_bold"
-            android:textSize="24sp"/>
+            android:text="configurada y hacer click"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_seventh"
@@ -79,9 +81,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_sixth"
             android:layout_centerHorizontal="true"
-            android:text="en el siguiente link:"
             android:fontFamily="@font/montserrat_semi_bold"
-            android:textSize="24sp"/>
+            android:text="en el siguiente link:"
+            android:textSize="24sp" />
 
 
         <ImageView
@@ -89,11 +91,10 @@
             android:layout_width="300dp"
             android:layout_height="43dp"
             android:layout_below="@id/tv_seventh"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/ic_web_link"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:clickable="true"
-            />
+            android:src="@drawable/ic_web_link" />
 
 
     </RelativeLayout>

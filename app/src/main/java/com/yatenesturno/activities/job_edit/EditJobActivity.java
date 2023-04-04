@@ -5,6 +5,7 @@ import android.animation.PropertyValuesHolder;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -56,6 +57,12 @@ public class EditJobActivity extends AppCompatActivity {
      */
     private static final String DAY_SCHEDULE_FRAGMENT = "dayScheduleFragment";
 
+    private static final String SWITCH_STATUS = "switch_status";
+
+    private static final String MY_PREF = "switch_pref";
+
+    boolean switch_status;
+
     /**
      * Instance variables
      */
@@ -63,6 +70,8 @@ public class EditJobActivity extends AppCompatActivity {
     private Job originalJob;
     private Job editedJob;
 
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     public void SetJobActivity(Job job, Place place) {
         this.originalJob = job;
@@ -123,6 +132,10 @@ public class EditJobActivity extends AppCompatActivity {
             Log.d("editJobActivity EDITED CLONED", editedJob.getDaySchedules().toString());
             initViews();
         }
+        sharedPreferences =getSharedPreferences(MY_PREF, MODE_PRIVATE);
+        editor = getSharedPreferences(MY_PREF, MODE_PRIVATE).edit();
+
+        switch_status = sharedPreferences.getBoolean(SWITCH_STATUS,true);
 
     }
 
@@ -203,15 +216,7 @@ public class EditJobActivity extends AppCompatActivity {
 
     private void setUpSwitchCancellableApps() {
         switchUserCancellableApps.setChecked(originalJob.canUserCancelApps());
-        switchUserCancellableApps.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(this, place.getId(), UserManagement.getInstance().getUser().getId())) {
-                if (isChecked) {
-                    editedJob.setUserCanCancelApps(isChecked);
-                } else {
-                    //editedJob.setUserCanCancelApps(isChecked);
-                }
-            }
-        });
+        switchUserCancellableApps.setOnCheckedChangeListener((buttonView, isChecked) -> editedJob.setUserCanCancelApps(isChecked));
     }
 
     private void setEditServicesBtnListener() {
