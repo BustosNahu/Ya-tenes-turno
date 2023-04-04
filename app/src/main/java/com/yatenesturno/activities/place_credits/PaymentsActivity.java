@@ -67,6 +67,7 @@ public class PaymentsActivity extends AppCompatActivity {
     private void setUpNavBar() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(getDrawable(R.color.white));
+        getSupportActionBar().setTitle("Mis Cobros");
         getSupportActionBar().setElevation(0);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }

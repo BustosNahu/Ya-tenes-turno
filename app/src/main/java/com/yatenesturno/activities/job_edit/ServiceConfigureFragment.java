@@ -247,23 +247,18 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
     }
 
 
-    /**
-     * This method is to know when the button is clicked, so user could
-     * save al info about service, but obly premium users could do it
-     * so here is a validation premuim user
-     */
+
     public void onBtnConfirmClicked() {
         btnConfirm.hideLoading();
-        if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
 
             if (hasReachedBottomOfScrollView) {
-                configureJob();
+                    configureJob();
             } else {
-                hasReachedBottomOfScrollView = true;
-                setBtnToConfirm();
-                scrollDown();
+                    hasReachedBottomOfScrollView = true;
+                    setBtnToConfirm();
+                    scrollDown();
             }
-        }
+
     }
 
     private void scrollDown() {
@@ -301,9 +296,16 @@ public class ServiceConfigureFragment extends Fragment implements ServiceConfigC
         refreshUI();
     }
 
+
+    /**
+     * This method is to know when the button is clicked, so user could
+     * save al info about service, but obly premium users could do it
+     * so here is a validation premuim user
+     */
     private void configureJob() {
         if (validateData()) {
-            createOrUpdateServiceInstance();
+            if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
+            createOrUpdateServiceInstance();}
         }
     }
 

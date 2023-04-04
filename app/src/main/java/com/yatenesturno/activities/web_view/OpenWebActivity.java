@@ -25,7 +25,7 @@ public class OpenWebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_web);
 
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.color.black));
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.color.white));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setTitle("Mi PC - IPhone");

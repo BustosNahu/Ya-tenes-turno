@@ -31,11 +31,11 @@
             style="@style/SemiBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="para hacer uso de                               nuestras herramientas"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/cards_background"
                 android:orientation="horizontal"
@@ -113,7 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/cards_background"
                 android:orientation="horizontal"
@@ -146,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/cards_background"
                 android:orientation="horizontal"
@@ -179,7 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/cards_background"
                 android:orientation="horizontal"
@@ -207,16 +207,26 @@
                     android:textSize="23sp" />
             </LinearLayout>
 
-        <Button
+        <ImageView
             android:id="@+id/btnGetPremium"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="@string/view_sub_options"
+            android:layout_height="107dp"
+            android:src="@drawable/ic_ofertas"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:clickable="true"
+            />
+        <!--        <Button-->
+<!--            android:id="@+id/btnGetPremium"-->
+<!--            style="@style/Widget.AppCompat.Button.Borderless.Colored"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            android:text="@string/view_sub_options"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

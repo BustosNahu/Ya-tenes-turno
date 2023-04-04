@@ -28,7 +28,6 @@
         tools:targetApi="s">
         <activity
             android:name=".activities.web_view.OpenWebActivity"
-            android:theme="@style/BlackColoredAppTheme"
             android:exported="false" />
         <activity
             android:name=".activities.splash_activity.SplashActivity"
@@ -100,7 +99,7 @@
             android:theme="@style/BlackColoredAppTheme" />
         <activity
             android:name=".activities.get_premium.SubscriptionsTemplatesActivity"
-            android:theme="@style/BlackColoredAppTheme" />
+             />
         <activity android:name=".activities.job_appointment_book.AnonymousAppActivity" />
 
         <meta-data

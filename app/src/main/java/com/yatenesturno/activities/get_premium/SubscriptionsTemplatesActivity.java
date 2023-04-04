@@ -61,7 +61,7 @@ public class SubscriptionsTemplatesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_subscriptions_templates);
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.color.black));
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.color.white));
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setTitle("Suscripciones");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

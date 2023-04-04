@@ -14,7 +14,15 @@
         android:text="@string/privacy_policy"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/grey_ui" />
 
     <Button
         android:id="@+id/btnTermsCond"
@@ -24,7 +32,15 @@
         android:text="@string/terms_cond"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/grey_ui" />
 
 
 </LinearLayout>

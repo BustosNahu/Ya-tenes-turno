@@ -73,7 +73,7 @@ public class ClientInfoSelectionFragment extends Fragment {
         outState.putAll(saveState());
     }
 
-/////////////////////////////////////////////////////REVISAR/////////////////////////////////////////////////////////////------------------/////////////////////////////
+
     private Bundle saveState() {
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList(CLIENT_LIST, clientList);
@@ -172,33 +172,32 @@ public class ClientInfoSelectionFragment extends Fragment {
 
 
     /**
-     * This method listen when the user click on the button,
-     * and it calls another method to validate dates,
-     * but first it validates if the user is premium or not, is answer es not,
-     * it shows the user getPremium screen
+     * This method listen when the user click on the button
      */
     private void setBtnConfirmListener() {
         btnConfirm.setOnClickListener(v ->{
-            if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())){
             onConfirmClicked();}
-        } );
+        );
     }
 
 
     /**
-     * Method to know when the btnConfirm is clicked
+     * Method to know when the btnConfirm is clicked,
+     * and it calls another method to validate dates,
+     * but first it validates if the user is premium or not, is answer es not,
+     * it shows the user getPremium scree
      */
     public void onConfirmClicked() {
             if (selectedClient == null) {
                 if (validateClientInfo()) {
-
-                    listener.onConfirm(
-                            tietName.getText().toString(),
-                            tietEmail.getText().toString(),
-                            "+549" + tietPhone.getText().toString()
-                    );
+                    if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())) {
+                        listener.onConfirm(
+                                tietName.getText().toString(),
+                                tietEmail.getText().toString(),
+                                "+549" + tietPhone.getText().toString()
+                        );
+                    }
                 }
-
             } else {
                 listener.onConfirm(
                         selectedClient.getName(),
