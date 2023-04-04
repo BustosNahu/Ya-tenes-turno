@@ -1,5 +1,7 @@
 package com.yatenesturno.activities.job_edit;
 
+import static com.yatenesturno.activities.get_premium.GetPremiumActivity.showPremiumInfoFromActivity;
+
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.Activity;
@@ -132,10 +134,7 @@ public class EditJobActivity extends AppCompatActivity {
             Log.d("editJobActivity EDITED CLONED", editedJob.getDaySchedules().toString());
             initViews();
         }
-        sharedPreferences =getSharedPreferences(MY_PREF, MODE_PRIVATE);
-        editor = getSharedPreferences(MY_PREF, MODE_PRIVATE).edit();
 
-        switch_status = sharedPreferences.getBoolean(SWITCH_STATUS,true);
 
     }
 
@@ -191,13 +190,30 @@ public class EditJobActivity extends AppCompatActivity {
 
     private void initViews() {
         findViewById(R.id.holderContent).setVisibility(View.VISIBLE);
-
+        switchBeAblePremium();
         setUpSwitchCancellableApps();
         setEditServicesBtnListener();
         setUpDayScheduleFragment();
         setUpEmergencyFragment();
         setUpDayOff();
     }
+
+    private void switchBeAblePremium() {
+        if (GetPremiumActivity.hasPremiumInPlace(place.getId(),UserManagement.getInstance().getUser().getId())){
+            switchUserCancellableApps.setEnabled(true);
+
+        }
+        else {
+            switchUserCancellableApps.setEnabled(false);
+
+            switchUserCancellableApps.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showPremiumInfoFromActivity(EditJobActivity.this, place.getId());
+                }
+            });}
+    }
+
 
     private void setUpDayOff() {
         View view = findViewById(R.id.btnOpenDayOffConfig);
