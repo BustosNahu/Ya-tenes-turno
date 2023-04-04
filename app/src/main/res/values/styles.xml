@@ -20,6 +20,8 @@
         <item name="fontFamily">@font/product_extra_bold</item>
     </style>
 
+
+
     <style name="NormalBold">
         <item name="fontFamily">@font/monserrat_bold</item>
     </style>

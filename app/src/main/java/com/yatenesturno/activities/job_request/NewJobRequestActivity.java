@@ -68,27 +68,9 @@ public class NewJobRequestActivity extends AppCompatActivity {
         fromFirstShop = getIntent().getBooleanExtra("fromFirstShop", false);
         intent = new Intent(this, MainActivity.class);
 
-        init();
+
         initUI();
 
-
-
-
-        if (savedInstanceState != null) {
-            recoverState(savedInstanceState);
-            Toast.makeText(this, "Estoy donde tengo que estar", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this, "Troll", Toast.LENGTH_SHORT).show();
-        }
-
-        //SACAR TOAST
-//        if (savedInstanceState == null) {
-//            initUI();
-//            Toast.makeText(this, "Estoy NULL", Toast.LENGTH_SHORT).show();
-//        } else {
-//            recoverState(savedInstanceState);
-//            Toast.makeText(this, "Estoy RECOVERSTATE", Toast.LENGTH_SHORT).show();
-//        }
     }
 
     private void initUI() {
@@ -109,28 +91,8 @@ public class NewJobRequestActivity extends AppCompatActivity {
 
 
     }
-    private void init(){
-        placeId = getIntent().getStringExtra("placeId");
-        //intent.putExtras(bundle);
-    }
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
 
-        outState.putAll(saveState());
-    }
-
-    private Bundle saveState() {
-        Bundle bundle = new Bundle();
-        bundle.putString("placeId", place.getId());
-        bundle.putString(PLACE_ID, placeId);
-        return bundle;
-    }
-
-    private void recoverState(Bundle bundle){
-        placeId = bundle.getString(PLACE_ID);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

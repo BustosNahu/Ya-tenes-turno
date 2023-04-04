@@ -77,6 +77,7 @@ public class LoadingButton extends LinearLayoutCompat {
     @Override
     public void setOnClickListener(@Nullable @org.jetbrains.annotations.Nullable OnClickListener l) {
         cardView.setOnClickListener(view -> {
+
             showLoading();
             l.onClick(view);
         });

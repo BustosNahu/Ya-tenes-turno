@@ -67,34 +67,9 @@ public class JobRequestActivity extends AppCompatActivity {
         setTitle("");
 
         loadingOverlay = new LoadingOverlay(findViewById(R.id.containerRequests));
-
-        //fromFirstShop = getIntent().getBooleanExtra("fromFirstShop", false);
-
+        fromFirstShop = getIntent().getBooleanExtra("fromFirstShop", false);
         initUI();
-        Bundle bundle = this.getIntent().getExtras();
-//
 
-        if(bundle != null){
-            place = bundle.getParcelable("place") ;
-            Toast.makeText(this, "Lo TEEENGOO", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(this, "No tengo unamierda", Toast.LENGTH_SHORT).show();
-        }
-
-
-        //REVISAR//////////////////////////////////////
-//        if (savedInstanceState != null) {
-//            placeId = savedInstanceState.getString(PLACE_ID);
-//            Toast.makeText(this, "TOY BIEN", Toast.LENGTH_SHORT).show();
-//
-//        } else {
-//            placeId = getIntent().getStringExtra(PLACE_ID);
-//            Toast.makeText(this, "TOY MAL", Toast.LENGTH_SHORT).show();
-//        }
-
-
-
-        //////////HASTA ACA////////////////////////////////////////
 
     }
 

@@ -92,19 +92,6 @@ public class GetPremiumActivity extends AppCompatActivity {
     private void initUI() {
         findViewById(R.id.btnGetPremium).setOnClickListener(view -> startSubsOptionActivity());
 
-        if (place != null) {
-            ((TextView) findViewById(R.id.textView2)).setText(
-                    getString(R.string.premium_invite_with_place,
-                            UserManagement.getInstance().getUser().getGivenName(),
-                            place.getBusinessName()
-                    ));
-        } else {
-            ((TextView) findViewById(R.id.textView2)).setText(
-                    getString(R.string.premium_invite_without_place,
-                            UserManagement.getInstance().getUser().getGivenName()
-                    ));
-        }
-
         loadingOverlay = new LoadingOverlay(findViewById(R.id.coordinator));
     }
 

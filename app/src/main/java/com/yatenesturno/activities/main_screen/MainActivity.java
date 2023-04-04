@@ -376,9 +376,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, JobRequestActivity.class);
         intent.putExtra("fromFirstShop", false);
-        //startActivity(intent);
-//        intent.putExtra("fromFirstShop", false);
-//        intent.putExtra("placeId" , place.getId());
         startActivityForResult(intent, Constants.RC_JOB_REQUESTS);
     }
 
