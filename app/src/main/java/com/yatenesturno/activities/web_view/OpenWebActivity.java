@@ -3,10 +3,15 @@ package com.yatenesturno.activities.web_view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.yatenesturno.R;
@@ -17,7 +22,9 @@ public class OpenWebActivity extends AppCompatActivity {
     String uri = "https://yatenesturno.com.ar/login";
 
 
-    ImageView iv_web;
+    ImageView iv_web_link;
+    private Animation iv_web_link_anim;
+
 
 
     @Override
@@ -32,6 +39,7 @@ public class OpenWebActivity extends AppCompatActivity {
 
         initViews();
         linkClicked();
+
     }
 
     /**
@@ -40,7 +48,7 @@ public class OpenWebActivity extends AppCompatActivity {
      * and it opens login web
      */
     private void linkClicked() {
-        iv_web.setOnClickListener(new View.OnClickListener() {
+        iv_web_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
@@ -59,6 +67,9 @@ public class OpenWebActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        iv_web = findViewById(R.id.iv_web_link);
+        iv_web_link = findViewById(R.id.iv_web_link);
+        iv_web_link_anim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.web_link_anim);
+        iv_web_link.startAnimation(iv_web_link_anim);
+
     }
 }

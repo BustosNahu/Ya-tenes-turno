@@ -199,11 +199,13 @@ public class ClientInfoSelectionFragment extends Fragment {
                     }
                 }
             } else {
-                listener.onConfirm(
-                        selectedClient.getName(),
-                        selectedClient.getEmail(),
-                        null
-                );
+                if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())) {
+                    listener.onConfirm(
+                            selectedClient.getName(),
+                            selectedClient.getEmail(),
+                            null
+                    );
+                }
             }
         //}
     }

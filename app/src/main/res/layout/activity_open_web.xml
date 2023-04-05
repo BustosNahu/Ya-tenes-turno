@@ -14,7 +14,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302">
+        app:layout_constraintVertical_bias="0.229">
 
         <TextView
             android:id="@+id/tv_first"
@@ -27,9 +27,7 @@
             android:lineHeight="31dp"
             android:lines="3"
             android:text="@string/tx_web_screen"
-            android:textSize="24sp"
-
-            />
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/iv_pc_phone"
@@ -85,6 +83,20 @@
             android:text="en el siguiente link:"
             android:textSize="24sp" />
 
+        <!--        <Button-->
+        <!--            android:id="@+id/bt_web"-->
+        <!--            android:layout_width="300dp"-->
+        <!--            android:layout_height="43dp"-->
+        <!--            android:layout_below="@id/tv_seventh"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            android:layout_marginBottom="5dp"-->
+        <!--            android:text="yatenesturno.com.ar"-->
+        <!--            android:textAllCaps="false"-->
+        <!--            android:textSize="20sp"-->
+        <!--            android:drawableEnd="@drawable/ic_finger"-->
+
+        <!--            />-->
 
         <ImageView
             android:id="@+id/iv_web_link"
@@ -93,7 +105,10 @@
             android:layout_below="@id/tv_seventh"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
             android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:foregroundGravity="bottom"
             android:src="@drawable/ic_web_link" />
 
 
