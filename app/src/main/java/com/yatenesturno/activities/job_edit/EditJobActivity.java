@@ -250,22 +250,18 @@ public class EditJobActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
                     if (b == true) {
-                        //if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+                        //save new option selected by the user
                         editedJob.setUserCanCancelApps(b);
-                        //}
-                        //returnStateFalse();
                     } else if (b == false) {
-
-                        //if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+                        //save new option selected by the user
                         editedJob.setUserCanCancelApps(b);
-                        // }
-                        //returnStateTrue();
+
                     }
                 }else if(b == true){
-                    //no es premium
+                    //is not premium so returns to his last value
                     returnStateFalse();
                 }else if(b == false){
-                    //no es premium
+                    //is not premium so returns to his last value
                     returnStateTrue();
                 }
             }
