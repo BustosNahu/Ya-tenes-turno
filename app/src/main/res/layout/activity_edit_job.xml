@@ -25,6 +25,13 @@
                 android:layout_marginBottom="64dp"
                 android:visibility="visible">
 
+                <LinearLayout
+                    android:id="@+id/layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:clickable="true">
+
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchUserCancellableApps"
                     android:layout_width="match_parent"
@@ -35,12 +42,13 @@
                     android:text="@string/allow_user_cancellable_apps"
                     android:textSize="16sp"
                     />
+                </LinearLayout>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnOpenDayOffConfig"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/switchUserCancellableApps"
+                    android:layout_below="@id/layout"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"

@@ -19,6 +19,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -71,6 +73,8 @@ public class EditJobActivity extends AppCompatActivity {
     private Place place;
     private Job originalJob;
     private Job editedJob;
+
+    private LinearLayout layout;
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -190,28 +194,33 @@ public class EditJobActivity extends AppCompatActivity {
 
     private void initViews() {
         findViewById(R.id.holderContent).setVisibility(View.VISIBLE);
-        switchBeAblePremium();
         setUpSwitchCancellableApps();
         setEditServicesBtnListener();
         setUpDayScheduleFragment();
         setUpEmergencyFragment();
         setUpDayOff();
+
     }
 
-    private void switchBeAblePremium() {
-        if (GetPremiumActivity.hasPremiumInPlace(place.getId(),UserManagement.getInstance().getUser().getId())){
-            switchUserCancellableApps.setEnabled(true);
+    private void notSetUpSwitchCancellable() {
+        switchUserCancellableApps.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+//                        onCheckedChanged(switchUserCancellableApps, true);
+                    }
+//                    onCheckedChanged(switchUserCancellableApps, true);
 
-        }
-        else {
-            switchUserCancellableApps.setEnabled(false);
-
-            switchUserCancellableApps.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    showPremiumInfoFromActivity(EditJobActivity.this, place.getId());
+                } else {
+                    if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+//                        onCheckedChanged(switchUserCancellableApps, false);
+                    }
+//                    onCheckedChanged(switchUserCancellableApps, true);
                 }
-            });}
+            }
+        });
+
     }
 
 
@@ -231,8 +240,45 @@ public class EditJobActivity extends AppCompatActivity {
     }
 
     private void setUpSwitchCancellableApps() {
+        //editedJob.setUserCanCancelApps(isChecked));
+        //switchUserCancellableApps.setOnCheckedChangeListener(null);
+
+        //INICIA EL SWITCH SEGUN EL USUARIO ASI LO HAYA CONFIGURADO ANTERIORMENTE
         switchUserCancellableApps.setChecked(originalJob.canUserCancelApps());
-        switchUserCancellableApps.setOnCheckedChangeListener((buttonView, isChecked) -> editedJob.setUserCanCancelApps(isChecked));
+        switchUserCancellableApps.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+                    if (b == true) {
+                        //if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+                        editedJob.setUserCanCancelApps(b);
+                        //}
+                        //returnStateFalse();
+                    } else if (b == false) {
+
+                        //if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(EditJobActivity.this, place.getId(), UserManagement.getInstance().getUser().getId())) {
+                        editedJob.setUserCanCancelApps(b);
+                        // }
+                        //returnStateTrue();
+                    }
+                }else if(b == true){
+                    //no es premium
+                    returnStateFalse();
+                }else if(b == false){
+                    //no es premium
+                    returnStateTrue();
+                }
+            }
+        });
+
+    }
+
+    private void returnStateTrue() {
+        switchUserCancellableApps.setChecked(true);
+    }
+
+    private void returnStateFalse() {
+        switchUserCancellableApps.setChecked(false);
     }
 
     private void setEditServicesBtnListener() {
