@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.web_view.OpenWebActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229">
+
+        <TextView
+            android:id="@+id/tv_first"
+            style="@style/MontserratRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="80dp"
+            android:gravity="center"
+            android:lineHeight="31dp"
+            android:lines="3"
+            android:text="@string/tx_web_screen"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/iv_pc_phone"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/tv_first"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_pc_phone" />
+
+
+        <TextView
+            android:id="@+id/tv_fourth"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_pc_phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Para ello, sólo debes"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_fifth"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fourth"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/product_thin"
+            android:text="tener tu tienda"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_sixth"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fifth"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="configurada y hacer click"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_seventh"
+            style="@style/SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_sixth"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="en el siguiente link:"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/iv_web_link"
+            android:layout_width="300dp"
+            android:layout_height="43dp"
+            android:layout_below="@id/tv_seventh"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:foregroundGravity="bottom"
+            android:src="@drawable/ic_web_link" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
