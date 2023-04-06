@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.google.android.material.snackbar.Snackbar;
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.custom_views.LoadingButton;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.custom_views.NonSwipeableViewPager;
@@ -26,6 +27,7 @@ import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.Job;
 import com.yatenesturno.object_interfaces.Label;
 import com.yatenesturno.object_interfaces.ServiceInstance;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.CalendarUtils;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 import com.yatenesturno.utils.TimeZoneManager;
@@ -194,6 +196,13 @@ public class AnonymousAppActivity extends AppCompatActivity {
         viewPager.setCurrentItem(1);
     }
 
+    /**
+     * Method to show user a dialog with the client information, and checks when the user
+     * clicks on the confirmButton, but it validates if the user is premium or not too.
+     * @param name
+     * @param email
+     * @param phonenumber
+     */
     private void onClientInfoConfirmed(final String name, final String email, final String phonenumber) {
         View view = getLayoutInflater().inflate(R.layout.dialog_anonymous_app_overview, null, false);
         CustomAlertDialogBuilder builder = new CustomAlertDialogBuilder(this)
@@ -218,8 +227,16 @@ public class AnonymousAppActivity extends AppCompatActivity {
         labelDate.setText(CalendarUtils.formatDate(TimeZoneManager.fromUTC(selectedCalendar)));
         labelTime.setText(CalendarUtils.formatTime(TimeZoneManager.fromUTC(selectedCalendar)));
         labelServices.setText(getServicesString());
-        btnConfirm.setOnClickListener(view1 -> postAppointment(name, email, phonenumber, checkBoxNotify.isChecked(), checkBoxCredits.isChecked(), btnConfirm, builder));
-
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(AnonymousAppActivity.this, placeId, UserManagement.getInstance().getUser().getId())){
+                    btnConfirm.showLoading();
+                    postAppointment(name, email, phonenumber, checkBoxNotify.isChecked(), checkBoxCredits.isChecked(), btnConfirm, builder);
+                }else{
+                btnConfirm.hideLoading();}
+            }
+        });
         builder.show();
     }
 

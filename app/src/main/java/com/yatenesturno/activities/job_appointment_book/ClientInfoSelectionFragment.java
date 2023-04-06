@@ -190,22 +190,22 @@ public class ClientInfoSelectionFragment extends Fragment {
     public void onConfirmClicked() {
             if (selectedClient == null) {
                 if (validateClientInfo()) {
-                    if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())) {
+                  //  if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())) {
                         listener.onConfirm(
                                 tietName.getText().toString(),
                                 tietEmail.getText().toString(),
                                 "+549" + tietPhone.getText().toString()
                         );
-                    }
+                    //}
                 }
             } else {
-                if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())) {
+               // if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())) {
                     listener.onConfirm(
                             selectedClient.getName(),
                             selectedClient.getEmail(),
                             null
                     );
-                }
+               // }
             }
         //}
     }
