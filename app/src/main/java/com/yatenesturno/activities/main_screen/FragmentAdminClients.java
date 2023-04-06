@@ -565,6 +565,7 @@ public class FragmentAdminClients extends Fragment {
                         .setView(view);
 
         btnConfirm.setOnClickListener(view1 -> {
+
             //Condition to validate if the user has any place yet, if the user has already make it,
             // validate if it a premium user or not, if the user don't has it, it shows the getPremium screen to the user.
             if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
@@ -577,6 +578,8 @@ public class FragmentAdminClients extends Fragment {
                 } else {
                     textInputLayout.setError("Por favor ingrese un mensaje");
                 }
+                btnConfirm.hideLoading();
+            }else {
                 btnConfirm.hideLoading();
             }
         });
