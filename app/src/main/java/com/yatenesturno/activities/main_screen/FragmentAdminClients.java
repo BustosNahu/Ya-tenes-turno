@@ -553,7 +553,7 @@ public class FragmentAdminClients extends Fragment {
      * Metod who inflates a dialog, and before to confirm promotion, it validates premium or not premium user.
      * if the user is not premium, it shows you getPremimum screen
      */
-    public void  displayNewPromoDialog() {
+    public void displayNewPromoDialog() {
         final View view = getLayoutInflater().inflate(R.layout.new_promo_dialog, null);
         LoadingButton btnConfirm = view.findViewById(R.id.btnConfirm);
         TextInputLayout textInputLayout = view.findViewById(R.id.textInputExtraInfo);
@@ -568,20 +568,21 @@ public class FragmentAdminClients extends Fragment {
 
             //Condition to validate if the user has any place yet, if the user has already make it,
             // validate if it a premium user or not, if the user don't has it, it shows the getPremium screen to the user.
-            if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
 
                 String description = ((EditText) view.findViewById(R.id.etNewPromo)).getText().toString();
                 if (!TextUtils.isEmpty(description)) {
-                    textInputLayout.setError(null);
-                    sendNewPromo(description);
-                    builder.dismiss();
+                    if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(getActivity(), place.getId(), UserManagement.getInstance().getUser().getId())) {
+                        textInputLayout.setError(null);
+                        sendNewPromo(description);
+                        builder.dismiss();
+                    }
                 } else {
                     textInputLayout.setError("Por favor ingrese un mensaje");
                 }
                 btnConfirm.hideLoading();
-            }else {
-                btnConfirm.hideLoading();
-            }
+//            } else {
+//                btnConfirm.hideLoading();
+//            }
         });
 
 
