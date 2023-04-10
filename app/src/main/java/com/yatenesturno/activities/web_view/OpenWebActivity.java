@@ -1,6 +1,7 @@
 package com.yatenesturno.activities.web_view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +13,8 @@ import android.view.animation.AnimationUtils;
 
 import android.widget.ImageView;
 
+import com.facebook.shimmer.Shimmer;
+import com.facebook.shimmer.ShimmerDrawable;
 import com.yatenesturno.R;
 
 public class OpenWebActivity extends AppCompatActivity {
@@ -66,8 +69,23 @@ public class OpenWebActivity extends AppCompatActivity {
 
     private void initViews() {
         iv_web_link = findViewById(R.id.iv_web_link);
-        iv_web_link_anim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.web_link_anim);
-        iv_web_link.startAnimation(iv_web_link_anim);
+        initAnimation();
 
+
+    }
+
+    private void initAnimation() {
+        Shimmer shimmer = new Shimmer.AlphaHighlightBuilder()
+                .setDuration(1500)
+                .setBaseAlpha(0.9f)
+                .setHighlightAlpha(1f)
+                .setDirection(Shimmer.Direction.LEFT_TO_RIGHT)
+                .setAutoStart(true)
+                .build();
+
+        // Agrega el shimmer a la ImageView
+        ShimmerDrawable shimmerDrawable = new ShimmerDrawable();
+        shimmerDrawable.setShimmer(shimmer);
+        iv_web_link.setImageDrawable(shimmerDrawable);
     }
 }
