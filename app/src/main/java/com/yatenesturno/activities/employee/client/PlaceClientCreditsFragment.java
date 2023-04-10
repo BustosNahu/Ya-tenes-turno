@@ -18,6 +18,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.custom_views.JobDateSelectionButton;
 import com.yatenesturno.custom_views.LoadingButton;
 import com.yatenesturno.custom_views.ServiceSelectionView;
@@ -30,6 +31,7 @@ import com.yatenesturno.object_interfaces.PlaceCredits;
 import com.yatenesturno.object_interfaces.ServiceInstance;
 import com.yatenesturno.object_views.ViewJobCredit;
 import com.yatenesturno.objects.PlaceCreditsImpl;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.CalendarUtils;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 
@@ -351,9 +353,12 @@ public class PlaceClientCreditsFragment extends Fragment {
                 btnConfirm.hideLoading();
                 textInputEditText.setError("Seleccione la cantidad de créditos a añadir");
             } else {
-                int inputNumber = (Integer.parseInt(etCreditsCount.getText().toString()));
-                textInputEditText.setError(null);
-                saveCredits(inputNumber, builder, btnConfirm);
+                if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(requireActivity(), placeId, UserManagement.getInstance().getUser().getId())) {
+                    int inputNumber = (Integer.parseInt(etCreditsCount.getText().toString()));
+                    textInputEditText.setError(null);
+                    saveCredits(inputNumber, builder, btnConfirm);
+                }
+                btnConfirm.hideLoading();
             }
         });
 

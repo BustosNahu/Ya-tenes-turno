@@ -580,9 +580,6 @@ public class FragmentAdminClients extends Fragment {
                     textInputLayout.setError("Por favor ingrese un mensaje");
                 }
                 btnConfirm.hideLoading();
-//            } else {
-//                btnConfirm.hideLoading();
-//            }
         });
 
 

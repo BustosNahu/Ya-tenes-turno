@@ -1,33 +1,50 @@
 package com.yatenesturno.functionality.app_observation;
 
+import android.app.Activity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
+import com.yatenesturno.activities.job_request.NewJobRequestActivity;
 import com.yatenesturno.custom_views.LoadingButton;
+import com.yatenesturno.functionality.ManagerPlace;
+import com.yatenesturno.functionality.PlacePremiumManager;
 import com.yatenesturno.object_interfaces.Appointment;
+import com.yatenesturno.object_interfaces.Place;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
+import com.yatenesturno.view_builder.InnerViewAppointment;
+import com.yatenesturno.view_builder.InnerViewAppointmentClass;
+
+import java.util.List;
 
 public class AppObservationController {
 
     private final Appointment appointment;
     private final String jobId;
     private final OnChangeListener listener;
+    private final String placeId;
+    private final Activity activity;
     private ViewGroup root;
     private AppCompatTextView labelObservation;
 
-    public AppObservationController(ViewGroup holderView, String jobId, Appointment appointment, OnChangeListener listener) {
+    public AppObservationController(ViewGroup holderView, String jobId, String placeId, Appointment appointment, Activity activity,  OnChangeListener listener) {
         this.jobId = jobId;
         this.appointment = appointment;
         this.listener = listener;
+        this.placeId = placeId;
+        this.activity = activity;
 
         inflateView(holderView);
         updateView();
@@ -51,6 +68,10 @@ public class AppObservationController {
         }
     }
 
+    /**
+     * Method to show dialog edit observation, then you could choose any option,
+     * but it validates if you are premium too
+     */
     private void showDialog() {
         CustomAlertDialogBuilder builder = new CustomAlertDialogBuilder(root.getContext());
         ViewGroup view = (ViewGroup) LayoutInflater.from(root.getContext()).inflate(R.layout.view_observation_dialog, null, false);
@@ -64,16 +85,23 @@ public class AppObservationController {
         LoadingButton btnDelete = view.findViewById(R.id.btnDelete);
 
         btnConfirm.setOnClickListener(view1 -> {
-            if (TextUtils.isEmpty(editText.getText())) {
-                removeObservation(btnConfirm, builder);
-            } else {
-                addObservation(editText.getText().toString(), btnConfirm, builder);
-            }
+                if (TextUtils.isEmpty(editText.getText())) {
+                    //if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(activity, placeId , UserManagement.getInstance().getUser().getId())){
+                        removeObservation(btnConfirm, builder);
+                    //}
+                    //btnConfirm.hideLoading();
+                } else {
+                    if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(activity, placeId , UserManagement.getInstance().getUser().getId())){
+                        addObservation(editText.getText().toString(), btnConfirm, builder);
+                    }
+                    btnConfirm.hideLoading();
+                }
+
             notifyListener();
         });
         btnDelete.setOnClickListener(view1 -> {
-            removeObservation(btnDelete, builder);
-            notifyListener();
+                removeObservation(btnDelete, builder);
+                notifyListener();
         });
 
         ListView listViewSuggestions = view.findViewById(R.id.listViewSuggestions);
@@ -85,6 +113,7 @@ public class AppObservationController {
 
         builder.setView(view);
         builder.show();
+
     }
 
     private void notifyListener() {

@@ -261,9 +261,7 @@ public class EmployeeActivity extends AppCompatActivity {
     }
 
     private void checkCanViewClientInfo(CustomUser user) {
-        if (GetPremiumActivity.hasPremiumInPlaceOrShowScreen(this, place.getId(), UserManagement.getInstance().getUser().getId())) {
             startViewClientInfoActivity(user);
-        }
     }
 
     private void startViewClientInfoActivity(CustomUser user) {

@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.yatenesturno.Constants;
 import com.yatenesturno.R;
+import com.yatenesturno.activities.get_premium.GetPremiumActivity;
 import com.yatenesturno.custom_views.LoadingButton;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.custom_views.NonSwipeableViewPager;
@@ -24,6 +25,7 @@ import com.yatenesturno.listeners.DatabaseCallback;
 import com.yatenesturno.object_interfaces.CustomUser;
 import com.yatenesturno.object_interfaces.DaySchedule;
 import com.yatenesturno.object_interfaces.ServiceInstance;
+import com.yatenesturno.user_auth.UserManagement;
 import com.yatenesturno.utils.CustomAlertDialogBuilder;
 import com.yatenesturno.utils.TaskRunner;
 
@@ -243,8 +245,10 @@ public class ClientInfoActivity extends AppCompatActivity {
         builderConfirmation.setTitle("¿Confirma la eliminación del cliente?");
         builderConfirmation.setMessage("Esta acción es irreversible.\nSi continúa, toda información del cliente vinculada con este empleado será eliminada");
         builderConfirmation.setPositiveButton(R.string.remove, (dialogInterface, i) -> {
+            if(GetPremiumActivity.hasPremiumInPlaceOrShowScreen(ClientInfoActivity.this, placeId, UserManagement.getInstance().getUser().getId())){
             deleteClient(btnDeleteClient, builder);
-            dialogInterface.dismiss();
+            dialogInterface.dismiss();}
+            btnDeleteClient.hideLoading();
         });
 
         builderConfirmation.show();

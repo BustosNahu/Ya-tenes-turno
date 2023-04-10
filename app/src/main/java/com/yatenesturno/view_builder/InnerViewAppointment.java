@@ -2,6 +2,7 @@ package com.yatenesturno.view_builder;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -106,6 +107,7 @@ public class InnerViewAppointment extends Fragment {
     public void initView() {
         RecyclerView recyclerViewServiceInstance = getView().findViewById(R.id.recyclerViewServiceInstance);
         loadingOverlay = new LoadingOverlay(getView().findViewById(R.id.root));
+        Activity activity = requireActivity();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerViewServiceInstance.setLayoutManager(layoutManager);
@@ -115,8 +117,11 @@ public class InnerViewAppointment extends Fragment {
         new AppObservationController(
                 getView().findViewById(R.id.appObservation),
                 jobId,
+                placeId,
                 appointment,
-                () -> getActivity().setResult(RESULT_OK));
+                activity,
+                () -> getActivity().setResult(RESULT_OK)
+                );
 
         setUpBtnCancel();
         setUpLabel();
@@ -148,20 +153,21 @@ public class InnerViewAppointment extends Fragment {
     private void showChangeLabelDialog() {
         LabelSelectorView labelSelectorView = new LabelSelectorView(placeId, jobId, appointment);
         labelSelectorView.setOnLabelSelectedListener(new LabelSelectorView.OnLabelClickListener() {
+
             @Override
             public void onLabelSelected(Label label) {
-                if (label != null) {
-                    postAppLabelToRemote(label);
-                } else if (appointment.getLabel() != null && !appointment.getLabel().isNotAttendedLabel()) {
-                    deleteAppLabel();
-                } else {
-                    appointment.setLabel(null);
-                    appointment.setDidAttend(true);
-                    postAttended(true);
-                }
+                    if (label != null) {
+                        postAppLabelToRemote(label);
+                    } else if (appointment.getLabel() != null && !appointment.getLabel().isNotAttendedLabel()) {
+                        deleteAppLabel();
+                    } else {
+                        appointment.setLabel(null);
+                        appointment.setDidAttend(true);
+                        postAttended(true);
+                    }
 
-                appointment.setLabel(label);
-                setUpLabel();
+                    appointment.setLabel(label);
+                    setUpLabel();
             }
 
             @Override
@@ -189,7 +195,7 @@ public class InnerViewAppointment extends Fragment {
 
             @Override
             public void onFailure() {
-
+                Toast.makeText(requireActivity(), "Error de conexion a la base datos", Toast.LENGTH_SHORT).show();
             }
         });
     }
