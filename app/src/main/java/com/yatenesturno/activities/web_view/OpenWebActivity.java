@@ -20,7 +20,7 @@ import com.yatenesturno.R;
 public class OpenWebActivity extends AppCompatActivity {
 
 
-    String uri = "https://yatenesturno.com.ar/login";
+    String uri = "https://yatenesturno.com.ar/my-commerce";
 
 
     ImageView iv_web_link;

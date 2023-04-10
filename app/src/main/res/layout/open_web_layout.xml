@@ -89,9 +89,10 @@
             android:layout_marginTop="40dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="35dp"
+            android:elevation="20dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/tv_seventh"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="8dp"
             >
 
             <ImageView
@@ -100,7 +101,6 @@
                 android:layout_height="43dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:src="@drawable/ic_web_link"
                 android:background="@drawable/ic_web_link"
 
                 />
