@@ -65,7 +65,7 @@ public class EditPlaceActivity extends AppCompatActivity {
 
         //viewPager = findViewById(R.id.view_pager);
 
-        loadingOverlay = new LoadingOverlay(findViewById(R.id.root));
+        loadingOverlay = new LoadingOverlay(findViewById(R.id.new_place_root));
         loadingOverlay.show();
 
         final String placeId = getIntent().getExtras().getString("placeId");
