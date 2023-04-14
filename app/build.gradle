@@ -27,7 +27,7 @@ android {
         applicationId "com.adminturnos"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 102
+        versionCode 104
         versionName "8.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
