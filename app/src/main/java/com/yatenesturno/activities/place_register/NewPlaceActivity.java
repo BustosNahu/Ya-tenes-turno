@@ -360,19 +360,7 @@ public class NewPlaceActivity extends AppCompatActivity {
     }
 
 
-    private class NewPlaceCoordinatorListener implements ObjectConfiguratorCoordinator.ListenerCoordinator {
-        @Override
-        public void onFinish(Bundle bundle) {
-            saveToDatabase(bundle);
-        }
 
-        @Override
-
-
-        public void onCanceled() {
-            returnCancel();
-        }
-    }
 
     private class CallbackNewPlace extends DatabaseCallback {
 

@@ -16,7 +16,7 @@ import java.util.List;
 public class ObjectConfiguratorCoordinator {
 
     private final PagerAdapter adapter;
-    private final ViewPager viewPager;
+//    private final ViewPager viewPager;
     private final ListenerCoordinator listener;
     private final Bundle bundle;
 
@@ -27,60 +27,60 @@ public class ObjectConfiguratorCoordinator {
                                          List<ObjectConfigurator> fragments,
                                          ListenerCoordinator listener) {
 
-        this.viewPager = rootView.findViewById(R.id.view_pager);
+//        this.viewPager = rootView.findViewById(R.id.view_pager);
         this.fragments = fragments;
         this.listener = listener;
         this.adapter = new ObjectConfigPagerAdapter(fragmentManager, fragments);
         this.bundle = new Bundle();
 
-        viewPager.setOffscreenPageLimit(fragments.size());
-        viewPager.setAdapter(adapter);
+//        viewPager.setOffscreenPageLimit(fragments.size());
+//        viewPager.setAdapter(adapter);
     }
 
-    public boolean hasNext() {
-        return viewPager.getCurrentItem() < adapter.getCount() - 1;
-    }
+//    public boolean hasNext() {
+//        return viewPager.getCurrentItem() < adapter.getCount() - 1;
+//    }
 
-    public boolean hasPrev() {
-        return viewPager.getCurrentItem() > 0;
-    }
+//    public boolean hasPrev() {
+//        return viewPager.getCurrentItem() > 0;
+//    }
 
-    private void updateBundle() {
-        Bundle currentFragBundle = fragments.get(viewPager.getCurrentItem()).getData();
+//    private void updateBundle() {
+//        Bundle currentFragBundle = fragments.get(viewPager.getCurrentItem()).getData();
+//
+//        if (currentFragBundle != null) {
+//            for (String key : currentFragBundle.keySet()) {
+//                bundle.putSerializable(key, currentFragBundle.getSerializable(key));
+//            }
+//        }
+//    }
 
-        if (currentFragBundle != null) {
-            for (String key : currentFragBundle.keySet()) {
-                bundle.putSerializable(key, currentFragBundle.getSerializable(key));
-            }
-        }
-    }
+//    public void next() {
+//        if (fragments.get(viewPager.getCurrentItem()).validateData()) {
+//            updateBundle();
+//            if (hasNext()) {
+//                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+//            } else {
+//                listener.onFinish(bundle);
+//            }
+//        }
+//    }
 
-    public void next() {
-        if (fragments.get(viewPager.getCurrentItem()).validateData()) {
-            updateBundle();
-            if (hasNext()) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-            } else {
-                listener.onFinish(bundle);
-            }
-        }
-    }
+//    public void prev() {
+//        if (hasPrev()) {
+//            viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
+//        } else {
+//            listener.onCanceled();
+//        }
+//    }
 
-    public void prev() {
-        if (hasPrev()) {
-            viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
-        } else {
-            listener.onCanceled();
-        }
-    }
+//    public int getCurrentItem() {
+//        return viewPager.getCurrentItem();
+//    }
 
-    public int getCurrentItem() {
-        return viewPager.getCurrentItem();
-    }
-
-    public void setCurrentItem(int position) {
-        viewPager.setCurrentItem(position);
-    }
+//    public void setCurrentItem(int position) {
+//        viewPager.setCurrentItem(position);
+//    }
 
     public interface ListenerCoordinator {
         void onFinish(Bundle bundle);

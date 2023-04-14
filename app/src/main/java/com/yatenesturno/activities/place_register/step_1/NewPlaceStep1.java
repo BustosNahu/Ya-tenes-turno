@@ -40,6 +40,7 @@ import com.yatenesturno.activities.ObjectConfigurator;
 import com.yatenesturno.activities.place_register.NewPlaceActivity;
 import com.yatenesturno.activities.place_register.NewPlaceLocationFragment;
 import com.yatenesturno.activities.place_register.step_2.NewPlaceIntroStep2;
+import com.yatenesturno.activities.place_view.EditPlaceActivity;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoRead;
 import com.yatenesturno.database.interfaces.ImageLoaderRead;
 import com.yatenesturno.database.ImageLoaderReadImpl;
@@ -95,6 +96,10 @@ public class NewPlaceStep1 extends ObjectConfigurator {
     Uri uri;
     private LatLng selectedLatLng;
 
+        //CAMBIAR //////////////////////////////////////////////////////////////
+    private  boolean isEdit = false;
+    ///////////////////////////////////////////////////////////////////////////
+
     public NewPlaceStep1(Place place) {
         this.place = place;
         jobsRvDisplayed = false;
@@ -119,15 +124,28 @@ public class NewPlaceStep1 extends ObjectConfigurator {
         super.onViewCreated(view, savedInstanceState);
 
         initViews();
+        Bundle bundle = new Bundle();
+        Place placeEdit = (Place) bundle.getParcelable("place");
+
+
+        if(isEdit){
+            //Log.d("BUNDLE", );
+            loadDataUiByEdit(placeEdit);
+        }
 
         if (jobTypeViewList.size() > 0) {
             populateRecyclerView();
             this.isPopulated = true;
         }
         fillIfEditingPlace();
-        if (((NewPlaceActivity)requireActivity()).savedBundle){
-            restoreState(((NewPlaceActivity)requireActivity()).returnBundleFromActToFragStep1());
+        if (!isEdit){
+            if (((NewPlaceActivity)requireActivity()).savedBundle){
+                restoreState(((NewPlaceActivity)requireActivity()).returnBundleFromActToFragStep1());
+            }
         }
+
+
+
 
 
     }
@@ -301,7 +319,9 @@ public class NewPlaceStep1 extends ObjectConfigurator {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ((NewPlaceActivity)requireActivity()).saveBundleFromStep1(saveState());
+        if(!isEdit){
+            ((NewPlaceActivity)requireActivity()).saveBundleFromStep1(saveState());
+        }
     }
 
     private void openStep2() {
@@ -594,6 +614,33 @@ public class NewPlaceStep1 extends ObjectConfigurator {
         }
 
     }
+
+    private void setTitleText(){
+
+    }
+    private void setButtonText(){
+
+    }
+    private void setFormInfo(Place place){
+//        etShopName.setText(place.getBusinessName());
+
+//        etShopName = getView().findViewById(R.id.shop_name_et);
+//        etSlogan = getView().findViewById(R.id.slogan_et_new_place);
+//        etPhone = getView().findViewById(R.id.phone_et_new_place);
+//        etAddress = getView().findViewById(R.id.address_et_new_place);
+//        etShopCategory = getView().findViewById(R.id.category_et_new_place);
+//        ivPic = getView().findViewById(R.id.image_card_view);
+//        continueBtn = getView().findViewById(R.id.btn_continue_step1);
+//        backArrow = getView().findViewById(R.id.back_btn_new_place_a);
+//        jobsRecyclerView = getView().findViewById(R.id.recyclerViewJobTypes);
+    }
+    private void loadDataUiByEdit(Place placeEdit){
+
+        setButtonText();
+        setTitleText();
+        setFormInfo(placeEdit);
+    }
+
 
     public Bundle getData() {
 //        String name = etShopName.getText().toString();

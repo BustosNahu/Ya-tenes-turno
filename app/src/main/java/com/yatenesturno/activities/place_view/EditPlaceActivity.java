@@ -5,19 +5,28 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.yatenesturno.Constants;
 import com.yatenesturno.Flags;
 import com.yatenesturno.R;
 import com.yatenesturno.activities.ObjectConfigurator;
 import com.yatenesturno.activities.ObjectConfiguratorCoordinator;
+import com.yatenesturno.activities.place_register.step_1.NewPlaceIntroStep1;
+import com.yatenesturno.activities.place_register.step_1.NewPlaceStep1;
 import com.yatenesturno.custom_views.LoadingButton;
 import com.yatenesturno.custom_views.LoadingOverlay;
 import com.yatenesturno.database.djangoImpl.DatabaseDjangoWrite;
@@ -43,11 +52,7 @@ public class EditPlaceActivity extends AppCompatActivity {
     private ObjectConfiguratorCoordinator coordinator;
     private Bundle bundle;
     private List<ObjectConfigurator> fragments;
-    private LoadingButton btnConfirm;
-
     private Place place;
-
-    private ViewPager viewPager;
 
     private LoadingOverlay loadingOverlay;
     private boolean changed;
@@ -56,6 +61,16 @@ public class EditPlaceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_place);
+
+        //SACAR TODO
+        LottieAnimationView  settings_anim = findViewById(R.id.settings_anim);
+        TextView textWork = findViewById(R.id.textWork);
+        FrameLayout new_place_fragment_main = findViewById(R.id.new_place_fragment_main);
+
+        new_place_fragment_main.setVisibility(View.GONE);
+        settings_anim.setVisibility(View.VISIBLE);
+        settings_anim.playAnimation();
+        textWork.setVisibility(View.VISIBLE);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(getDrawable(R.color.white));
@@ -66,14 +81,21 @@ public class EditPlaceActivity extends AppCompatActivity {
         //viewPager = findViewById(R.id.view_pager);
 
         loadingOverlay = new LoadingOverlay(findViewById(R.id.new_place_root));
-        loadingOverlay.show();
+//        loadingOverlay.show();
+        //INCIARLA DESPUES
 
         final String placeId = getIntent().getExtras().getString("placeId");
+        Log.d("PLACEID", placeId);
+
         ManagerPlace.getInstance().getOwnedPlaces(new ManagerPlace.OnPlaceListFetchListener() {
             @Override
             public void onFetch(List<Place> placeList) {
+                Bundle bundle =  new Bundle();
                 place = findPlace(placeList, placeId);
-                initUI();
+                bundle.putParcelable("place", place);
+
+                //initUI(bundle);
+
             }
 
             @Override
@@ -84,25 +106,18 @@ public class EditPlaceActivity extends AppCompatActivity {
         });
     }
 
-    private void initUI() {
-        btnConfirm.setOnClickListener(new BtnConfirmClickListener());
-        btnConfirm.setMatchParent();
+    private void initUI(Bundle bundle) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        Fragment fragment = new NewPlaceStep1();
+        fragment.setArguments(bundle);
         setTitle("");
         Handler handler = new Handler();
         handler.postDelayed(() -> {
-            fragments = new ArrayList<>();
-            //fragments.add(new NewPlaceStep1(place));
-//            fragments.add(new NewPlaceContactFragment(place));
-//            fragments.add(new NewPlaceJobTypeFragment(place));
 
-            coordinator = new ObjectConfiguratorCoordinator(
-                    getSupportFragmentManager(),
-                    findViewById(android.R.id.content).getRootView(),
-                    fragments,
-                    new NewPlaceCoordinatorListener()
-            );
+            fragmentTransaction.replace(R.id.new_place_fragment_main, fragment)
+                    .commit();
+
             loadingOverlay.hide();
-            updateButton();
         }, 100);
 
     }
@@ -116,16 +131,6 @@ public class EditPlaceActivity extends AppCompatActivity {
         return null;
     }
 
-    private void updateButton() {
-        if (coordinator.hasNext()) {
-            btnConfirm.setBackgroundColor(getColor(R.color.colorPrimary));
-            btnConfirm.setText(getString(R.string.next));
-        } else {
-            btnConfirm.setText(getString(R.string.confirm));
-            btnConfirm.setBackgroundColor(getColor(R.color.green));
-        }
-    }
-
     private void returnCancel() {
         setResult(Activity.RESULT_CANCELED);
         finish();
@@ -137,15 +142,14 @@ public class EditPlaceActivity extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        if (viewPager.getCurrentItem() == 3) {
-            hideKeyboard();
-        }
-
-        coordinator.prev();
-        updateButton();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        if (viewPager.getCurrentItem() == 3) {
+//            hideKeyboard();
+//        }
+//
+//        coordinator.prev();
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -252,18 +256,16 @@ public class EditPlaceActivity extends AppCompatActivity {
         }
     }
 
-    private void hideKeyboard() {
-        View view = findViewById(R.id.root).getRootView();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
+//    private void hideKeyboard() {
+//        View view = findViewById(R.id.root).getRootView();
+//        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+//        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+//    }
 
     private class NewPlaceCoordinatorListener implements ObjectConfiguratorCoordinator.ListenerCoordinator {
 
         @Override
         public void onFinish(Bundle bundle) {
-            btnConfirm.showLoading();
-            btnConfirm.setEnabled(false);
             saveToDatabase(bundle);
         }
 
@@ -284,18 +286,6 @@ public class EditPlaceActivity extends AppCompatActivity {
         public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
             loadingOverlay.hide();
             Toast.makeText(getApplicationContext(), getString(R.string.error_de_conexion), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private class BtnConfirmClickListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            btnConfirm.hideLoading();
-
-            hideKeyboard();
-            coordinator.next();
-            updateButton();
         }
     }
 }

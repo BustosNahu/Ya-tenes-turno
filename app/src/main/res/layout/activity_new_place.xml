@@ -11,22 +11,41 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true">
+        android:animateLayoutChanges="false">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/settings_anim"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:lottie_rawRes="@raw/settings3"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_above="@id/textWork"
+            android:visibility="gone"
+            app:lottie_loop="true"
+            />
+
+        <TextView
+            android:id="@+id/textWork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="Aún estamos trabajando en ello..."
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="280dp"
+            android:textSize="20sp"
+            style="@style/MontserratRegular"
+            android:visibility="gone"/>
 
         <FrameLayout
             android:id="@+id/new_place_fragment_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-
-
     </RelativeLayout>
 
-    <com.yatenesturno.custom_views.NonSwipeableViewPager
-        android:id="@+id/view_pager"
-        android:contentDescription="MOCK"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
